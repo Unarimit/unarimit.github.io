@@ -1,0 +1,16 @@
+{
+  "name": "unarimit-github-page",
+  "version": "1.0.0",
+  "description": "personal page for display my projects",
+  "main": "index.js",
+  "repository": "https://github.com/Unarimit/unarimit.github.io.git",
+  "author": "unarimit",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.9.10"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
