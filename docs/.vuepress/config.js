@@ -8,7 +8,7 @@ module.exports = {
         ],
         sidebar: [
             {
-                title: 'Page1',
+                title: '上帝视角射击游戏',
                 path: '/Page1',
                 collapsable: false, // 不折叠
             },
