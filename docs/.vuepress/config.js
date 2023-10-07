@@ -13,9 +13,39 @@ module.exports = {
                 collapsable: false, // 不折叠
             },
             {
-                title: 'Page2',
-                path: '/Page2',
+                title: 'Gameplay',
+                path: '/Gameplay/index',
                 collapsable: false, // 不折叠
+                children: [
+                    { title: "摄像机", path: "/Gameplay/Camera" },
+                    { title: "[x]角色控制", path: "/WIP" },
+                    { title: "[x]Animator", path: "/WIP" },
+                    { title: "[x]输入系统", path: "/WIP" },
+                    { title: "[x]环境交互", path: "/WIP" },
+                    { title: "[x]事件系统", path: "/WIP" },
+                    { title: "[x]音频系统", path: "/WIP" }
+                ]
+            },
+            {
+                title: 'AI(NPC&人机&Boot)',
+                path: '/AI/index',
+                collapsable: false, // 不折叠
+                children: [
+                    { title: "[x]自动机", path: "/WIP" },
+                    { title: "[x]寻路", path: "/WIP" },
+                    { title: "[x]常见AI设计", path: "/WIP" }
+                ]
+            },
+            {
+                title: '画面表示',
+                path: '/Graphics/index',
+                collapsable: false, // 不折叠
+                children: [
+                    { title: "[x]模型", path: "/WIP" },
+                    { title: "[x]Shader和渲染", path: "/WIP" },
+                    { title: "[x]粒子系统", path: "/WIP" },
+                    { title: "[x]优化策略", path: "/WIP" }
+                ]
             }
             /*
             {
