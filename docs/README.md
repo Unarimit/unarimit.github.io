@@ -12,7 +12,7 @@
 ## 技术栈参考
 https://unity.cn/university
 
-Game Play
+Gameplay
 1. 摄像机
 2. 角色控制
 3. Animator
@@ -21,7 +21,7 @@ Game Play
 6. 事件系统
 7. 音频系统
 
-AI(NPC&人机&Boot)
+AI (NPC&人机&Boot)
 1. 自动机
 2. 寻路
 3. 常见AI设计

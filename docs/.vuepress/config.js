@@ -24,7 +24,8 @@ module.exports = {
                     { title: "[x]环境交互", path: "/WIP" },
                     { title: "[x]存储系统", path: "/WIP" },
                     { title: "[x]事件系统", path: "/WIP" },
-                    { title: "[x]音频系统", path: "/WIP" }
+                    { title: "[x]音频系统", path: "/WIP" },
+                    { title: "设计模式", path: "/Gameplay/DesignPattern" }
                 ]
             },
             {
