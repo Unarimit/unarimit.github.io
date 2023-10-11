@@ -45,6 +45,7 @@ module.exports = {
                 children: [
                     { title: "[x]模型", path: "/WIP" },
                     { title: "[x]Shader和渲染", path: "/WIP" },
+                    { title: "渲染风格和手段", path: "/Graphics/StyleAndMethod" },
                     { title: "[x]粒子系统", path: "/WIP" },
                     { title: "[x]优化策略", path: "/WIP" }
                 ]
