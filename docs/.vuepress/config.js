@@ -20,7 +20,7 @@ module.exports = {
                     { title: "摄像机", path: "/Gameplay/Camera" },
                     { title: "[x]角色控制", path: "/WIP" },
                     { title: "[x]Animator", path: "/WIP" },
-                    { title: "[x]输入系统", path: "/Gameplay/Inputsystem" },
+                    { title: "输入系统", path: "/Gameplay/Inputsystem" },
                     { title: "[x]环境交互", path: "/WIP" },
                     { title: "[x]存储系统", path: "/WIP" },
                     { title: "[x]事件系统", path: "/WIP" },
