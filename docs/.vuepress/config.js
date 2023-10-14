@@ -50,6 +50,14 @@ module.exports = {
                     { title: "[x]粒子系统", path: "/WIP" },
                     { title: "[x]优化策略", path: "/WIP" }
                 ]
+            },
+            {
+                title: '代码设计',
+                path: '/WIP',
+                collapsable: false, // 不折叠
+                children: [
+                    { title: "游戏系统设计", path: "/GameCodeDegin/GameSystem" }
+                ]
             }
             /*
             {
