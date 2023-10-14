@@ -1,7 +1,17 @@
 # 输入系统 InputSystem
 
+## 介绍
 
-## 利用inputActions文件生成按键指南
+## 最佳实践
+
+
+### 利用inputActions文件生成按键指南
+
+先上效果：
+
+<img  src="./../img/inputsystem-pic1.png" />
+
+然后是代码
 
 ``` csharp
 public class KeyTipsController : MonoBehaviour
