@@ -9,6 +9,24 @@
 
 最关键的 diffuse(CelShader, RampShading)
 
+### CelShading
+
+wiki中是这样描述`CelShading`的：
+> Cel shading or toon shading is a type of non-photorealistic rendering designed to make 3-D computer graphics appear ....
+
+他把`Cel shading`和`toon shading`放在一起足以证明他在NPR中的重要性。他的实现理论基础也很简单，就是把因为光线和遮挡造成的阴影分成多个离散的部分显示。
+
+就像那张对比图中展示的那样：
+
+<center><img  width="80%" src="./../img/whatIsNPR.jpg" /></center>
+
+在开源方案`FarnNPR`中，则是分为两个部分，亮面和暗面，是根据光线分布划分出来的。而具体多亮或多暗，则综合所有光线计算。
+
+<center><img  width="80%" src="./../img/cel-shading.png" /></center>
+
+<center>即便受直射光影响有一部分很亮的地方，但仍可以从中间看出明暗的分界线</center>
+
+
 ## 光晕
 
 Ring(Fresnel Rim)
@@ -21,7 +39,11 @@ Outline
 
 Specular(Anisotropy, AngleRing, FernNPR stylized)，感觉用了平滑法线贴图会更好
 
-## 优化
+## Shadow
+
+Depth Shadow
+
+## 表现优化
 
 ### 利用法线贴图平滑阴影
 
