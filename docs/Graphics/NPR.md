@@ -5,16 +5,16 @@
 
 介绍：NPR的要点
 
-## 阴影 & 光线
+## 着色（阴影 & 光线）
 
-最关键的 diffuse(CelShader, RampShading)
+在FarnNPR中，这一功能在`Diffuse`下拉栏中，其中包括`CelShader`, `RampShading`和一些特化与脸部或头发的选项
 
 ### CelShading
 
-wiki中是这样描述`CelShading`的：
+wiki中是这样描述`CelShading`（赛璐珞渲染）的：
 > Cel shading or toon shading is a type of non-photorealistic rendering designed to make 3-D computer graphics appear ....
 
-他把`Cel shading`和`toon shading`放在一起足以证明他在NPR中的重要性。他的实现理论基础也很简单，就是把因为光线和遮挡造成的阴影分成多个离散的部分显示。
+并且将`Cel shading`视作`toon shading`，足以证明他在NPR中的重要性。他的实现理论基础也很简单，就是把因为光线和遮挡造成的阴影分成多个离散的部分显示。
 
 就像那张对比图中展示的那样：
 
@@ -26,6 +26,17 @@ wiki中是这样描述`CelShading`的：
 
 <center>即便受直射光影响有一部分很亮的地方，但仍可以从中间看出明暗的分界线</center>
 
+### RampShading
+
+`RampShading`（渐变渲染）是渲染技术中的术语，百度搜索这个词时，都是将如何通过多通道的Ramp去渲染达到比较好的效果。
+
+下面是一些精美的买家秀
+
+<center><img  width="80%" src="./../img/ramp-shading-1.png" /></center>
+
+<center><img  width="80%" src="./../img/ramp-shading-2.png" /></center>
+
+在开源方案`FarnNPR`中，`RampShading`应该是指可以通过这种方式达到更多层级的渐变效果（`CelShading`为阴面、暗面两级），算是一种对`CelShading`的补充（TODO：待实践确认）
 
 ## 光晕
 
@@ -35,7 +46,7 @@ Ring(Fresnel Rim)
 
 Outline
 
-## 头发反光
+## 头发高光
 
 Specular(Anisotropy, AngleRing, FernNPR stylized)，感觉用了平滑法线贴图会更好
 
@@ -85,3 +96,4 @@ Depth Shadow
 - [Nilo - Github](https://github.com/ColinLeung-NiloCat/UnityURPToonLitShaderExample)
 - [Nilo-UI Preview - Google Drive](https://drive.google.com/drive/folders/1SlOhvqCZrDBRkSgzwW0ZIzAkDqonpa26)
 - [卡通渲染NPR概述 - 凛冬与仓鼠的文章 - 知乎](https://zhuanlan.zhihu.com/p/416293436)
+- [人物3渲2学习总结 - CSDN](https://blog.csdn.net/qq_45796212/article/details/124568976)
