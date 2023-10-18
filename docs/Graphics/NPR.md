@@ -3,6 +3,8 @@
 要点+实现方式+性能
 参照Nilo和FarnNPR完成实现方法和英文命名的对照
 
+TODO：一张图通过圈点的方式指出NPR的必要内容
+[[toc]]
 介绍：NPR的要点
 
 ## 着色（阴影 & 光线）
@@ -18,11 +20,11 @@ wiki中是这样描述`CelShading`（赛璐珞渲染）的：
 
 就像那张对比图中展示的那样：
 
-<center><img  width="80%" src="./../img/whatIsNPR.jpg" /></center>
+<center><img  width="50%" src="./../img/whatIsNPR.jpg" /></center>
 
 在开源方案`FarnNPR`中，则是分为两个部分，亮面和暗面，是根据光线分布划分出来的。而具体多亮或多暗，则综合所有光线计算。
 
-<center><img  width="80%" src="./../img/cel-shading.png" /></center>
+<center><img  width="50%" src="./../img/cel-shading.png" /></center>
 
 <center>即便受直射光影响有一部分很亮的地方，但仍可以从中间看出明暗的分界线</center>
 
@@ -32,9 +34,9 @@ wiki中是这样描述`CelShading`（赛璐珞渲染）的：
 
 下面是一些精美的买家秀
 
-<center><img  width="80%" src="./../img/ramp-shading-1.png" /></center>
+<center><img  width="50%" src="./../img/ramp-shading-1.png" /></center>
 
-<center><img  width="80%" src="./../img/ramp-shading-2.png" /></center>
+<center><img  width="50%" src="./../img/ramp-shading-2.png" /></center>
 
 在开源方案`FarnNPR`中，`RampShading`应该是指可以通过这种方式达到更多层级的渐变效果（`CelShading`为阴面、暗面两级），算是一种对`CelShading`的补充（TODO：待实践确认）
 
@@ -60,13 +62,13 @@ Depth Shadow
 
 尝试使用法线贴图优化头发阴影，但效果并不是很好。是因为**模型本身面数就低**，再加上NPRshader对使用法线和不使用法线的优化方式不同吧。
 
-<center><img  width="80%" src="./../img/npr_normal_map.png" /></center>
+<center><img  width="50%" src="./../img/npr_normal_map.png" /></center>
 
 当然，参照其他游戏的处理手法，我们可以通过近似平滑物体，映射法线来实现平滑阴影的效果。
 
 >通常NPR中的人物着色不会借助于法线贴图，这是与PBR的显著差异之一，因为通常NPR要求着色简洁，不再需要法线贴图提供细节。《原神》中的人物面部利用平滑球的法线进行替代便可以获得高度相似的结果。法线修正可以不止用在面部，也不是光这一种修正办法，手掰法线。（摘自：[卡通渲染NPR概述 - 凛冬与仓鼠的文章 - 知乎](https://zhuanlan.zhihu.com/p/416293436)）
 
-<center><img  width="80%" src="./../img/better_normal_hair.png" /></center>
+<center><img  width="50%" src="./../img/better_normal_hair.png" /></center>
 
 <center>使用形状相似的简易模型来修正法线</center>
 
