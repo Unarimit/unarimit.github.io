@@ -1,5 +1,8 @@
 # 游戏系统设计
 
+
+## 控制逻辑分离
+
 在游戏逻辑，物理逻辑，动画逻辑中区分出游戏逻辑
 
 
@@ -32,7 +35,7 @@ public class DestructiblePersonController : MonoBehaviour
 }
 ```
 
-可以看到这个检测器还承担了角色HP属性的计算和存储，我认为这样做是很不好的。应该将关于HP的判断分离处理，因为这属于游戏逻辑的计算。于是改成了下面这个样子：
+这个检测器还承担了角色HP属性的计算和存储，我认为这样做是很不好的。应该将关于HP的判断分离处理，因为这属于游戏逻辑的计算。于是改成了下面这个样子：
 
 ``` csharp
 public class DestructiblePersonController : MonoBehaviour
@@ -64,4 +67,4 @@ public class DestructiblePersonController : MonoBehaviour
 }
 ```
 
-可以看到，这样一来，所有的游戏逻辑的计算都丢给了`CombatContext`去处理，碰撞检测器只需要检测碰撞并开启特效就行了。相当于分离了游戏逻辑和物理&画面逻辑。
+这样一来，所有的游戏逻辑的计算都丢给了`CombatContext`去处理，碰撞检测器只需要检测碰撞并开启特效就行了。相当于分离了游戏逻辑和物理&画面逻辑。

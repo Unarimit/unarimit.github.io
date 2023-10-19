@@ -33,20 +33,20 @@ module.exports = {
                 path: '/AI/index',
                 collapsable: false, // 不折叠
                 children: [
+                    { title: "寻路", path: "/AI/Navigation" },
                     { title: "[x]自动机", path: "/WIP" },
-                    { title: "[x]寻路", path: "/WIP" },
                     { title: "[x]常见AI设计", path: "/WIP" }
                 ]
             },
             {
                 title: '画面表示',
-                path: '/Graphics/index',
+                path: '/Shading/index',
                 collapsable: false, // 不折叠
                 children: [
                     { title: "[x]模型", path: "/WIP" },
                     { title: "[x]Shader和渲染", path: "/WIP" },
-                    { title: "渲染风格和手段", path: "/Graphics/StyleAndMethod" }, // title 需要修改
-                    { title: "NPR", path: "/Graphics/NPR" },
+                    { title: "渲染风格和手段", path: "/Shading/StyleAndMethod" }, // title 需要修改
+                    { title: "NPR", path: "/Shading/NPR" },
                     { title: "[x]粒子系统", path: "/WIP" },
                     { title: "[x]优化策略", path: "/WIP" }
                 ]
@@ -56,7 +56,25 @@ module.exports = {
                 path: '/WIP',
                 collapsable: false, // 不折叠
                 children: [
-                    { title: "游戏系统设计", path: "/GameCodeDegin/GameSystem" }
+                    { title: "游戏系统设计", path: "/GameCodeDegin/GameSystem" },
+                    { title: "技能系统设计", path: "/GameCodeDegin/AbilitySystem" }
+                ]
+            },
+            {
+                title: '编译&运维相关',
+                path: '/WIP',
+                collapsable: false, // 不折叠
+                children: [
+                    { title: "编译", path: "/GameBuild/Compile" },
+                    { title: "热更新", path: "/GameBuild/Mod&Hotfix" },
+                ]
+            },
+            {
+                title: '计算机图形学',
+                path: '/ComputerGraphics/Index',
+                collapsable: false, // 不折叠
+                children: [
+                    { title: "[x]四元数", path: "/WIP" },
                 ]
             }
             /*
