@@ -3,19 +3,42 @@
 施工中
 :::
 
-## `Cinemachine`
+## 基本相机属性
 
-`Cinemachine`是unity提供的一套控制相机移动的组件，配置好`CinemachineBrain`和`CinemachineVirtualCamera`即可使用。
 
-有三个主要属性`Follow`，`LookAt`和`Body`。
+## 自动相机-Cinemachine
 
-选择该组件的`Body`，确定相机的跟随目标的风格
-- `3rd person follow`
-- `Farming Transposer`
-- `Hard Lock to Target`
-- `Orbital Transposer`
-- `Tracked Dolly`
-- `Transposer`
+`Cinemachine`是unity提供的一套控制相机移动的组件，需要配置以下组件:
+- `CinemachineVirtualCamera`
+- `CinemachineBrain`：可以控制多个`CinemachineVirtualCamera`替换主相机
+    - 可以实现丝滑的在两个`CinemachineVirtualCamera`之间切换，是主要功能之一
+
+### CinemachineBrain
+
+`CinemachineBrain`用来控制主相机，和相机切换时的blend
+
+`CinemachineBrain`配置可以参考：[How to use Cameras in Unity: Cinemachine Overview and Brain Explained!](https://www.youtube.com/watch?v=P_ibDJhFVMU)
+- 通过`World Up Override`消除Camera Roll
+
+### CinemachineVirtualCamera
+
+`CinemachineVirtualCamera`有两组主要属性
+- 第一组：`Follow`和`Body`。
+- 第二组：`LookAt`和`Aim`。
+
+对于第一组属性，选择该组件的`Body`，确定相机的**跟随**目标的风格
+- `3rd person follow`：第三人称相机，在TPS、(A)RPG类型中使用较多
+    - 例如：神秘海域，原神，PUBG
+- `Farming Transposer`：第三人称俯视视角，在MOBA、RTS(即时策略)、2D-RPG类型中使用较多
+    - 例如：模拟农场，英雄联盟、HellDivers、冒险岛
+    - 特性：角色前向的视野会比其他方向多
+- `Hard Lock to Target`：第一人称
+- `Orbital Transposer`：第三人称环绕，用于一些游戏的胜利演出之类的？
+    - 例如：跑跑卡丁车冲线后动画
+- `Tracked Dolly`：一定范围内水平移动
+- `Transposer`：随`Transform`相对运动
+
+第二组属性的用法，可以参考：[How to use Cameras in Unity: Cinemachine Virtual Cameras Explained](https://www.youtube.com/watch?v=asruvbmUyw8)，里面对组件的各个属性有详细介绍。例如配置第二组属性，可以实现多人联机拖拽视角的效果
 
 ## 实现
 
