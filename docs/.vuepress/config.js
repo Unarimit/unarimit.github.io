@@ -18,14 +18,15 @@ module.exports = {
                 collapsable: false, // 不折叠
                 children: [
                     { title: "摄像机", path: "/Gameplay/Camera" },
+                    { title: "生命周期", path: "/Gameplay/Lifetime" },
                     { title: "[x]角色控制", path: "/WIP" },
                     { title: "[x]Animator", path: "/WIP" },
-                    { title: "InputSystem", path: "/Gameplay/Inputsystem" },
                     { title: "[x]环境交互", path: "/WIP" },
                     { title: "[x]存储系统", path: "/WIP" },
                     { title: "[x]事件系统", path: "/WIP" },
+                    { title: "InputSystem", path: "/Gameplay/Inputsystem" },
+                    { title: "UGUI", path: "/Gameplay/UGUI" },
                     { title: "[x]音频系统", path: "/WIP" },
-                    { title: "UGUI", path: "/Gameplay/UGUI" }
                 ]
             },
             {
@@ -53,7 +54,7 @@ module.exports = {
             },
             {
                 title: '代码设计',
-                path: '/WIP',
+                path: '/GameCodeDegin/Index',
                 collapsable: false, // 不折叠
                 children: [
                     { title: "游戏系统设计", path: "/GameCodeDegin/GameSystem" },
