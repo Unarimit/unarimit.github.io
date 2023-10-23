@@ -25,7 +25,7 @@ module.exports = {
                     { title: "[x]存储系统", path: "/WIP" },
                     { title: "[x]事件系统", path: "/WIP" },
                     { title: "[x]音频系统", path: "/WIP" },
-                    { title: "设计模式", path: "/Gameplay/DesignPattern" }
+                    { title: "UGUI", path: "/Gameplay/UI" }
                 ]
             },
             {
@@ -57,7 +57,9 @@ module.exports = {
                 collapsable: false, // 不折叠
                 children: [
                     { title: "游戏系统设计", path: "/GameCodeDegin/GameSystem" },
-                    { title: "技能系统设计", path: "/GameCodeDegin/AbilitySystem" }
+                    { title: "技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
+                    { title: "设计模式", path: "/GameCodeDegin/DesignPattern" },
+                    { title: "多线程", path: "/GameCodeDegin/MultiThread" }
                 ]
             },
             {
@@ -67,6 +69,7 @@ module.exports = {
                 children: [
                     { title: "编译", path: "/GameBuild/Compile" },
                     { title: "热更新", path: "/GameBuild/Mod&Hotfix" },
+                    { title: "GC机制", path: "/GameBuild/GC" },
                 ]
             },
             {
