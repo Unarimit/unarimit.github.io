@@ -25,7 +25,7 @@ module.exports = {
                     { title: "[x]存储系统", path: "/WIP" },
                     { title: "[x]事件系统", path: "/WIP" },
                     { title: "[x]音频系统", path: "/WIP" },
-                    { title: "UGUI", path: "/Gameplay/UI" }
+                    { title: "UGUI", path: "/Gameplay/UGUI" }
                 ]
             },
             {
