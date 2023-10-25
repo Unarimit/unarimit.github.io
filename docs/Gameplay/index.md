@@ -11,6 +11,9 @@ Gameplay是指**游戏客户端**开发者所必备的技能集合，即掌握�
 ## 可以参考
 [游戏Gameplay程序员的核心竞争力是什么？ - 大钊的回答 - 知乎](https://www.zhihu.com/question/601194013/answer/3030169440)
 
-
+## 未包含的内容
+- 服务端计算， 参考[et框架-github](https://github.com/egametang/ET/tree/master)
+- 性能优化
+- 针对几种不同类型的泛用设计模式（卡牌对战，FPS等）
 
 

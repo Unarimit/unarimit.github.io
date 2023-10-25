@@ -18,14 +18,14 @@ module.exports = {
                 collapsable: false, // 不折叠
                 children: [
                     { title: "摄像机", path: "/Gameplay/Camera" },
-                    { title: "生命周期", path: "/Gameplay/Lifetime" },
+                    { title: "[W]生命周期", path: "/Gameplay/Lifetime" },
                     { title: "[x]角色控制", path: "/WIP" },
                     { title: "[x]Animator", path: "/WIP" },
                     { title: "[x]环境交互", path: "/WIP" },
                     { title: "[x]存储系统", path: "/WIP" },
-                    { title: "[x]事件系统", path: "/WIP" },
+                    { title: "[x]事件系统", path: "/Gameplay/EventSystem" },
                     { title: "InputSystem", path: "/Gameplay/Inputsystem" },
-                    { title: "UGUI", path: "/Gameplay/UGUI" },
+                    { title: "[W]UGUI", path: "/Gameplay/UGUI" },
                     { title: "[x]音频系统", path: "/WIP" },
                 ]
             },
@@ -58,9 +58,10 @@ module.exports = {
                 collapsable: false, // 不折叠
                 children: [
                     { title: "游戏系统设计", path: "/GameCodeDegin/GameSystem" },
-                    { title: "技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
-                    { title: "设计模式", path: "/GameCodeDegin/DesignPattern" },
-                    { title: "多线程", path: "/GameCodeDegin/MultiThread" }
+                    { title: "[W]技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
+                    { title: "[W]设计模式", path: "/GameCodeDegin/DesignPattern" },
+                    { title: "[W]多线程", path: "/GameCodeDegin/MultiThread" },
+                    { title: "[W]协同开发", path: "/GameCodeDegin/Coop" }
                 ]
             },
             {
@@ -68,9 +69,9 @@ module.exports = {
                 path: '/WIP',
                 collapsable: false, // 不折叠
                 children: [
-                    { title: "编译", path: "/GameBuild/Compile" },
-                    { title: "热更新", path: "/GameBuild/Mod&Hotfix" },
-                    { title: "GC机制", path: "/GameBuild/GC" },
+                    { title: "[W]编译", path: "/GameBuild/Compile" },
+                    { title: "[W]热更新", path: "/GameBuild/Mod&Hotfix" },
+                    { title: "[W]GC机制", path: "/GameBuild/GC" },
                 ]
             },
             {
