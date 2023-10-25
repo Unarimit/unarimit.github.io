@@ -5,7 +5,19 @@
 
 TODO：一张图通过圈点的方式指出NPR的必要内容
 [[toc]]
-介绍：NPR的要点
+介绍：NPR的要点，主要是会用那些Shader
+
+## 基础贴图
+
+对于不同的渲染风格和不同的细致程度，需要的贴图数量不同
+
+对于一个仿原神渲染风格的shader，他包含如下贴图：
+1. BaseMap
+2. NormalMap
+3. LightMap
+    - 表达头发纹理的阴影
+4. ShadowMap
+    - 腿中的窝窝那里？
 
 ## 着色（阴影 & 光线）
 
@@ -99,3 +111,5 @@ Depth Shadow
 - [Nilo-UI Preview - Google Drive](https://drive.google.com/drive/folders/1SlOhvqCZrDBRkSgzwW0ZIzAkDqonpa26)
 - [卡通渲染NPR概述 - 凛冬与仓鼠的文章 - 知乎](https://zhuanlan.zhihu.com/p/416293436)
 - [人物3渲2学习总结 - CSDN](https://blog.csdn.net/qq_45796212/article/details/124568976)
+- [纳西妲仿原神渲染预设工程 - Bilibili](https://www.bilibili.com/video/BV1HN4y1X7uS)
+    - 对应技术解析: [【虚幻&Unity】两种引擎 原神风格基础卡通渲染 完整流程 - Bilibili](https://www.bilibili.com/video/BV1h14y177bp/)
