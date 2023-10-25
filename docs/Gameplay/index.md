@@ -15,5 +15,6 @@ Gameplay是指**游戏客户端**开发者所必备的技能集合，即掌握�
 - 服务端计算， 参考[et框架-github](https://github.com/egametang/ET/tree/master)
 - 性能优化
 - 针对几种不同类型的泛用设计模式（卡牌对战，FPS等）
-
-
+- 针对几种不同平台的泛用方法（手机游戏，VR，AR等）
+    - 手机游戏的按键适配可以参考leanTouch，优化方法(异形屏适配，放断触等)不知道
+    - VR、AR需要参考各自的api，很麻烦

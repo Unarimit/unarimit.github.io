@@ -1,13 +1,15 @@
 # 我要成为`U3D`高手！
+
 ::: warning
 施工中，[W]代表正在施工(已经新建文件啦)，[x]代表还没有新建文件
 :::
+
 ::: tip
 如果有什么问题可以在github提issue哦
 :::
 
+## 我的作品-上帝视角射击游戏
 
-## 上帝视角射击游戏
 简单的上帝视角射击游戏，大概只打了个框架。使用Unity引擎制作（2021.3.5f1c1），URP渲染管线。
 
 <img  width="500" src="./img/top-down-shoot.png" />
@@ -15,25 +17,15 @@
 [B站视频介绍](https://www.bilibili.com/video/BV1Uh4y1N7sK/)
 
 ## 技术栈参考
+
 https://unity.cn/university
 
-Gameplay
-1. 摄像机
-2. 角色控制
-3. Animator
-4. 输入系统
-5. 环境交互
-6. 事件系统
-7. 音频系统
 
-AI (NPC&人机&Boot)
-1. 自动机
-2. 寻路
-3. 常见AI设计
+## 未包含的内容
 
-Graphics
-1. Shader和渲染
-2. 模型
-3. 粒子系统
-4. 优化策略
-
+- 服务端计算， 参考[et框架-github](https://github.com/egametang/ET/tree/master)
+- 性能优化
+- 针对几种不同类型的泛用设计模式（卡牌对战，FPS等）
+- 针对几种不同平台的泛用方法（手机游戏，VR，AR等）
+    - 手机游戏的按键适配可以参考leanTouch，优化方法(异形屏适配，防断触等)不知道
+    - VR、AR需要参考各自的api，很麻烦

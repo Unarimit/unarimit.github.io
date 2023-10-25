@@ -8,7 +8,7 @@ Input System在Unity 2019.1及更高版本中成为了新的默认输入系统�
 
 ## 最佳实践
 
-根据unity自带的**第三人称模板**和一个教程视频，利用inputsystem的最佳实践如下所示：
+根据unity自带的**第三人称模板**和一个教程视频(见参考)，利用inputsystem的最佳实践如下所示：
 
 <img  src="./../img/inputsystem-pic2.png" />
 
@@ -99,4 +99,4 @@ public class KeyTipsController : MonoBehaviour
 ```
 
 ## 参考
-[InputSystem Best Practices Part1 - Youtube](https://www.youtube.com/watch?v=BAXZ6bxdTYI)
+- [InputSystem Best Practices Part1 - Youtube](https://www.youtube.com/watch?v=BAXZ6bxdTYI)
