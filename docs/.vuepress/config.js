@@ -59,6 +59,7 @@ module.exports = {
                 children: [
                     { title: "游戏系统设计", path: "/GameCodeDegin/GameSystem" },
                     { title: "[W]技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
+                    { title: "[W]UI系统设计", path: "/GameCodeDegin/UISystem" },
                     { title: "[W]设计模式", path: "/GameCodeDegin/DesignPattern" },
                     { title: "[W]多线程", path: "/GameCodeDegin/MultiThread" },
                     { title: "[W]协同开发", path: "/GameCodeDegin/Coop" }
