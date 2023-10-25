@@ -9,12 +9,7 @@
 Gameplay是指**游戏客户端**开发者所必备的技能集合，即掌握基本几种游戏的玩法实现方式。但工作中要求美术素材的导入、性能优化等，需要对涉及游戏开发的各个领域都有所了解。**目前主流的游戏类型都有开源或收费的框架（FPS，RPG等），可以参照这些实现，提高自己的水平。** 
 
 ## 可以参考
-[游戏Gameplay程序员的核心竞争力是什么？ - 大钊的回答 - 知乎](https://www.zhihu.com/question/601194013/answer/3030169440)
+- [游戏Gameplay程序员的核心竞争力是什么？ - 大钊的回答 - 知乎](https://www.zhihu.com/question/601194013/answer/3030169440)
+- [[Unity教程]-如何制作技能系统 | Prototype系列](https://www.bilibili.com/video/BV1LV411S7d8)
+    - 实际上在讲怎么制作一个游戏原型
 
-## 未包含的内容
-- 服务端计算， 参考[et框架-github](https://github.com/egametang/ET/tree/master)
-- 性能优化
-- 针对几种不同类型的泛用设计模式（卡牌对战，FPS等）
-- 针对几种不同平台的泛用方法（手机游戏，VR，AR等）
-    - 手机游戏的按键适配可以参考leanTouch，优化方法(异形屏适配，放断触等)不知道
-    - VR、AR需要参考各自的api，很麻烦
