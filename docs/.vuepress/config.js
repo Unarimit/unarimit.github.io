@@ -24,6 +24,8 @@ module.exports = {
                     { title: "[x]环境交互", path: "/WIP" },
                     { title: "[x]存储系统", path: "/WIP" },
                     { title: "[x]事件系统", path: "/Gameplay/EventSystem" },
+                    { title: "[W]资源管理", path: "/Gameplay/Resource" },
+                    { title: "[W]碰撞箱", path: "/Gameplay/BoxCollider" },
                     { title: "InputSystem", path: "/Gameplay/Inputsystem" },
                     { title: "[W]UGUI", path: "/Gameplay/UGUI" },
                     { title: "[x]音频系统", path: "/WIP" },
