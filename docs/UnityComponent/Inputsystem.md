@@ -1,4 +1,4 @@
-# 输入系统 InputSystem
+# 输入系统(InputSystem)
 
 Input System在Unity 2019.1及更高版本中成为了新的默认输入系统。
 

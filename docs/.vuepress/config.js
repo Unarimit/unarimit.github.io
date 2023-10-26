@@ -8,33 +8,42 @@ module.exports = {
         ],
         sidebar: [
             {
-                title: '上帝视角射击游戏',
-                path: '/Page1',
-                collapsable: false, // 不折叠
+                title: '作品',
+                path: '/Projects/Index',
+                collapsable: false, 
+                children: [
+                    { title: "[W]上帝视角射击游戏", path: "/Projects/TopShooting" },
+                ]
             },
             {
                 title: 'Gameplay',
-                path: '/Gameplay/index',
-                collapsable: false, // 不折叠
+                path: '/Gameplay/Index',
+                collapsable: true, 
                 children: [
-                    { title: "摄像机", path: "/Gameplay/Camera" },
-                    { title: "[W]生命周期", path: "/Gameplay/Lifetime" },
+                    { title: "[x]占位符", path: "/WIP" }, // 不加过不了build
+                ]
+            },
+            {
+                title: 'Unity组件',
+                path: '/UnityComponent/Index',
+                collapsable: true,
+                children: [
+                    { title: "摄像机", path: "/UnityComponent/Camera" },
+                    { title: "[W]生命周期", path: "/UnityComponent/Lifetime" },
                     { title: "[x]角色控制", path: "/WIP" },
                     { title: "[x]Animator", path: "/WIP" },
+                    { title: "[W]碰撞箱", path: "/UnityComponent/BoxCollider" },
                     { title: "[x]环境交互", path: "/WIP" },
-                    { title: "[x]存储系统", path: "/WIP" },
-                    { title: "[x]事件系统", path: "/Gameplay/EventSystem" },
-                    { title: "[W]资源管理", path: "/Gameplay/Resource" },
-                    { title: "[W]碰撞箱", path: "/Gameplay/BoxCollider" },
-                    { title: "InputSystem", path: "/Gameplay/Inputsystem" },
-                    { title: "[W]UGUI", path: "/Gameplay/UGUI" },
+                    { title: "[W]资源管理", path: "/UnityComponent/Resource" },
+                    { title: "InputSystem", path: "/UnityComponent/Inputsystem" },
+                    { title: "[W]UGUI", path: "/UnityComponent/UGUI" },
                     { title: "[x]音频系统", path: "/WIP" },
                 ]
             },
             {
                 title: 'AI (NPC&人机&Boot)',
                 path: '/AI/index',
-                collapsable: false, // 不折叠
+                collapsable: true,
                 children: [
                     { title: "寻路", path: "/AI/Navigation" },
                     { title: "[x]自动机", path: "/WIP" },
@@ -44,7 +53,7 @@ module.exports = {
             {
                 title: '画面表示',
                 path: '/Shading/index',
-                collapsable: false, // 不折叠
+                collapsable: true,
                 children: [
                     { title: "[x]模型", path: "/WIP" },
                     { title: "[x]Shader和渲染", path: "/WIP" },
@@ -57,11 +66,12 @@ module.exports = {
             {
                 title: '代码设计',
                 path: '/GameCodeDegin/Index',
-                collapsable: false, // 不折叠
+                collapsable: true,
                 children: [
                     { title: "游戏系统设计", path: "/GameCodeDegin/GameSystem" },
                     { title: "[W]技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
                     { title: "[W]UI系统设计", path: "/GameCodeDegin/UISystem" },
+                    { title: "[x]存储和事件系统", path: "/GameCodeDegin/EventSystem" },
                     { title: "[W]设计模式", path: "/GameCodeDegin/DesignPattern" },
                     { title: "[W]多线程", path: "/GameCodeDegin/MultiThread" },
                     { title: "[W]协同开发", path: "/GameCodeDegin/Coop" }
@@ -70,7 +80,7 @@ module.exports = {
             {
                 title: '编译&运维相关',
                 path: '/WIP',
-                collapsable: false, // 不折叠
+                collapsable: true,
                 children: [
                     { title: "[W]编译", path: "/GameBuild/Compile" },
                     { title: "[W]热更新", path: "/GameBuild/Mod&Hotfix" },
@@ -80,7 +90,7 @@ module.exports = {
             {
                 title: '计算机图形学',
                 path: '/ComputerGraphics/Index',
-                collapsable: false, // 不折叠
+                collapsable: true, 
                 children: [
                     { title: "[x]四元数", path: "/WIP" },
                 ]
