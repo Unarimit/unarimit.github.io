@@ -15,7 +15,9 @@
 
 ### CinemachineBrain
 
-`CinemachineBrain`用来控制主相机，和相机切换时的blend
+`CinemachineBrain`用来控制主相机，和相机切换时的blend、
+- 通过改变`CinemachineVirtualCamera`优先级的方式切换相机
+- 默认为平滑过渡，可以给每个虚拟相机设置过渡曲线
 
 `CinemachineBrain`配置可以参考：[How to use Cameras in Unity: Cinemachine Overview and Brain Explained!](https://www.youtube.com/watch?v=P_ibDJhFVMU)
 - 通过`World Up Override`消除Camera Roll
@@ -59,4 +61,4 @@ void update(){
 
 ## 参考
 - 简易跟随相机代码：[Making A MOBA Character #1: MOVEMENT (Unity 2019 Tutorial) - Youtube](https://youtu.be/d_0dAwk3wqI?si=lkzEyYuIJKDawH5Q&t=140)
-- [How to use Cameras in Unity: Cinemachine Virtual Cameras Explained](https://www.youtube.com/watch?v=asruvbmUyw8)
+- [How to use Cameras in Unity: Cinemachine Virtual Cameras Explained - Youtube](https://www.youtube.com/watch?v=asruvbmUyw8)
