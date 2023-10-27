@@ -17,3 +17,5 @@
 4. 通过 UIManager 访问各个窗口成员。
     - `UIManagerInstance.GetWindow<窗口类型>().成员`:
 :::
+
+## 参考
