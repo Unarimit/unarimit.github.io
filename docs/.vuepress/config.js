@@ -1,5 +1,5 @@
 module.exports = {
-    title: '作品展示',
+    title: '我要成为U3D高手',
     description: '个人网站',
     themeConfig: {
         nav: [

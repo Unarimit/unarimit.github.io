@@ -1,10 +1,8 @@
 # 摄像机
-::: warning
-施工中
-:::
 
 ## 基本相机属性
 
+WIP
 
 ## 自动相机-Cinemachine
 
