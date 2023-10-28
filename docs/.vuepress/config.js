@@ -41,29 +41,6 @@ module.exports = {
                 ]
             },
             {
-                title: 'AI (NPC&人机&Boot)',
-                path: '/AI/index',
-                collapsable: true,
-                children: [
-                    { title: "寻路", path: "/AI/Navigation" },
-                    { title: "[x]自动机", path: "/WIP" },
-                    { title: "[x]常见AI设计", path: "/WIP" }
-                ]
-            },
-            {
-                title: '画面表示',
-                path: '/Shading/index',
-                collapsable: true,
-                children: [
-                    { title: "[x]模型", path: "/WIP" },
-                    { title: "[x]Shader和渲染", path: "/WIP" },
-                    { title: "渲染风格和手段", path: "/Shading/StyleAndMethod" }, // title 需要修改
-                    { title: "NPR", path: "/Shading/NPR" },
-                    { title: "[x]粒子系统", path: "/WIP" },
-                    { title: "[x]优化策略", path: "/WIP" }
-                ]
-            },
-            {
                 title: '代码设计',
                 path: '/GameCodeDegin/Index',
                 collapsable: true,
@@ -85,6 +62,29 @@ module.exports = {
                     { title: "[W]编译", path: "/GameBuild/Compile" },
                     { title: "[W]热更新", path: "/GameBuild/Mod&Hotfix" },
                     { title: "[W]GC机制", path: "/GameBuild/GC" },
+                ]
+            },
+            {
+                title: 'AI (NPC&人机&Boot)',
+                path: '/AI/index',
+                collapsable: true,
+                children: [
+                    { title: "寻路", path: "/AI/Navigation" },
+                    { title: "[x]自动机", path: "/WIP" },
+                    { title: "[x]常见AI设计", path: "/WIP" }
+                ]
+            },
+            {
+                title: '画面表示',
+                path: '/Shading/index',
+                collapsable: true,
+                children: [
+                    { title: "[x]模型", path: "/WIP" },
+                    { title: "[x]Shader和渲染", path: "/WIP" },
+                    { title: "渲染风格和手段", path: "/Shading/StyleAndMethod" }, // title 需要修改
+                    { title: "NPR", path: "/Shading/NPR" },
+                    { title: "[x]粒子系统", path: "/WIP" },
+                    { title: "[x]优化策略", path: "/WIP" }
                 ]
             },
             {

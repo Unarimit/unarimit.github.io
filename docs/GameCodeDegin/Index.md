@@ -1,5 +1,7 @@
 # 代码设计
-
+::: tip
+“优雅，永不过时”
+:::
 
 ## 参考
 - [Game Programming Patterns](https://gameprogrammingpatterns.com/)
