@@ -1,6 +1,7 @@
 # 资源管理
 
 Unity提供`Resource`API和`Addressable`包用于管理资源。
+> Unity2018之前也使用`AssetsBundle`管理，因为使用`AssetsBundle`实现一套资源管理系统非常复杂，所有有了`Addressable`，而`AssetsBundle`已被标记为"out of date"。
 
 :::tip gpt
 
