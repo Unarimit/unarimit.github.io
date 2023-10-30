@@ -37,6 +37,8 @@ module.exports = {
                     { title: "[W]资源管理", path: "/UnityComponent/Resource" },
                     { title: "InputSystem", path: "/UnityComponent/Inputsystem" },
                     { title: "[W]UGUI", path: "/UnityComponent/UGUI" },
+                    { title: "TextMeshPro", path: "/UnityComponent/TextMeshPro" },
+                    { title: "[W]常用Transform", path: "/UnityComponent/Transform" },
                     { title: "[x]音频系统", path: "/WIP" },
                 ]
             },
