@@ -2,6 +2,12 @@
 
 ## 基本相机属性
 
+`Rendering`里面有一个`Post-Processing`选项，每次都忘记选。
+
+两个渲染位置：RenderTexture & Screen
+
+### 分层渲染
+
 WIP
 
 ## 自动相机-Cinemachine
@@ -57,6 +63,18 @@ void update(){
 
 实际上可以通过`CinemachineVirtualCamera`(Framing Transposer)实现一样的功能，并且有更多参数可以调节，可以做得更好
 
+## bugs
+### 内存溢出：在URP管线下，两个相机，使用全局Volume和后处理
+
+一个相机输出到render texture（256\*256），1920\*1080分辨率
+
+TODO: 不知道是不是我导入其他后处理效果导致的（关闭导入的后处理效果不影响），进一步实验确认。
+
+现象：点击play，三秒钟内存使用8G，在等几秒立刻崩溃。
+
+虽然说改用local Volume可以解决这个问题，但他奶奶的global模式是干什么用的？
+
 ## 参考
 - 简易跟随相机代码：[Making A MOBA Character #1: MOVEMENT (Unity 2019 Tutorial) - Youtube](https://youtu.be/d_0dAwk3wqI?si=lkzEyYuIJKDawH5Q&t=140)
 - [How to use Cameras in Unity: Cinemachine Virtual Cameras Explained - Youtube](https://www.youtube.com/watch?v=asruvbmUyw8)
+- [Unity HDRP 多摄像机分层渲染 - cnblog](https://www.cnblogs.com/koshio0219/p/14263078.html)

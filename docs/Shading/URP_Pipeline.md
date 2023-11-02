@@ -4,6 +4,9 @@ Files
 - UniversalRenderPipelineAsset_Renderer.asset
 - UniversalRenderPipelineGlobalSettings.asset
 
+## 问题？
+给Volume设置layer会导致其失效
+
 ## 介绍
 阅读参考，完善md文件
 

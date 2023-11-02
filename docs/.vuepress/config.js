@@ -29,7 +29,7 @@ module.exports = {
                 collapsable: true,
                 children: [
                     { title: "摄像机", path: "/UnityComponent/Camera" },
-                    { title: "[W]生命周期", path: "/UnityComponent/Lifetime" },
+                    { title: "生命周期", path: "/UnityComponent/Lifetime" },
                     { title: "[x]角色控制", path: "/WIP" },
                     { title: "[x]Animator", path: "/WIP" },
                     { title: "[W]碰撞箱", path: "/UnityComponent/BoxCollider" },
