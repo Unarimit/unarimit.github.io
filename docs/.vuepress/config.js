@@ -47,6 +47,7 @@ module.exports = {
                 path: '/GameCodeDegin/Index',
                 collapsable: true,
                 children: [
+                    { title: "[W]常用规范", path: "/GameCodeDegin/CommonlySpec" },
                     { title: "游戏系统设计", path: "/GameCodeDegin/GameSystem" },
                     { title: "[W]技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
                     { title: "[W]UI系统设计", path: "/GameCodeDegin/UISystem" },
@@ -72,8 +73,8 @@ module.exports = {
                 collapsable: true,
                 children: [
                     { title: "寻路", path: "/AI/Navigation" },
-                    { title: "[x]自动机", path: "/WIP" },
-                    { title: "[x]常见AI设计", path: "/WIP" }
+                    { title: "[W]状态机", path: "/AI/StateMachine" },
+                    { title: "[W]常见AI设计", path: "/AI/AIDesign" }
                 ]
             },
             {
