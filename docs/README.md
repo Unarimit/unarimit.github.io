@@ -26,4 +26,4 @@ https://unity.cn/university
 - 针对几种不同平台的泛用方法（手机游戏，VR，AR等）
     - 手机游戏的按键适配可以参考leanTouch，优化方法(异形屏适配，防断触等)不知道
     - VR、AR需要参考各自的api，很麻烦
-- 都可以先参考一下[Unity的文档](docs.unity3d.com)
+- 都可以先参考一下[Unity的文档](https://docs.unity3d.com)
