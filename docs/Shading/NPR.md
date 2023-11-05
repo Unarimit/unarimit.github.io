@@ -113,3 +113,4 @@ Depth Shadow
 - [人物3渲2学习总结 - CSDN](https://blog.csdn.net/qq_45796212/article/details/124568976)
 - [纳西妲仿原神渲染预设工程 - Bilibili](https://www.bilibili.com/video/BV1HN4y1X7uS)
     - 对应技术解析: [【虚幻&Unity】两种引擎 原神风格基础卡通渲染 完整流程 - Bilibili](https://www.bilibili.com/video/BV1h14y177bp/)
+- 更细节的仿原神渲染：[一些较少人提过的二次元渲染方法 - flashyiyi的文章 - 知乎](https://zhuanlan.zhihu.com/p/539950545)

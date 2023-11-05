@@ -40,6 +40,7 @@ module.exports = {
                     { title: "TextMeshPro", path: "/UnityComponent/TextMeshPro" },
                     { title: "[W]常用Transform", path: "/UnityComponent/Transform" },
                     { title: "[x]音频系统", path: "/WIP" },
+                    { title: "[x]TimeLine", path: "/UnityComponent/TimeLine" },
                 ]
             },
             {
@@ -48,10 +49,10 @@ module.exports = {
                 collapsable: true,
                 children: [
                     { title: "[W]常用规范", path: "/GameCodeDegin/CommonlySpec" },
-                    { title: "游戏系统设计", path: "/GameCodeDegin/GameSystem" },
+                    { title: "[W]游戏系统设计", path: "/GameCodeDegin/GameSystem" },
                     { title: "[W]技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
                     { title: "[W]UI系统设计", path: "/GameCodeDegin/UISystem" },
-                    { title: "[x]存储和事件系统", path: "/GameCodeDegin/EventSystem" },
+                    { title: "[W]存储和事件系统", path: "/GameCodeDegin/EventSystem" },
                     { title: "[W]设计模式", path: "/GameCodeDegin/DesignPattern" },
                     { title: "[W]多线程", path: "/GameCodeDegin/MultiThread" },
                     { title: "[W]协同开发", path: "/GameCodeDegin/Coop" }
