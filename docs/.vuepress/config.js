@@ -39,7 +39,7 @@ module.exports = {
                     { title: "[W]UGUI", path: "/UnityComponent/UGUI" },
                     { title: "TextMeshPro", path: "/UnityComponent/TextMeshPro" },
                     { title: "[W]常用Transform", path: "/UnityComponent/Transform" },
-                    { title: "[x]音频系统", path: "/WIP" },
+                    { title: "音频系统", path: "/UnityComponent/AudioSystem" },
                     { title: "[x]TimeLine", path: "/UnityComponent/TimeLine" },
                 ]
             },
