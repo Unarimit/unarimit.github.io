@@ -31,7 +31,7 @@ module.exports = {
                     { title: "摄像机", path: "/UnityComponent/Camera" },
                     { title: "生命周期", path: "/UnityComponent/Lifetime" },
                     { title: "[x]角色控制", path: "/WIP" },
-                    { title: "[x]Animator", path: "/WIP" },
+                    { title: "[W]Animator", path: "/UnityComponent/Animator" },
                     { title: "[W]碰撞箱", path: "/UnityComponent/BoxCollider" },
                     { title: "[x]环境交互", path: "/WIP" },
                     { title: "[W]资源管理", path: "/UnityComponent/Resource" },
@@ -51,7 +51,7 @@ module.exports = {
                     { title: "[W]常用规范", path: "/GameCodeDegin/CommonlySpec" },
                     { title: "[W]设计模式", path: "/GameCodeDegin/DesignPattern" },
                     { title: "[W]游戏系统设计", path: "/GameCodeDegin/GameSystem" },
-                    { title: "[W]技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
+                    { title: "技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
                     { title: "[W]UI系统设计", path: "/GameCodeDegin/UISystem" },
                     { title: "[W]存储和事件系统", path: "/GameCodeDegin/EventSystem" },
                     { title: "[W]多线程", path: "/GameCodeDegin/MultiThread" },
@@ -99,24 +99,6 @@ module.exports = {
                     { title: "[x]四元数", path: "/WIP" },
                 ]
             }
-            /*
-            {
-                title: '欢迎学习',
-                path: '/',
-                collapsable: false, // 不折叠
-                children: [
-                    { title: "学前必读", path: "/" }
-                ]
-            },
-            {
-                title: "基础学习",
-                path: '/handbook/ConditionalTypes',
-                collapsable: false, // 不折叠
-                children: [
-                    { title: "条件类型", path: "/handbook/ConditionalTypes" },
-                    { title: "泛型", path: "/handbook/Generics" }
-                ],
-            }*/
         ]
     },
 }
