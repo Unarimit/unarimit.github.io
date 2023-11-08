@@ -49,11 +49,11 @@ module.exports = {
                 collapsable: true,
                 children: [
                     { title: "[W]常用规范", path: "/GameCodeDegin/CommonlySpec" },
+                    { title: "[W]设计模式", path: "/GameCodeDegin/DesignPattern" },
                     { title: "[W]游戏系统设计", path: "/GameCodeDegin/GameSystem" },
                     { title: "[W]技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
                     { title: "[W]UI系统设计", path: "/GameCodeDegin/UISystem" },
                     { title: "[W]存储和事件系统", path: "/GameCodeDegin/EventSystem" },
-                    { title: "[W]设计模式", path: "/GameCodeDegin/DesignPattern" },
                     { title: "[W]多线程", path: "/GameCodeDegin/MultiThread" },
                     { title: "[W]协同开发", path: "/GameCodeDegin/Coop" }
                 ]
