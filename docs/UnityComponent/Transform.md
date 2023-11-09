@@ -16,5 +16,7 @@ WIP
 
 和镜头一个方向`transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward);`
 
+## Mathf
+
 ## 参考
 - LookAt的两种方式：[Unity LookAt和LookRotation的使用 - 简书](https://www.jianshu.com/p/edc80df2ebd9)

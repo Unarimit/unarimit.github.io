@@ -1,5 +1,7 @@
 # UGUI(功能实现)
 
+需要在场景添加eventsystem组件。
+
 ## 自适应布局方式
 
 ## Image

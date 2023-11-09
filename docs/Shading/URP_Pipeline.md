@@ -4,11 +4,25 @@ Files
 - UniversalRenderPipelineAsset_Renderer.asset
 - UniversalRenderPipelineGlobalSettings.asset
 
-## 问题？
-给Volume设置layer会导致其失效
+可能还会有
+- Setting/Low_PipelineAsset.asset
+- Setting/High_PipelineAsset.asset
+- Setting/Ultra_PipelineAsset.asset
+- ...
+
+根据需要配置，在`project setting->Quality`中可以看到editor使用的模式
+
 
 ## 介绍
 阅读参考，完善md文件
+
+## 和其他渲染管线的区别
+
+HDRP,甚至UE的一些渲染管线
+
+## 问题？
+给Volume设置layer会导致其失效
+
 
 ## 例子
 

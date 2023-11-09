@@ -2,6 +2,10 @@
 
 需要通过`AudioListener`组件接受声音，具体可以查阅Unity Documentation的音频部分。
 
+::: warning
+`AudioSource`作为一个全局静态类，要控制好他的使用范围，能封装就封装。
+:::
+
 ## AudioClip常用函数
 
 - `AudioClip.LoadAudioData`:加载剪辑的音频数据。设置了“Preload Audio Data”的AudioClip将自动加载音频数据。AudioClip如果加载成功，返回 true。
