@@ -1,10 +1,20 @@
 # 摄像机
 
+摄像机作为游戏制作的3C之一，... 后面忘了
+
 ## 基本相机属性
 
-`Rendering`里面有一个`Post-Processing`选项，每次都忘记选。
+Unity版本2022.3，使用URP
 
-两个渲染位置：RenderTexture & Screen
+- `RenderType`
+- `Projection`：可以通过调整FOV（视场）帮助cpu正确的剔除不需要渲染的物体
+- `Rendering`：总之就是渲染相关
+    - 里面有一个`Post-Processing`选项，每次都忘记选。
+- `Stack`
+- `Enviorment`：设置背景，即没投影到物体显示什么东西
+- `Output`
+    - 两个渲染位置：RenderTexture & Screen
+
 
 ### 分层渲染
 
@@ -46,9 +56,9 @@ WIP
 
 第二组属性的用法，可以参考：[How to use Cameras in Unity: Cinemachine Virtual Cameras Explained](https://www.youtube.com/watch?v=asruvbmUyw8)，里面对组件的各个属性有详细介绍。例如配置第二组属性，可以实现多人联机拖拽视角的效果
 
-## 实现
+## 例子
 
-看一个简单moba游戏跟随相机的实现
+### 实现moba游戏跟随相机
 
 ``` csharp
 float smoothness = 0.5f;
