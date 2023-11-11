@@ -61,7 +61,7 @@ module.exports = {
             },
             {
                 title: '编译&运维相关',
-                path: '/WIP',
+                path: '/GameBuild/Index',
                 collapsable: true,
                 children: [
                     { title: "[W]编译", path: "/GameBuild/Compile" },
