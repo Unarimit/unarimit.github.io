@@ -35,7 +35,7 @@ module.exports = {
                     { title: "[W]Animator", path: "/UnityComponent/Animator" },
                     { title: "[W]碰撞箱", path: "/UnityComponent/BoxCollider" },
                     { title: "[W]资源管理", path: "/UnityComponent/Resource" },
-                    { title: "[W]UGUI", path: "/UnityComponent/UGUI" },
+                    { title: "UGUI", path: "/UnityComponent/UGUI" },
                     { title: "TextMeshPro", path: "/UnityComponent/TextMeshPro" },
                     { title: "[W]常用Transform", path: "/UnityComponent/Transform" },
                     { title: "音频系统", path: "/UnityComponent/AudioSystem" },
