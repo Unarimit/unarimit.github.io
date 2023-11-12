@@ -20,6 +20,8 @@ UGUI的代码是公开的，想要了解组件是如何工作的可以看看。�
     - 可以用来写Unity Editor UI
 - UGUI
     - Unity主流UI
+- NGUI & IMUI
+    - 过时的老东西
 
 ## Canvas
 
@@ -28,6 +30,13 @@ UGUI的代码是公开的，想要了解组件是如何工作的可以看看。�
     - `RenderMode`：永远显示在屏幕前、显示在相机前（可以被3d物体遮挡）、显示在世界坐标系下
 - `CanvasScaler`: 用于适配分辨率不同的设备
 - `GraphicRaycaster`: 射线检测相关，关了就触发不了ui事件了
+
+### Canvas Group
+
+可以控制当前Canvas以下所有UI的部分属性，有：
+- `Alpha`: 配合DOTween做动画
+- `interactable`,`Blocks Raycasts`,`Ignore Parent Groups`
+
 
 ### 使用Z轴
 
@@ -57,7 +66,23 @@ WIP
 基于滚动视图实现内容自动布局，给`ScrollView`中的Content Object挂上上述的两个组件即可。
 - 然后在Content Object的层级下随意添加ui组件，就可以看到效果了
 
+<center><img src="./../img/ugui-1.png"> </center>
+
+<center>使用gridgrouplayout自动布局的滚动视图</center>
+
+
 关于自动布局实现中遇到问题可以看看实践视频，如[Unity UGUI 自适应布局 - Bilibili](https://www.bilibili.com/video/BV1F741147L8)
+
+
+## DOTween
+
+Unity著名的缓动插件，在Asset Store免费下载。
+
+为你能想到的所有类使用装饰着模式，拓展了缓动方法。在UGUI中，一般会使用:
+- `RectTransform::DOSizeDelta(vector2, float)`缓动组件大小。
+    - 确保该组件在inspector中使用height和width属性控制
+- `Image::DOFade(float, float)`控制透明度实现渐进效果。
+    - `DOTween.To(() => color.alpha, x => color.alpha=x, float, float);`可以实现一样的效果
 
 ## 例子
 
@@ -72,3 +97,5 @@ WIP
 - [滚动矩形 (Scroll Rect) - Unity Doc](https://docs.unity3d.com/cn/current/Manual/script-ScrollRect.html)
 - [自动布局 - Unity Doc](https://docs.unity3d.com/cn/current/Manual/UIAutoLayout.html)
 - [Unity UGUI 自适应布局 - Bilibili](https://www.bilibili.com/video/BV1F741147L8)
+- [DOTween Documentation](https://dotween.demigiant.com/documentation.php)
+- [泰裤辣 の Unity百宝箱】Canvas组件四件套 - 知乎](https://zhuanlan.zhihu.com/p/629759121)
