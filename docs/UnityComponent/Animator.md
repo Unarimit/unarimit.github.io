@@ -37,7 +37,7 @@
 
 ## humanoid & dynamic
 
-在导入模型文件时，需要配置rig（操纵 or 绑定），如下图所示。
+在导入模型文件时，需要配置rig（翻译为：操纵 or 绑定），如下图所示。
 
 <center><img  src="../img/animator-3.png" /></center>
 
