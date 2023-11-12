@@ -31,7 +31,7 @@ module.exports = {
                     { title: "摄像机", path: "/UnityComponent/Camera" },
                     { title: "生命周期", path: "/UnityComponent/Lifetime" },
                     { title: "InputSystem", path: "/UnityComponent/Inputsystem" },
-                    { title: "[x]角色控制", path: "/WIP" },
+                    { title: "[W]角色控制", path: "/UnityComponent/CharacterController" },
                     { title: "[W]Animator", path: "/UnityComponent/Animator" },
                     { title: "[W]碰撞箱", path: "/UnityComponent/BoxCollider" },
                     { title: "[W]资源管理", path: "/UnityComponent/Resource" },
