@@ -19,11 +19,6 @@ Unity引擎本身就包含了大量的设计模式，例如MonoBehavior就应用
 
 但我认为unity中的inputsystem已经完成了按键映射，而角色行为逻辑的抽离由于玩家使用控制器移动和Agent使用NavMesh移动的方式差距过大，实现存在一定难度。
 
-## 享元模式
-
-简而言之就是把重复使用的数据封装取引用。可能理解的难点主要在cpu和gpu的数据交换上。
-
-Unity的material复用和渲染时合批使用了这种思想，可以参考unity批处理的条件。
 
 ## 观察者模式
 
@@ -78,11 +73,28 @@ private void OnDestroy()
 - 一部分管理类（Manager or System or ...）可以被优化，由被管理的类本身实现这些逻辑（OOP）
 - 服务定位模式...
 
-## 原型模式
 
-## 状态模式
+## 双缓存模式
 
+双缓存模式主要用于GPU的渲染，单缓存可能会出现GPU读到脏数据的情况。
 
+另外也可以用作帧同步（每帧的执行结果不受MonoBehavior顺序的影响），通过给每个状态设置：
+```cs
+{
+    T current_state;
+    T next_state;
+}
+```
+的方式，在每帧中`current_state`不会被更改，`next_state`会被更改，在每帧的开始或结束（如`LastUpdate()`），交换`next_state`和`current_state`。
+
+## 不常用的模式
+
+这里列举在GPP书中见到过，但实际开发很少用的设计模式
+
+- 原型模式: 像是unity里的Prefab，一种批量生成示例的思想，暂时还没用到。
+- 状态模式：实现方式很像命令模式，但是用来做状态机的版本，可以参考[AI状态机的例子](/AI/StateMachine)
+- 享元模式：简而言之就是把重复使用的数据封装取引用。可能理解的难点主要在cpu和gpu的数据交换上。
+    - Unity的material复用和渲染时合批使用了这种思想，可以参考unity批处理的条件。
 
 ## WIP
 
