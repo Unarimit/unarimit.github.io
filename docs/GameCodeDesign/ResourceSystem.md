@@ -9,6 +9,27 @@ unity中，存在`Resources`和`AudioSource`等资源加载静态类。
 
 ## ResourceManager
 
+一个最简单的`ResourceManager`示例
+
+```cs
+internal static class ResourceManager
+{
+    public static T Load<T>(string resName) where T : Object
+    {
+        var res = Resources.Load<T>(resName);
+        if(res == null)
+        {
+            Debug.LogError($"ResourceManager can not find {resName}");
+        }
+        return res;
+    }
+}
+```
+
+若需初始加载配置，可以在静态构造函数里面做
+
+## AudioManager
+
 WIP
 
 
