@@ -4,6 +4,7 @@
 - `Animator组件`介绍（Animator Component）
 - `Animator面板`提供的功能（Animator Window）
 - 关于3D动画格式的一些知识
+- 动态导入，从fbx导入Avatar
 
 ## Animator组件
 
@@ -43,6 +44,45 @@
 
 WIP
 
+## 动态导入Avatar
+
+仅介绍humanoid的方式，参考方法：
+
+`public static Avatar BuildHumanAvatar(GameObject go, HumanDescription humanDescription)`
+
+这个函数显然不如`Editor`的`Avatar配置`一样智能，只会按照humanoid的标准找骨骼，找不到就报错。
+
+只能自己配置`HumanDescription`，其中包括：
+- `human`:模型骨骼名称对应humanoid骨骼名称的映射
+- `skeleton`:骨骼位置
+- 其他如`m_ArmTwist`的float参数
+
+由于`skeleton`中需要配置`T-pose`时的参数，如果模型初始状态不处于`T-pose`时会很麻烦
+> `human`相对来说好配置，可由`Editor`的`Avatar配置`导出一套映射。理论上如果模型处于`T-pose`就不需要配置`skeleton`？
+
+### 从默认Avatar获取`HumanDescription`
+
+这里假定导入的模型在humanoid部分，骨骼都是相同的情况，以下是示例代码
+
+```cs
+private HumanDescription GetHumanDesc()
+{
+    var res = TestAvatar.humanDescription;
+    int t = 0;
+    for(; t < res.skeleton.Length; t++)
+    {
+        if (res.skeleton[t].name == "bone_root") break; // 如果根骨骼不叫"bone_root"也要改一下
+    }
+    res.skeleton = res.skeleton.Skip(t-1).Take(HUMANOID_BOUND).ToArray(); // 保留mesh根当作根，我也不知道为什么要这样，反正这样是对的
+    // HUMANOID_BOUND 需要debug目测一下到哪里结束HUMANOID部分
+
+    // 清空parent（一个internal修饰的变量，记录模型中的父骨骼名称）
+    res.skeleton[0] = new SkeletonBone { name = "this_is_root", position = res.skeleton[0].position, rotation = res.skeleton[0].rotation, scale = res.skeleton[0].scale };
+    res.skeleton[1] = new SkeletonBone { name = res.skeleton[1].name, position = res.skeleton[1].position, rotation = res.skeleton[1].rotation, scale = res.skeleton[1].scale };
+    return res;
+}
+```
+
 ## 其他选项
 
 ### 导入动画时
@@ -51,6 +91,7 @@ WIP
 
 ## 参考
 - [动画 - Unity Doc](https://docs.unity3d.com/cn/current/Manual/AnimationSection.html)
+- [ConfiguringtheAvatar - Unity Doc](https://docs.unity3d.com/Manual/ConfiguringtheAvatar.html)
 - Animation Rigging
     - blend
 - Spite动画：[NIKKE射击系统在Unity中的实现-Bilibili](https://www.bilibili.com/video/BV1Hz4y1F75i)
