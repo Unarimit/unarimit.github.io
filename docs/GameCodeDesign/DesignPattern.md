@@ -87,6 +87,12 @@ private void OnDestroy()
 ```
 的方式，在每帧中`current_state`不会被更改，`next_state`会被更改，在每帧的开始或结束（如`LastUpdate()`），交换`next_state`和`current_state`。
 
+## 游戏循环
+
+Unity提供了游戏循环部分的设计，即MonoBehavior。GPP书中主要解释了使用变时步长更新机制（`Update()`）的的坏处，会使整个系统不确定，尤其是在涉及网络的时候。
+
+Unity中`FixedUpdate()`就避免了上述问题。
+
 ## 不常用的模式
 
 这里列举在GPP书中见到过，但实际开发很少用的设计模式
