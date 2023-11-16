@@ -1,7 +1,7 @@
 # 资源管理
 
 Unity提供`Resource`API和`Addressable`包用于管理资源。
-> Unity2018之前也使用`AssetsBundle`管理，因为使用`AssetsBundle`实现一套资源管理系统非常复杂，所有有了`Addressable`，而`AssetsBundle`已被标记为"out of date"。
+> Unity2018之前也使用`AssetsBundle`管理，因为使用`AssetsBundle`实现一套资源管理系统非常复杂，所有有了`Addressable`，而`AssetsBundle`已被标记为"out of date"。但`AssetsBundle`的资源加载方式，也应该了解一下。
 
 :::tip gpt
 
@@ -22,6 +22,12 @@ Resources 文件夹是 Unity 项目中许多常见问题的来源。Resources �
 1. 把资源放在`[项目名]\Assets\Resources\`下
 2. 通过`Resources.Load<GameObject>([资源名]);`载入资源，这里通过泛型限定了载入类型为prefab
  
+### 资源映射表
+
+为了防止`Resources`文件夹下文件结构变动对检索资源造成影响，可以通过写editor脚本，配置资源映射表的方式解决这一问题。
+
+其中，资源映射表应写入`SteamingAssests`文件夹下
+
 ## Addressable
 
 WIP
