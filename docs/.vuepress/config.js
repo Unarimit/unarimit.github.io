@@ -46,18 +46,18 @@ module.exports = {
             },
             {
                 title: '代码设计',
-                path: '/GameCodeDegin/Index',
+                path: '/GameCodeDesign/Index',
                 collapsable: true,
                 children: [
-                    { title: "[W]常用规范", path: "/GameCodeDegin/CommonlySpec" },
-                    { title: "[W]设计模式", path: "/GameCodeDegin/DesignPattern" },
-                    { title: "[W]游戏系统设计", path: "/GameCodeDegin/GameSystem" },
-                    { title: "技能系统设计", path: "/GameCodeDegin/AbilitySystem" },
-                    { title: "[W]UI系统设计", path: "/GameCodeDegin/UISystem" },
-                    { title: "[W]存储和事件系统", path: "/GameCodeDegin/EventSystem" },
-                    { title: "[W]资源系统", path: "/GameCodeDegin/ResourceSystem" },
-                    { title: "[W]多线程", path: "/GameCodeDegin/MultiThread" },
-                    { title: "[W]协同开发", path: "/GameCodeDegin/Coop" }
+                    { title: "[W]常用规范", path: "/GameCodeDesign/CommonlySpec" },
+                    { title: "[W]设计模式", path: "/GameCodeDesign/DesignPattern" },
+                    { title: "[W]游戏系统设计", path: "/GameCodeDesign/GameSystem" },
+                    { title: "技能系统设计", path: "/GameCodeDesign/AbilitySystem" },
+                    { title: "[W]UI系统设计", path: "/GameCodeDesign/UISystem" },
+                    { title: "[W]存储和事件系统", path: "/GameCodeDesign/EventSystem" },
+                    { title: "[W]资源系统", path: "/GameCodeDesign/ResourceSystem" },
+                    { title: "[W]多线程", path: "/GameCodeDesign/MultiThread" },
+                    { title: "[W]协同开发", path: "/GameCodeDesign/Coop" }
                 ]
             },
             {
