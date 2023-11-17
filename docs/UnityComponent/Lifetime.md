@@ -9,6 +9,7 @@
 - `Awake`：始终在任何`Start`函数之前并在实例化预制件之后调用此函数。（如果游戏对象在启动期间处于非活动状态，则在激活之后才会调用`Awake`）
 - `OnEnable`：（仅在对象处于激活状态时调用）在启用对象后立即调用此函数。在创建 MonoBehaviour 实例时（例如加载关卡或实例化具有脚本组件的游戏对象时）会执行此调用。
 - `Start`：仅当启用脚本实例后，才会在**第一次帧更新之前**调用`Start`。
+    - 若运行中加载`Monobehaviour`，**可能会**导致更新先于`Start`执行。
 - `FixedUpdate`：`Time.deltaTime`固定的`Update`。（默认一秒50次）
 - `Update`：每帧调用一次.
 - `LateUpdate`: 每帧调用一次, `LateUpdate`开始时，在`Update`中执行的所有计算便已完成。
@@ -101,6 +102,8 @@ Console的输出
 > 请注意，对于添加到场景中的对象，在为任何对象调用 Start 和 Update 等函数之前，会为_所有_ 脚本调用 Awake 和 OnEnable 函数。当然，在游戏运行过程中实例化对象时，不能强制执行此调用。
 
 存在差异，有待进一步确定。
+
+
 
 ## 参考
 - [Order of execution for event functions - Unity Documentation](https://docs.unity3d.com/Manual/ExecutionOrder.html)

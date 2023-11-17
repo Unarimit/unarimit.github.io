@@ -18,6 +18,10 @@
 
 **具体实现详见参考中的视频**
 
+### 运行时更新NavMesh
+
+`navMeshSurface.UpdateNavMesh(navMeshSurface.navMeshData);`
+
 ### 使用或不使用NavMesh
 
 下面是一段自己写的移动到目标位置的代码（未考虑寻路和遮挡）

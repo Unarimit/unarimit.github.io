@@ -36,6 +36,12 @@
 
 关于对其元素更多的解释，可以查看[Animator Controllers文档](https://docs.unity3d.com/cn/current/Manual/AnimatorControllers.html)
 
+### AnimationEvent
+
+可以在动画clip中设置AnimationEvent，在执行到指定动画帧时，会在执行动画的物体上调用相应的函数。
+
+详见[使用动画事件 - unity doc](https://docs.unity3d.com/cn/2021.3/Manual/script-AnimationWindowEvent.html)
+
 ## humanoid & dynamic
 
 在导入模型文件时，需要配置rig（翻译为：操纵 or 绑定），如下图所示。

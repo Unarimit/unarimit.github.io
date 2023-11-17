@@ -10,6 +10,15 @@
 
 需要更多实践以完善内容，或参照文档：[TextMesh Pro Documentation - doc.u3d](https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/manual/index.html)
 
+## 中文字体
+
+由于中文字体很多，都打包成贴图空间会很大，一般采取打包常用字的方式。
+> 常用字库：[Unity-TextMeshPro-Chinese-Characters-Set - Github](https://github.com/wy-luke/Unity-TextMeshPro-Chinese-Characters-Set)
+
+当然，如果有用户输入的需求，就不需要考虑贴图大小了。
+
+需要注意的是，创建`Font Atlas`时`Atlas Resolution`这个值要选的大一些，不然字体放不下。
+
 ## 例子-实现伤害飘字
 
 </br>
@@ -58,3 +67,4 @@ public class DamageNumEffectController : MonoBehaviour
 ## 参考
 - 伤害飘字2d版：[Unity实现伤害飘字 - csdn](https://blog.csdn.net/WEIWEI6661012/article/details/129630051)
 - TMP官方手册：[TextMesh Pro Documentation - doc.u3d](https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/manual/index.html)
+- 常用字库：[Unity-TextMeshPro-Chinese-Characters-Set - Github](https://github.com/wy-luke/Unity-TextMeshPro-Chinese-Characters-Set)
