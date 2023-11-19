@@ -97,7 +97,7 @@ Console的输出
 <img  src="./../img/lifetime-1.png" />
 
 
-根据对上方代码和输出的观察，初始化后的对象，会立刻调用`Awake`和`OnEnable`函数。这个现象和[unity doc](https://docs.unity3d.com/cn/current/Manual/ExecutionOrder.html)中的:
+根据对上方代码和输出的观察，初始化后的对象，会立刻调用`Awake`和`OnEnable`函数（在一个`Awake`函数中初始化对象也同样）。这个现象和[unity doc](https://docs.unity3d.com/cn/current/Manual/ExecutionOrder.html)中的:
 
 > 请注意，对于添加到场景中的对象，在为任何对象调用 Start 和 Update 等函数之前，会为_所有_ 脚本调用 Awake 和 OnEnable 函数。当然，在游戏运行过程中实例化对象时，不能强制执行此调用。
 

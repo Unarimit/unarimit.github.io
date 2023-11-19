@@ -13,6 +13,7 @@ Input System在Unity 2019.1及更高版本中成为了新的默认输入系统�
 <img  src="./../img/inputsystem-pic2.png" />
 
 `Player Input`用于锁定接收指令的GameObject
+> 需要注意的是，默认情况下一个输入设备只能绑定到一个`Player Input`上。如果存在两个以上的`Player Input`，他不会接收同一台输入设备的输入，除非对`Player Input`强制配置，或利用`Player Input Manager`。
 
 <img  src="./../img/inputsystem-pic3.png" />
 
@@ -100,3 +101,4 @@ public class KeyTipsController : MonoBehaviour
 
 ## 参考
 - [InputSystem Best Practices Part1 - Youtube](https://www.youtube.com/watch?v=BAXZ6bxdTYI)
+- [The PlayerInput component - Unity doc](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.6/manual/PlayerInput.html)
