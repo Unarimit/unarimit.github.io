@@ -78,7 +78,7 @@ WIP
 
 Unity著名的缓动插件，在Asset Store免费下载。
 
-为你能想到的所有类使用装饰着模式，拓展了缓动方法。在UGUI中，一般会使用:
+为你能想到的所有类使用装饰者模式，拓展了缓动方法。在UGUI中，一般会使用:
 - `RectTransform::DOSizeDelta(vector2, float)`缓动组件大小。
     - 确保该组件在inspector中使用height和width属性控制
 - `Image::DOFade(float, float)`控制透明度实现渐进效果。

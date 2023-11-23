@@ -65,6 +65,19 @@ public void MoveOnce(Vector3 location, float MaxSpeed)
 ```
 当然，还需要挂载相应的脚本和生成NavMesh
 
+## NavMeshAgent
+
+`NavMeshAgent`和`CharacterController`一样，是操控具体人物的组件，依赖于NavMesh Surface等配置。他也向`CharacterController`一样，自带一些碰撞和移动策略。有以下三类属性:
+- `Steering`: 控制移动表现（模拟人物在不同的环境，如冰面，路面等）
+- `Obstacle Avoidance`: 控制agent躲避其他agent，可以通过设置priority实现优先躲避，或设置Quality直接取消躲避。
+    - 这个属性抽象在他不受物理碰撞设置的影响
+- `PathFinding`: 一些寻路策略的应用
+
+### 不同层级的碰撞
+
+如果想实现空中单位和陆地单位不相互碰撞，可以通过将空中单位躲避优先级（`Obstacle Avoidance -> priority`）调高，并躲避质量（`Obstacle Avoidance -> Quality`）为None的方式实现。
+- 当然，还是为空中专门设计类似“地面”的结构比较好。
+
 ## 优化
 
 考虑到在rimworld中表现糟糕的寻路延迟卡顿，寻路是否可以异步进行？（是因为寻路耗时，还是NavMap创造耗时？）
@@ -75,3 +88,4 @@ public void MoveOnce(Vector3 location, float MaxSpeed)
 - 新版Navigation：[New AI Navigation in Unity - Youtube](https://www.youtube.com/watch?v=u2EQtrdgfNs)
 - 旧版Navigation：[Making A MOBA Character in 2023 - #1: INTRODUCTION (Unity 2023 Tutorial) - Youtube](https://www.youtube.com/watch?v=p3AB_GP45C4)
 - NavMesh实现原理：[Navigation Meshes and Pathfinding](https://www.gamedev.net/tutorials/programming/artificial-intelligence/navigation-meshes-and-pathfinding-r4880/)
+- [NavMesh Agent - Unity doc](https://docs.unity3d.com/2022.2/Documentation/Manual/class-NavMeshAgent.html)

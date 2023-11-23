@@ -63,6 +63,36 @@ private void OnDestroy()
 }
 ```
 
+## 原型模式
+
+像是unity里的Prefab，一种批量生成实例的思想。
+
+如常用的敌人物体，一定会包括`NavMesh Agent`,`Animator`和一些自定义的Component，就可以把物体打包为prefab，并由某个静态方法去初始化这个敌人物体。
+
+如弹出UI框的设计（一个简单的例子），只需要一段string就可以创建这个实例
+
+```cs
+// 弹出UI框的例子
+internal class TipsUI : MonoBehaviour
+{
+    public TextMeshProUGUI Text;
+    public static void GenerateNewTips(string text)
+    {
+        var prefab = ResourceManager.Load<GameObject>("UIs/Tip");
+        var go = Instantiate(prefab);
+        go.GetComponent<TipsUI>().Text.text = text;
+    }
+
+    private void Start()
+    {
+        var cg = GetComponent<CanvasGroup>();
+        cg.alpha = 0;
+        cg.DOFade(1, 0.2f); // 渐入动画
+        Destroy(gameObject, 1.5f); // 持续1.5秒后销毁
+    }
+}
+```
+
 ## 单例模式
 
 单例模式在unity开发中很常用，但需要加以限制。
@@ -97,7 +127,6 @@ Unity中`FixedUpdate()`就避免了上述问题。
 
 这里列举在GPP书中见到过，但实际开发很少用的设计模式
 
-- 原型模式: 像是unity里的Prefab，一种批量生成示例的思想，暂时还没用到。
 - 状态模式：实现方式很像命令模式，但是用来做状态机的版本，可以参考[AI状态机的例子](/AI/StateMachine)
 - 享元模式：简而言之就是把重复使用的数据封装取引用。可能理解的难点主要在cpu和gpu的数据交换上。
     - Unity的material复用和渲染时合批使用了这种思想，可以参考unity批处理的条件。

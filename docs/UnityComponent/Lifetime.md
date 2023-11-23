@@ -17,6 +17,11 @@
 <center>来张官方的图</center>
 <img  src="./../img/monobehaviour_flowchart.svg" />
 
+## 同一函数的更新顺序
+
+如要改变不同脚本Awake函数的执行顺序，可以在`Project Settings -> Script Execution Order`中排序脚本执行顺序。
+
+参考:[Script Execution Order 设置 - Unity doc](https://docs.unity3d.com/cn/current/Manual/class-MonoManager.html)
 
 ## 例子
 
@@ -107,3 +112,4 @@ Console的输出
 
 ## 参考
 - [Order of execution for event functions - Unity Documentation](https://docs.unity3d.com/Manual/ExecutionOrder.html)
+- [Script Execution Order 设置 - Unity doc](https://docs.unity3d.com/cn/current/Manual/class-MonoManager.html)
