@@ -106,7 +106,7 @@ module.exports = {
                 path: '/Coding/Index',
                 collapsable: true, 
                 children: [
-                    { title: "记Leetcode第373次周赛", path: "/Coding/LeetcodeWeekContext373" },
+                    { title: "记Leetcode第373次周赛", path: "/Coding/LeetcodeWeekContest373" },
                 ]
             }
         ]
