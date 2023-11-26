@@ -100,6 +100,14 @@ module.exports = {
                 children: [
                     { title: "[x]四元数", path: "/WIP" },
                 ]
+            },
+            {
+                title: '代码杂谈',
+                path: '/Coding/Index',
+                collapsable: true, 
+                children: [
+                    { title: "记Leetcode第373次周赛", path: "/Coding/LeetcodeWeekContext373" },
+                ]
             }
         ]
     },
