@@ -1,3 +1,6 @@
+
+<img src="../img/uisystem-1.jpg">
+
 # UI系统
 
 对于动态窗口（如mmorpg频繁开启的任务状态、背包、人物等），对UI采用设计模式是非常有必要的。
@@ -55,3 +58,5 @@ WIP
 4. 通过 UIManager 访问各个窗口成员。
     - `UIManagerInstance.GetWindow<窗口类型>().成员`:
 :::
+
+- 头图：[What’s a Design Pattern in Software Engineering? - Netsolutions](https://www.netsolutions.com/insights/software-design-pattern/)
