@@ -6,7 +6,7 @@ WIP
 
 ## 框架
 - ECS：面向数据，Cache友好的设计
-- QFramework
+- QFramework, GameFramework
 
 ## 控制逻辑分离
 

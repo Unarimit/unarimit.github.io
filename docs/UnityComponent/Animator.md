@@ -89,7 +89,21 @@ private HumanDescription GetHumanDesc()
 }
 ```
 
+### 判断Animator状态
+```cs
+//检查是否正在播放reload动画
+AnimatorStateInfo stateinfo = anim.GetCurrentAnimatorStateInfo(0);  // 从0开始计数
+//参数表示动画层的id
+bool play_ing_flag = stateinfo.IsName("handgun_combat_reload");
+```
+
+### Animator转换触发事件
+
+需要继承StateMachineBehaviour，详见参考中的引用
+
 ## 其他选项
+
+ 
 
 ### 导入动画时
 
@@ -100,4 +114,5 @@ private HumanDescription GetHumanDesc()
 - [ConfiguringtheAvatar - Unity Doc](https://docs.unity3d.com/Manual/ConfiguringtheAvatar.html)
 - Animation Rigging
     - blend
-- Spine动画：[NIKKE射击系统在Unity中的实现-Bilibili](https://www.bilibili.com/video/BV1Hz4y1F75i)
+- Spine动画：[NIKKE射击系统在Unity中的实现 - Bilibili](https://www.bilibili.com/video/BV1Hz4y1F75i)
+- Animator状态检查和事件：[Unity检查动画Animator状态 - 简书](https://www.jianshu.com/p/a4379937f8c3)
