@@ -85,11 +85,13 @@ module.exports = {
                 path: '/Shading/index',
                 collapsable: true,
                 children: [
-                    { title: "[x]模型", path: "/WIP" },
                     { title: "[x]Shader和渲染", path: "/WIP" },
+                    { title: "URP渲染管线", path: "/Shading/URP_Pipeline" },
+                    { title: "[W]Blender", path: "/Shading/Blender" },
+                    { title: "[W]模型", path: "/Shading/Modeling" },
                     { title: "渲染风格和手段", path: "/Shading/StyleAndMethod" }, // title 需要修改
                     { title: "NPR", path: "/Shading/NPR" },
-                    { title: "[x]粒子系统", path: "/WIP" },
+                    { title: "[x]特效和粒子系统", path: "/WIP" },
                     { title: "[x]优化策略", path: "/WIP" }
                 ]
             },
