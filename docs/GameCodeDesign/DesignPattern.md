@@ -117,11 +117,15 @@ internal class TipsUI : MonoBehaviour
 ```
 的方式，在每帧中`current_state`不会被更改，`next_state`会被更改，在每帧的开始或结束（如`LastUpdate()`），交换`next_state`和`current_state`。
 
-## 游戏循环
+## 游戏循环-更新方法
 
 Unity提供了游戏循环部分的设计，即MonoBehavior。GPP书中主要解释了使用变时步长更新机制（`Update()`）的的坏处，会使整个系统不确定，尤其是在涉及网络的时候。
 
 Unity中`FixedUpdate()`就避免了上述问题。
+
+对于更新方法GPP书中提到了更新方法的解耦设计，可以结合状态模式、组件模式等设计模式进行。
+
+由于Unity已经自带了这些设计，包括组件模式，这些设计方法已经被Unity开发中被动使用，在实现上不太需要关注，但可以通过追问“为什么要这么做”，更好的认识Unity生命周期函数。
 
 ## 不常用的模式
 
