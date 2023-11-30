@@ -1,3 +1,5 @@
+<img src="../img/camera-0.png">
+
 # 摄像机
 
 摄像机作为游戏制作的3C之一，... 后面忘了
@@ -6,11 +8,11 @@
 
 Unity版本2022.3，使用URP
 
-- `RenderType`
+- `RenderType`：base和overlay，base是默认的，独立工作的相机。overlay依赖于base相机，在base基础上叠放渲染结果。
 - `Projection`：可以通过调整FOV（视场）帮助cpu正确的剔除不需要渲染的物体
 - `Rendering`：总之就是渲染相关
     - 里面有一个`Post-Processing`选项，每次都忘记选。
-- `Stack`
+- `Stack`: base中独有，可以在里面添加overlay相机，将渲染结果覆盖到上方
 - `Enviorment`：设置背景，即没投影到物体显示什么东西
 - `Output`
     - 两个渲染位置：RenderTexture & Screen
@@ -18,7 +20,21 @@ Unity版本2022.3，使用URP
 
 ### 分层渲染
 
-WIP
+当涉及UI和3D物体的显示时，常常需要分层渲染，如世界坐标系下的互动UI一定在3D物体之上，或主角的模型在UI面板之前显示等。
+
+下图是一个可互动发光物体上显示的互动提示UI，可以看到它因为后处理被整体拉低了颜色。
+
+<center><img src="../img/camera-1.png"></center>
+
+若我们使用分层渲染(如下图所示)，世界坐标下的UI可以避免被后处理影响，也不会被3D物体遮挡。
+
+<center><img src="../img/camera-2.png"></center>
+
+分层渲染在不同的渲染管线下实现方式不同：
+- URP中，需要配置overlay相机，两个相机对UI layer要做过滤
+    - 参考：[Unity URP相机使用简介 - CSDN](https://blog.csdn.net/aaa27987/article/details/129753424)
+- Built-in Pipeline中，需要配置两个相机，渲染优先级，Clear Flags，同时UI layer要做过滤
+    - 参考：[World Space canvas on top of “everything” ? - unity discussions](https://discussions.unity.com/t/world-space-canvas-on-top-of-everything/128165/3)
 
 ## 自动相机-Cinemachine
 
@@ -88,3 +104,6 @@ TODO: 不知道是不是我导入其他后处理效果导致的（关闭导入�
 - 简易跟随相机代码：[Making A MOBA Character #1: MOVEMENT (Unity 2019 Tutorial) - Youtube](https://youtu.be/d_0dAwk3wqI?si=lkzEyYuIJKDawH5Q&t=140)
 - [How to use Cameras in Unity: Cinemachine Virtual Cameras Explained - Youtube](https://www.youtube.com/watch?v=asruvbmUyw8)
 - [Unity HDRP 多摄像机分层渲染 - cnblog](https://www.cnblogs.com/koshio0219/p/14263078.html)
+- URP 相机-overlay和base模式，多相机：[Unity URP相机使用简介 - CSDN](https://blog.csdn.net/aaa27987/article/details/129753424)
+- Built-in Pipeline 相机层次渲染：[World Space canvas on top of “everything” ? - unity discussions](https://discussions.unity.com/t/world-space-canvas-on-top-of-everything/128165/3)
+- 头图：[稀音精二立绘, 明日方舟 - 萌娘百科](https://zh.moegirl.org.cn/%E7%A8%80%E9%9F%B3)
