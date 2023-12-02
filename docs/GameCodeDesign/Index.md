@@ -21,6 +21,11 @@
 
 1. update中遍历cnt100的数组和碰撞检测哪个更性能友好？
 
+### 插件使用
+
+1. DOTween的`DelayCall`和`OnComplete`中报错，只会记录调用某个函数发生错误，不会深入函数中，影响debug。
+> 可以仅在委托中改变控制变量，利用委托等方式绕开DOTween的调用栈。或在一些独立的模块的开发过程中，先执行以下试试。
+
 ## 参考
 - [Game Programming Patterns](https://gameprogrammingpatterns.com/)
 - [GameFramework解析：开篇 - 知乎](https://zhuanlan.zhihu.com/p/426136370)

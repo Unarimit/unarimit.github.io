@@ -89,6 +89,8 @@ Unity著名的缓动插件，在Asset Store免费下载。
 - `Image::DOFade(float, float)`控制透明度实现渐进效果。
     - `DOTween.To(() => color.alpha, x => color.alpha=x, float, float);`可以实现一样的效果
 
+注：使用DOTween托管的功能(`OnComplete`,`DelayCall`)，会在Unity调用DOTween组件的`update`,`fixedupdate`等中执行委托，具体在哪里执行，取决于在哪个更新函数中使用DOTween托管。
+
 ## 例子
 
 ### 使用Img实现cooldown
