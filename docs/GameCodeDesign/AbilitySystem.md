@@ -1,6 +1,6 @@
 # 技能系统
 
-技能系统的目的是为了减少后续开发难度，和增加**热更新**的可能。要求在一开始时就考虑到各种效果的表现方式。并使用继承、封装等编程思想建立统一标准。
+技能系统的目的是为了减少后续开发难度，和**热更新**的可能，采用数据驱动方法设计。要求在一开始时就考虑到各种效果的表现方式。并使用继承、封装等编程思想建立统一标准。
 
 ## 如何设计技能系统
 
@@ -47,7 +47,7 @@
 
 <br/>
 
-### 更好的实现
+### 更好的实现1
 
 先看看方案比较吧：
 
@@ -84,6 +84,34 @@
 这时候就需要在技能控制器中引入`Buffs`或更多效果类型，增加组合种类。
 - 如眩晕，中毒，回血等效果，甚至可以做一个闪现技能，因为技能控制器中有释放者的Transform！
 - 这时候利用lua等热更新技术，可以方便的完善技能的多样性。
+
+### 更好的实现2
+
+承接上文，为了避免在“投、抛、检测并伤害”上完善新方式的时候重复修改类型内的代码，将技能的释放过程拆解为三个部分（释放、选择目标、影响目标），解耦控制。下图是我按照上述方法拆解后的调用关系。（附上[当时的代码目录](https://github.com/Unarimit/my-topdown-shooting-game/tree/6b7f94746778638dcb6b510d402f715ba4ab42d5/Assets/Scripts/CombatLogic/Skill)）
+
+<center><img src="../img/abilitySystem-4.png"></center>
+
+- 技能管理器`SkillManager`调用`CastSkill`时，会初始化技能释放器`Releaser`，并将技能信息传递给`Releaser`。
+- `Releaser`根据技能信息，使用**反射**生成对应的选择器`Selector`和影响器`Impactor`，并将信息传入。
+- `Selector`根据算法选择到目标后，调用`Impactor`的`Impact`，完成对目标的影响。
+
+这样一来，添加技能的方式就变为：
+
+1. 如果现有的`Releaser`、`Selector`和`Impactor`能组合出技能，就通过配置表组合。
+2. 如果不能，完成`Releaser`、`Selector`和`Impactor`中的一个或多个，满足1的条件后，通过配置表组合。
+
+相比上一个实现方式，这种实现方式减少了“超出预期需要改技能系统”时的复杂度，并且耦合性更低了。
+> 但考虑到有些技能逻辑特殊到不需要复用，这样实现就有些太复杂了，可以考虑“可编程技能系统的实现”，将会在`更好的实现3`中介绍。
+
+最后还可以通过csv文件+`Editor Menu`脚本的方式完成配置表的搭建，配置表如下图所示：
+
+<center><img src="../img/abilitySystem-5.png"></center>
+
+`Editor Menu`脚本的代码：[GenerateSkillInfoByCsvFile.cs](https://github.com/Unarimit/my-topdown-shooting-game/blob/6b7f94746778638dcb6b510d402f715ba4ab42d5/Assets/Scripts/Editor/GenerateSkillInfoByCsvFile.cs)，它的功能为将csv配置表转化为`更好的实现1`中的`ScriptableObject`。
+
+### 更好的实现3
+
+使用lua WIP
 
 ## 参考
 - [第三部分:Unity技能系统](https://www.bilibili.com/video/BV1WJ411T7YQ)
