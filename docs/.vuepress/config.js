@@ -40,7 +40,6 @@ module.exports = {
                     { title: "[W]常用Transform", path: "/UnityComponent/Transform" },
                     { title: "音频系统", path: "/UnityComponent/AudioSystem" },
                     { title: "[W]数据持久化", path: "/UnityComponent/DataPersistence" },
-                    { title: "[x]环境交互", path: "/WIP" },
                     { title: "[x]TimeLine", path: "/UnityComponent/TimeLine" },
                 ]
             },
@@ -51,9 +50,11 @@ module.exports = {
                 children: [
                     { title: "[W]常用规范", path: "/GameCodeDesign/CommonlySpec" },
                     { title: "[W]设计模式", path: "/GameCodeDesign/DesignPattern" },
-                    { title: "[W]游戏系统设计", path: "/GameCodeDesign/GameSystem" },
+                    { title: "[x]启动流程设计", path: "/GameCodeDesign/StartupProcedure"},
+                    { title: "[W]游戏上下文系统设计", path: "/GameCodeDesign/GameContextSystem" },
                     { title: "技能系统设计", path: "/GameCodeDesign/AbilitySystem" },
                     { title: "[W]UI系统设计", path: "/GameCodeDesign/UISystem" },
+                    { title: "[W]环境交互", path: "/GameCodeDesign/Interaction" },
                     { title: "[W]存储和事件系统", path: "/GameCodeDesign/EventSystem" },
                     { title: "[W]资源系统", path: "/GameCodeDesign/ResourceSystem" },
                     { title: "[W]多线程", path: "/GameCodeDesign/MultiThread" },
