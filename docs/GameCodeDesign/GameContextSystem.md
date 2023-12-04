@@ -32,7 +32,7 @@ WIP
 - 角色行动顺序（回合制）
 - 角色复活（射击游戏）
 
-有些地方和OOP思想有冲突，需要进一步理解
+>有些地方和OOP思想有冲突，需要进一步理解
 
 ## 使用装饰者模式拓展上下文
 
@@ -41,7 +41,7 @@ WIP
 例如，AI常用的按条件寻找敌人位置的方法，就可以封装在`AiInformationHelper.cs`类中，提供一系列寻找敌人坐标的方法。
 > 当然，这些函数也可以封装在AI基类中，被称为`子类沙盒模式`
 
-我实现的代码: [AiInformationHelper.cs](https://github.com/Unarimit/my-topdown-shooting-game/blob/9981b70eb553e8c827eaab56de2667d0f3f07d3c/Assets/Scripts/CombatLogic/ContextExtends/AiInformationHelper.cs)
+我实现的代码: [MyTDS-AiInformationHelper.cs](https://github.com/Unarimit/my-topdown-shooting-game/blob/9981b70eb553e8c827eaab56de2667d0f3f07d3c/Assets/Scripts/CombatLogic/ContextExtends/AiInformationHelper.cs)
 
 ## 例子
 
