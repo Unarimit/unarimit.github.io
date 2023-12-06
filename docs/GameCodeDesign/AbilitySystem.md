@@ -114,4 +114,5 @@
 使用lua WIP
 
 ## 参考
-- [第三部分:Unity技能系统](https://www.bilibili.com/video/BV1WJ411T7YQ)
+- [第三部分:Unity技能系统 - Bilibili](https://www.bilibili.com/video/BV1WJ411T7YQ)
+- [实现高扩展性的通用游戏技能系统 flashyiyi - 知乎](https://zhuanlan.zhihu.com/p/92651085)
