@@ -5,8 +5,10 @@
 摄像机作为游戏制作的3C之一，... 后面忘了
 
 ## 基本相机属性
-
-Unity版本2022.3，使用URP
+::: tip
+渲染管线不同，相机的配置属性不同
+:::
+Unity版本2022.3，使用URP v14
 
 - `RenderType`：base和overlay，base是默认的，独立工作的相机。overlay依赖于base相机，在base基础上叠放渲染结果。
 - `Projection`：可以通过调整FOV（视场）帮助cpu正确的剔除不需要渲染的物体
@@ -31,9 +33,9 @@ Unity版本2022.3，使用URP
 <center><img src="../img/camera-2.png"></center>
 
 分层渲染在不同的渲染管线下实现方式不同：
-- URP中，需要配置overlay相机，两个相机对UI layer要做过滤
+- URP中，需要配置`overlay`相机，主相机和`overlay`相机对UI layer要做过滤。
     - 参考：[Unity URP相机使用简介 - CSDN](https://blog.csdn.net/aaa27987/article/details/129753424)
-- Built-in Pipeline中，需要配置两个相机，渲染优先级，Clear Flags，同时UI layer要做过滤
+- Built-in Pipeline中，需要配置两个相机，`渲染优先级`，`Clear Flags`，同时相机对UI layer要做过滤。
     - 参考：[World Space canvas on top of “everything” ? - unity discussions](https://discussions.unity.com/t/world-space-canvas-on-top-of-everything/128165/3)
 
 ## 自动相机-Cinemachine
@@ -92,7 +94,7 @@ void update(){
 ## bugs
 ### 内存溢出：在URP管线下，两个相机，使用全局Volume和后处理
 
-一个相机输出到render texture（256\*256），1920\*1080分辨率
+一个相机输出到render texture（256\*256），一个相机输出到屏幕，1920\*1080分辨率
 
 TODO: 不知道是不是我导入其他后处理效果导致的（关闭导入的后处理效果不影响），进一步实验确认。
 
