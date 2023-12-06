@@ -106,10 +106,11 @@ module.exports = {
             },
             {
                 title: '代码杂谈',
-                path: '/Coding/Index',
+                path: '/CodingRamble/Index',
                 collapsable: true, 
                 children: [
-                    { title: "记Leetcode第373次周赛", path: "/Coding/LeetcodeWeekContest373" },
+                    { title: "记Leetcode第373次周赛", path: "/CodingRamble/LeetcodeWeekContest373" },
+                    { title: "小地图组件使用感想", path:"/CodingRamble/MinimapRamble"},
                 ]
             }
         ]
