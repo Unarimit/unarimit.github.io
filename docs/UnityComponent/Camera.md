@@ -35,6 +35,10 @@ Unity版本2022.3，使用URP v14
 分层渲染在不同的渲染管线下实现方式不同：
 - URP中，需要配置`overlay`相机，主相机和`overlay`相机对UI layer要做过滤。
     - 参考：[Unity URP相机使用简介 - CSDN](https://blog.csdn.net/aaa27987/article/details/129753424)
+    - 采用上述方法配置，`overlay`层会和`base`相机同时受到`anti-aliasing`（抗锯齿）影响，这对UI很不友好，有两个方法解决这一问题。
+        - 先看看[UI受`anti-aliasing`影响会怎么样 - unity forum](https://forum.unity.com/threads/blurry-font-when-using-screen-space-camera.509147/)
+        - 再配置一个不带`anti-aliasing`的`base`相机，提高渲染优先级，背景设为`Uninitialized`，过滤layer。
+        - 在`overlay`相机的`Renderer`配置不带`anti-aliasing`的`URP Render setting`（TODO：需要验证可行性）。
 - Built-in Pipeline中，需要配置两个相机，`渲染优先级`，`Clear Flags`，同时相机对UI layer要做过滤。
     - 参考：[World Space canvas on top of “everything” ? - unity discussions](https://discussions.unity.com/t/world-space-canvas-on-top-of-everything/128165/3)
 
