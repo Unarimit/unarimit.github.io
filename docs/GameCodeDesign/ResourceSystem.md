@@ -1,4 +1,4 @@
-# 资源系统
+# 资源系统和服务
 
 unity中，存在`Resources`和`AudioSource`等资源加载静态类。
 
@@ -7,9 +7,7 @@ unity中，存在`Resources`和`AudioSource`等资源加载静态类。
 而`AudioSource`或类似功能（如子弹发射），则可能因为频繁的创建和销毁产生内存碎片，并且不利于统一管理（如音量调节）。所以对`AudioSource`及其类似功能有封装需求。
 
 
-## ResourceManager
-
-一个最简单的`ResourceManager`示例
+## 以Resources Api的封装为例
 
 ```cs
 internal static class ResourceManager
@@ -25,10 +23,11 @@ internal static class ResourceManager
     }
 }
 ```
-
 若需初始加载配置，可以在静态构造函数里面做
 
-## AudioManager
+## 服务和服务定位器
+
+### AudioManager
 
 WIP
 
