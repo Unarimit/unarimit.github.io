@@ -1,3 +1,5 @@
+<img src="../img/abilitySystem-0.png">
+
 # 技能系统
 
 技能系统的目的是为了减少后续开发难度，和**热更新**的可能，采用数据驱动方法设计。要求在一开始时就考虑到各种效果的表现方式。并使用继承、封装等编程思想建立统一标准。
@@ -114,5 +116,6 @@
 使用lua WIP
 
 ## 参考
+- 头图：[New collage with ALL ability icons in Dota2. - Reddit](https://www.reddit.com/r/DotA2/comments/mvd6v9/new_collage_with_all_ability_icons_in_dota2_check/)
 - [第三部分:Unity技能系统 - Bilibili](https://www.bilibili.com/video/BV1WJ411T7YQ)
 - [实现高扩展性的通用游戏技能系统 flashyiyi - 知乎](https://zhuanlan.zhihu.com/p/92651085)

@@ -106,4 +106,11 @@ public class CSVImporterEditor : EditorWindow
 我的项目使用此模板完成了技能csv表到scriptable object的转换，附上[脚本内容 - Github](https://github.com/Unarimit/my-topdown-shooting-game/commit/ab0c3746797ad078d1a86032eda3569c221b80ac#diff-d76776d5cbe58bd51383b9709d4de327fd0e2cefb86dbaffeac814c4e5d4e5d2)
 
 
+### Editor实现覆写Inspector
+
+通过`CustomEditor(typeof(T))`特性覆写`T`类型`MonoBehaviour`在Inspector中的信息。
+
+WIP
+
 ## 参考
+- 覆写Inspector代码：[UGUI Minimap - Assets Store](https://assetstore.unity.com/packages/tools/gui/ugui-minimap-32874)
