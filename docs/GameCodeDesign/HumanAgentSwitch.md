@@ -47,8 +47,6 @@
 public class PlayerController : MonoBehaviour{
     private void Awake()
     {
-        _controller = GetComponent<OperatorController>();
-        // 注册其他组件
         // 相机追踪
         _cameraFlowing = Instantiate(ResourceManager.Load<GameObject>("Characters/CameraFlowing"), transform);
         _context.m_Camera.Follow = _cameraFlowing.transform;
@@ -101,8 +99,8 @@ public void SwithAgentWithPlayer(Transform agent)
 }
 ```
 
-
 具体的代码可以在[MyTDS-CombatContextManager.cs](https://github.com/Unarimit/my-topdown-shooting-game/blob/0154b461cfff4dbdddf2188972c68159486be56e/Assets/Scripts/CombatLogic/CombatContextManager.cs)、[MyTDS-PlayerController.cs](https://github.com/Unarimit/my-topdown-shooting-game/blob/0154b461cfff4dbdddf2188972c68159486be56e/Assets/Scripts/CombatLogic/Characters/Player/PlayerController.cs)和[MyTDS-AgentController.cs](https://github.com/Unarimit/my-topdown-shooting-game/blob/0154b461cfff4dbdddf2188972c68159486be56e/Assets/Scripts/CombatLogic/Characters/Computer/Agent/AgentController.cs)找到。
+> 这部分由于开发跨度比较长，代码命名规范挺乱的
 
 ## 参考
 - 头图：[异度之刃3](https://www.nintendo.com.hk/switch/az3ha/index.html) // c酱录播截图
