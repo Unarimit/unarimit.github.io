@@ -42,6 +42,14 @@
 
 详见[使用动画事件 - unity doc](https://docs.unity3d.com/cn/2021.3/Manual/script-AnimationWindowEvent.html)
 
+### 动画过渡
+
+当一个动画转换到另一个动画时，需要配置过渡属性，包括：
+- 从A到B如何混合动画
+- A到B发生中断如何混合
+
+可以查看[动画过渡 - unity doc](https://docs.unity3d.com/cn/current/Manual/class-Transition.html)
+
 ## humanoid & dynamic
 
 在导入模型文件时，需要配置rig（翻译为：操纵 or 绑定），如下图所示。
@@ -103,7 +111,10 @@ bool play_ing_flag = stateinfo.IsName("handgun_combat_reload");
 
 ## 其他选项
 
- 
+### 根运动（Root Motion）和脚的反向动力学（foot IK）
+
+- `Root Motion`：Animator在Inspector中可以勾选`Apply Root Motion`，使动画可以控制角色的transform。
+- `foot Ik`: 在`Animator Controller`的面板中，可以为单个动画状态设置`foot Ik`，使其脚能紧贴在地板上。
 
 ### 导入动画时
 
