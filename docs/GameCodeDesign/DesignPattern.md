@@ -96,13 +96,61 @@ internal class TipsUI : MonoBehaviour
 ## 单例模式
 
 单例模式在unity开发中很常用，但需要加以限制。
-> 例如你可能不想在一堆游戏逻辑中看到一句`AudioSource.PlayClipAtPoint(...)`
+> 例如你可能不想在一堆游戏逻辑中看到一句`AudioSource.PlayClipAtPoint(...)` // 这会造成业务的耦合，不过这里更多的是对业务的封装问题，会导致无法对声音播放流程做控制。
 
 避免使用单例模式的原因是为了降低耦合，因为单例模式属于全局变量，全局变量可能因为某个模块**逻辑错误**或**并发**顺序异常产生错误修改，而引起其他模块异常，且很难debug。当然对于一些游戏的Context不可避免的使用全局变量。`GPP`提供了几种避免使用单例模式的策略：
 - 使用依赖注入（对于需要引用实例的场合通过传参的方式）
 - 一部分管理类（Manager or System or ...）可以被优化，由被管理的类本身实现这些逻辑（OOP）
 - 服务定位模式...
 
+Unity的`TowerDefence`模板是这样实现单例模式的：
+```cs
+/// <summary>
+/// Singleton class
+/// </summary>
+/// <typeparam name="T">Type of the singleton</typeparam>
+public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
+{
+    /// <summary>
+    /// The static reference to the instance
+    /// </summary>
+    public static T instance { get; protected set; }
+
+    /// <summary>
+    /// Gets whether an instance of this singleton exists
+    /// </summary>
+    public static bool instanceExists
+    {
+        get { return instance != null; }
+    }
+
+    /// <summary>
+    /// Awake method to associate singleton with instance
+    /// </summary>
+    protected virtual void Awake()
+    {
+        if (instanceExists)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = (T) this;
+        }
+    }
+
+    /// <summary>
+    /// OnDestroy method to clear singleton association
+    /// </summary>
+    protected virtual void OnDestroy()
+    {
+        if (instance == this)
+        {
+            instance = null;
+        }
+    }
+}
+```
 
 ## 双缓存模式
 
