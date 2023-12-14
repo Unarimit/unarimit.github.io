@@ -37,8 +37,9 @@ Unity版本2022.3，使用URP v14
     - 参考：[Unity URP相机使用简介 - CSDN](https://blog.csdn.net/aaa27987/article/details/129753424)
     - 采用上述方法配置，`overlay`层会和`base`相机同时受到`anti-aliasing`（抗锯齿）影响，这对UI很不友好，有两个方法解决这一问题。
         - 先看看[UI受`anti-aliasing`影响会怎么样 - unity forum](https://forum.unity.com/threads/blurry-font-when-using-screen-space-camera.509147/)
-        - 再配置一个不带`anti-aliasing`的`base`相机，提高渲染优先级，背景设为`Uninitialized`，过滤layer。
+        - 再配置一个不带`anti-aliasing`的`base`相机，提高渲染优先级，背景设为`Uninitialized`，过滤layer。（不建议使用，`Uninitialized`很有问题，我URPv12和v14的`Uninitialized`在同一台设备下功能居然不一样）
         - 在`overlay`相机的`Renderer`配置不带`anti-aliasing`的`URP Render setting`（TODO：需要验证可行性）。
+        - 参考: [cameras-advanced - Unity Doc URP@14.0.9](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/cameras-advanced.html)
 - Built-in Pipeline中，需要配置两个相机，`渲染优先级`，`Clear Flags`，同时相机对UI layer要做过滤。
     - 参考：[World Space canvas on top of “everything” ? - unity discussions](https://discussions.unity.com/t/world-space-canvas-on-top-of-everything/128165/3)
 

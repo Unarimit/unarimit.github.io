@@ -1,5 +1,9 @@
 # URP渲染管线
 
+> The Universal Render Pipeline (URP) is a prebuilt Scriptable Render Pipeline, made by Unity. URP provides artist-friendly workflows that let you quickly and easily create optimized graphics across a range of platforms, from mobile to high-end consoles and PCs.
+
+URP和HDRP都是基于SRP（Scriptable Render Pipeline, 可编程渲染管线）的。
+
 ## 渲染管线介绍
 阅读参考，完善md文件
 
@@ -21,7 +25,7 @@
 
 ## URP和其他渲染管线的区别
 
-HDRP,SRP,甚至UE的一些渲染管线
+HDRP：They're both built with the Scriptable Render Pipeline (SRP), but their render paths and light models are different.
 
 ## 问题？
 给Volume设置layer会导致其失效

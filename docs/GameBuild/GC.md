@@ -13,8 +13,12 @@ unity在编译方式为il2cpp时（常用的编译方式），使用的GC算法�
 
 可以调用`GarbageCollector.CollectIncremental()`或`System.GC.Collect()`主动进行垃圾回收
 
+## CollectIncremental
 
+`GC.Collect`会在一个游戏帧内找出需要回收的垃圾，让玩家感受到卡顿（unity在卸载场景时会自动调用`GC.Collect`，我一个只包含一些UI元素的都要卡0.2秒）。使用`CollectIncremental`可以缓解这个问题，但这个方案也需要CPU不停计算待回收的垃圾，最好可以手动控制。
+> 虽然unity文档中说`Incremental garbage collection`策略时默认开启的，但我打开两个unity版本为`2021.3.5`的项目，都没有默认开启这个选项。
 
 ## 参考
 - [Memory in Unity - Unity Docs](https://docs.unity3d.com/cn/2023.2/Manual/performance-memory-overview.html)
 - BOEHM GC：[Unity 垃圾回收GC的原理？ - 知乎](https://zhuanlan.zhihu.com/p/623849906)
+- [当面试被问到unityGC有什么问题 - stack exchange](https://gamedev.stackexchange.com/questions/204261/what-are-unitys-problems-with-garbage-collection)
