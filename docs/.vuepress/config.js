@@ -113,8 +113,8 @@ module.exports = {
                 children: [
                     { title: "记Leetcode第373次周赛", path: "/CodingRamble/LeetcodeWeekContest373" },
                     { title: "小地图组件使用感想", path:"/CodingRamble/MinimapRamble"},
-                    { title: "[w]学习一下Unity的TD模板", path:"/CodingRamble/TowerDefenceTemplate"},
                     { title: "[w]记一次场景搭建", path:"/CodingRamble/ASceneStructure"},
+                    { title: "[x]学习一下Unity的TD模板", path:"/CodingRamble/TowerDefenceTemplate"},
                 ]
             }
         ]
