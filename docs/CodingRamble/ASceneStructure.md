@@ -6,7 +6,7 @@
 这里没有什么代码成分
 :::
 
-主要计划使用各种素材拼一个场景出来，也是比较现实和迅速的选择。但是还是有些东西需要自己建模的，主要是地形之间的过渡，和主要设施的层次结构（如果只是制作平面场景并使用tile prefab去拼可能避免这些问题，这也是我在战斗场景尝试过的内容），我们对这些问题分类讨论：
+主要计划使用各种素材拼一个场景出来(设计参考了NIKKI的家园)，也是比较简单和迅速的选择。但是还是有些东西需要自己建模的（主要是原型），分为地形之间的过渡和主要设施的层次结构（如果只是制作平面场景并使用tile prefab去拼可能避免这些问题，这也是我在战斗场景尝试过的内容）两大内容，我们对这些问题分类讨论：
 - 地形之间的过渡
     - 可以尝试用Unity自带的Terrain实现，虽然它对于风格渲染并不友好（需要写专门的shader），但用默认的shader也不是不能用。
 - 有层次结构的地形
@@ -26,16 +26,21 @@
 ::: tip 环境
 ProBuilder版本 Version 5.0.7 - April 12, 2023，Unity版本2021.3
 
-需要通过`PackageManager`导入该资源
+*需要通过`PackageManager`导入该资源
 :::
 
 我只能说这个东西应该叫做`ShitBuilder`，理由如下：
 - 他的一些功能容错度很低（如果不按照预期使用会产生报错和预期之外的效果）
 - 缺乏一些必要功能（如删除顶点，尽管他提供合并顶点的方法，但根本想不到他的合成逻辑是什么）
 - 一旦你使用他的clip方法，灾难就开始了，等着删除重建吧。
+- 基于上述缺点，`ShitBuilder`要求你懂一些基本的建模思想（例如建模异形体要留够足够的面数用于拓展，中途拆分面操作不当的话就烂了）
 
 作为专门的原型工具，他的使用流畅度甚至不如一些建模软件（如Blender）
-> 我感觉建模软件在制作原型时的主要问题是功能太多，而且在世界坐标系下的移动和拖拽逻辑都不一样，存在学习成本。
+> 我感觉建模软件在制作原型时的主要问题是功能太多，而且在世界坐标系下的移动和拖拽逻辑都不一样，存在学习成本(如果只是拖个原型出来应该也还好)。
+
+当然，如果你不需要建一个大的异形物体的模型（如地形）的话，还是可以使用的。具体而言，满足下列条件的任意一个就行：
+- 能接受“中途发现之前的操作有问题导致报错，需要删了重建”的成本。
+- 或者你是个懂一点建模的人，不需要在原型设计中频繁的拆`顶点`和`面`。
 
 
 ## Terrain
@@ -73,3 +78,8 @@ ProBuilder版本 Version 5.0.7 - April 12, 2023，Unity版本2021.3
 
 ## 参考
 - [Unity | Stylized Waterfall Shader - Youtube](https://www.youtube.com/watch?v=DIE3qfCGXl8)
+- 素材：
+    - [低聚物终极包 - Unity Assets](https://assetstore.unity.com/packages/3d/props/low-poly-ultimate-pack-54733)
+    - [Land 1 - Unity Assets](https://assetstore.unity.com/packages/3d/props/exterior/land-1-225713)
+    - [Cute Cartoon Town - Unity Assets](https://assetstore.unity.com/packages/3d/environments/urban/cute-cartoon-town-206100)
+    - [City Adventure - Unity Assets](https://assetstore.unity.com/packages/3d/environments/city-adventure-65307)
