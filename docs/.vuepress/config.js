@@ -39,6 +39,7 @@ module.exports = {
                     { title: "TextMeshPro", path: "/UnityComponent/TextMeshPro" },
                     { title: "[W]常用Transform", path: "/UnityComponent/Transform" },
                     { title: "音频系统", path: "/UnityComponent/AudioSystem" },
+                    { title: "[W]UnityObject", path: "/UnityComponent/UnityObject" },
                     { title: "[W]数据持久化", path: "/UnityComponent/DataPersistence" },
                     { title: "[x]TimeLine", path: "/UnityComponent/TimeLine" },
                 ]
@@ -112,6 +113,8 @@ module.exports = {
                 children: [
                     { title: "记Leetcode第373次周赛", path: "/CodingRamble/LeetcodeWeekContest373" },
                     { title: "小地图组件使用感想", path:"/CodingRamble/MinimapRamble"},
+                    { title: "[w]学习一下Unity的TD模板", path:"/CodingRamble/TowerDefenceTemplate"},
+                    { title: "[w]记一次场景搭建", path:"/CodingRamble/ASceneStructure"},
                 ]
             }
         ]
