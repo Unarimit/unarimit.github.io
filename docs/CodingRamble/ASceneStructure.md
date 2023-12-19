@@ -72,14 +72,35 @@ ProBuilder版本 Version 5.0.7 - April 12, 2023，Unity版本2021.3
 
 <img src="../img/terrain-5.png">
 
+
 ## 下一步，制作“动”效
 
-先为右边的瀑布实现流水效果。
+为右边的瀑布实现流水效果。这是后边补充的内容：
+
+<img src="../img/terrain-water.gif">
+
+- 使用[Stylized Water 2](https://assetstore.unity.com/packages/vfx/shaders/stylized-water-2-170386)插件完成。
+- 在blender里面按照插件设定配置水流表面和UV，在unity中使用`PolyBrush(unity registry asset)`按照插件设定着色。
+
+不得不说要实现水流冲击效果，特效还是很重要的。如果卡通风格其实可以考虑不用特效，但相关资源比较难找。
+
+### 一种卡通水的实现
+
+[Making My First Open World Game | Devlog #1 - Youtube](https://www.youtube.com/watch?v=WnnaI_OXeEA)视频中，就实现了相当方便，视觉也还可以的卡通水效果（感觉不如....）。视频中显示了可以在Unity中方便的编辑（如下图所示），和使用Shader Graph实现水流渲染。
+<img src="../img/terrain-6.png">
+
+他也实现了简单的特效。
+
+<img src="../img/terrain-7.png">
+
+可惜没有指南的话实现这套对我来说要花好长时间。
 
 ## 参考
-- [Unity | Stylized Waterfall Shader - Youtube](https://www.youtube.com/watch?v=DIE3qfCGXl8)
 - 素材：
     - [低聚物终极包 - Unity Assets](https://assetstore.unity.com/packages/3d/props/low-poly-ultimate-pack-54733)
     - [Land 1 - Unity Assets](https://assetstore.unity.com/packages/3d/props/exterior/land-1-225713)
     - [Cute Cartoon Town - Unity Assets](https://assetstore.unity.com/packages/3d/environments/urban/cute-cartoon-town-206100)
     - [City Adventure - Unity Assets](https://assetstore.unity.com/packages/3d/environments/city-adventure-65307)
+    - [Stylized Water 2](https://assetstore.unity.com/packages/vfx/shaders/stylized-water-2-170386)
+- [Unity | Stylized Waterfall Shader - Youtube](https://www.youtube.com/watch?v=DIE3qfCGXl8)
+    - 尝试了一下，他代码是开源的，但没有特效无法满足我的要求
