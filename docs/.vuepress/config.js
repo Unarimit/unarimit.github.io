@@ -40,6 +40,7 @@ module.exports = {
                     { title: "[W]常用Transform", path: "/UnityComponent/Transform" },
                     { title: "音频系统", path: "/UnityComponent/AudioSystem" },
                     { title: "[W]UnityObject", path: "/UnityComponent/UnityObject" },
+                    { title: "自定义Editor", path: "/UnityComponent/CustomEditor" },
                     { title: "[W]数据持久化", path: "/UnityComponent/DataPersistence" },
                     { title: "[x]TimeLine", path: "/UnityComponent/TimeLine" },
                 ]
