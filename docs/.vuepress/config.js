@@ -59,6 +59,7 @@ module.exports = {
                     { title: "技能系统设计", path: "/GameCodeDesign/AbilitySystem" },
                     { title: "[W]环境交互", path: "/GameCodeDesign/Interaction" },
                     { title: "人机切换", path: "/GameCodeDesign/HumanAgentSwitch" },
+                    { title: "RTS相机", path: "/GameCodeDesign/RTSCamera" },
                     { title: "[W]存储和事件系统", path: "/GameCodeDesign/EventSystem" },
                     { title: "[W]多线程", path: "/GameCodeDesign/MultiThread" },
                     { title: "[W]协同开发", path: "/GameCodeDesign/Coop" }
