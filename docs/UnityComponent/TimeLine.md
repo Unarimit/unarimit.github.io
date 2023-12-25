@@ -8,12 +8,14 @@
 我仅轻度使用，对这个组件不是很了解
 :::
 
-
 鉴于官方文档只有英文，我建议先看一些文章了解以下Timeline可以做什么。例如[【Unity】TimeLine系列教程——编排剧情！ - 陈虹松的文章 - 知乎](https://zhuanlan.zhihu.com/p/29188275)就是一个很好的，告诉你Tineline可以干什么的文章。当然最好可以去看文档([Unity Timeline - unity manual](https://docs.unity3d.com/Packages/com.unity.timeline@1.5/manual/index.html))。
 
 那我讲讲Timeline不适合干什么：
 - 模拟一段符合物理常识的动画（想想你可以通过关键帧做到吗？）
+    - 虽然可以通过脚本控制，但就没办法在Timeline和Scene中实时看效果了（如果允许脚本在编辑时执行会怎样呢?`[ExecuteAlways]`
 - 使用关键帧切换VirtualCamera的状态（不知道为什么总会丢失关键帧记录！）
+
+听说是面向影视开发的，还能支持对自定脚本的关键帧过渡，已经算是很不错了吧。 
 
 ## 例子：使用Timeline模拟流星坠落效果
 
