@@ -42,7 +42,7 @@ module.exports = {
                     { title: "[W]UnityObject", path: "/UnityComponent/UnityObject" },
                     { title: "自定义Editor", path: "/UnityComponent/CustomEditor" },
                     { title: "[W]数据持久化", path: "/UnityComponent/DataPersistence" },
-                    { title: "[x]TimeLine", path: "/UnityComponent/TimeLine" },
+                    { title: "TimeLine", path: "/UnityComponent/TimeLine" },
                 ]
             },
             {
