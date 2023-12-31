@@ -93,7 +93,7 @@ Unity著名的缓动插件，在Asset Store免费下载。
 
 ## 例子
 
-### 使用Img实现cooldown
+### 使用Image实现cooldown
 
 利用img组件自带的一系列Fill属性即可
 
@@ -107,3 +107,4 @@ Unity著名的缓动插件，在Asset Store免费下载。
 - [DOTween Documentation](https://dotween.demigiant.com/documentation.php)
 - [泰裤辣 の Unity百宝箱】Canvas组件四件套 - 知乎](https://zhuanlan.zhihu.com/p/629759121)
 - [Unity Canvas详解 - 知乎](https://zhuanlan.zhihu.com/p/634891882)
+- [Unity中的Image和Raw Image - 51CTO博客](https://blog.51cto.com/u_15296378/3017736)
