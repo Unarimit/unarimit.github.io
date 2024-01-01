@@ -51,6 +51,17 @@ RectTransform的Z轴并没有什么卵用
 - 为UI组件添加`Canvas`和`GraphicRaycaster`（如果这个ui不需要互动事件也可以不勾选），勾选重写顺序选项，通过order字段修改优先级。
 - 通过多个`Canvas`实现，或配合额外的`Camera`实现分层渲染。
 
+
+## Image、RowImge和Minimap
+
+Image、RowImge是两个功能相似的组件，都可以满足显示图片的需求。
+
+Image并不是RowImage的超集，都有各自的适用场景。
+- Image附带一些常用遮罩效果，使用`Spite`封装图片信息。
+- RowImage可以控制texture uv的显示范围，使用`Texture`封装图片信息。
+
+当遇到图片在游戏中出现锯齿时（通常是因为描边），如果是因为图片分辨率和目标分辨率差距过大导致，可以为图片asset勾选`Minimap`生成不同大小的图片（运行时和`Minimap`的插值算法是不同的），可以缓解这个问题。
+
 ## 自适应布局方式
 
 WIP
