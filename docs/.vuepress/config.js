@@ -60,7 +60,7 @@ module.exports = {
                     { title: "[W]环境交互", path: "/GameCodeDesign/Interaction" },
                     { title: "人机切换", path: "/GameCodeDesign/HumanAgentSwitch" },
                     { title: "RTS相机", path: "/GameCodeDesign/RTSCamera" },
-                    { title: "[W]存储和事件系统", path: "/GameCodeDesign/EventSystem" },
+                    { title: "事件系统", path: "/GameCodeDesign/EventSystem" },
                     { title: "异步编程", path: "/GameCodeDesign/Asynchronous" },
                     { title: "[W]多线程", path: "/GameCodeDesign/MultiThread" },
                     { title: "[W]协同开发", path: "/GameCodeDesign/Coop" }
