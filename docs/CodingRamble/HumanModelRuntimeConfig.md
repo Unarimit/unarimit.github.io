@@ -14,9 +14,9 @@
 
 所有配置代码都在[我的项目My-TDS，FbxLoadManager.cs](https://github.com/Unarimit/my-topdown-shooting-game/blob/version0.4/Assets/Scripts/CombatLogic/FbxLoadManager.cs)中的`LoadModel`函数中。
 
-## 为什么需要配置自动化
+## 为什么需要运行时配置
 
-对于"BA模型"，其格式较为统一，相较为每个人物在Unity中Editor下配置，还是按照一定格式统一配置比较方便。除此之外还有下列好处：
+对于"BA模型"，其格式较为统一，相较为每个人物在Unity中Editor下配置，还是按照一定格式在运行时统一配置比较方便。除此之外还有下列好处：
 - 适应从外部Patch模型（如Mod制作只需对照格式制作即可像native模型一样映射到游戏中）
 - （实际开发流程中）强制规范化（你也不想收到一堆骨骼命名、尺寸甚至pivot都不一样的人物模型吧）
 - 一些通过点云扫描建模的元宇宙app生成avatar只能这么做吧
