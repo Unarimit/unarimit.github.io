@@ -117,7 +117,9 @@ module.exports = {
                     { title: "记Leetcode第373次周赛", path: "/CodingRamble/LeetcodeWeekContest373" },
                     { title: "小地图组件使用感想", path:"/CodingRamble/MinimapRamble"},
                     { title: "记一次场景搭建", path:"/CodingRamble/ASceneStructure"},
+                    { title: "记一次人物模型的运行时配置", path:"/CodingRamble/HumanModelRuntimeConfig"},
                     { title: "[x]学习一下Unity的TD模板", path:"/CodingRamble/TowerDefenceTemplate"},
+                    
                 ]
             }
         ]
