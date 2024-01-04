@@ -51,7 +51,7 @@ module.exports = {
                 collapsable: true,
                 children: [
                     { title: "[W]常用规范", path: "/GameCodeDesign/CommonlySpec" },
-                    { title: "[W]设计模式", path: "/GameCodeDesign/DesignPattern" },
+                    { title: "(游戏中的)设计模式", path: "/GameCodeDesign/DesignPattern" },
                     { title: "[x]启动流程设计", path: "/GameCodeDesign/StartupProcedure"},
                     { title: "[W]游戏上下文系统设计", path: "/GameCodeDesign/GameContextSystem" },
                     { title: "资源系统和服务", path: "/GameCodeDesign/ResourceSystem" },
