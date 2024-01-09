@@ -102,11 +102,12 @@ module.exports = {
                 ]
             },
             {
-                title: '计算机图形学',
-                path: '/ComputerGraphics/Index',
+                title: 'Lua学习笔记',
+                path: '/Lua/Index',
                 collapsable: true, 
                 children: [
-                    { title: "[x]四元数", path: "/WIP" },
+                    { title: "[w]常用语法", path: "/Lua/Grammar" },
+                    { title: "[x]lua中的面向对象", path: "/Lua/OOPInLua" },
                 ]
             },
             {
@@ -120,6 +121,14 @@ module.exports = {
                     { title: "记一次人物模型的运行时配置", path:"/CodingRamble/HumanModelRuntimeConfig"},
                     { title: "[x]学习一下Unity的TD模板", path:"/CodingRamble/TowerDefenceTemplate"},
                     
+                ]
+            },
+            {
+                title: '计算机图形学',
+                path: '/ComputerGraphics/Index',
+                collapsable: true, 
+                children: [
+                    { title: "[x]四元数", path: "/WIP" },
                 ]
             }
         ]
