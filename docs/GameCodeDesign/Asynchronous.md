@@ -21,12 +21,33 @@
         - 提供比协程更多的逻辑控制（`cancellationToken`）
         - 同步异步都能用
     - 缺点：
-        - 比协程复杂一点，要了解它的工作方式[一个不恰当使用导致try catch没用的例子](https://stackoverflow.com/questions/5383310/catch-an-exception-thrown-by-an-async-void-method)
+        - 比协程复杂一点，要了解它的工作方式，不了解的话，可能会引起：[一个不恰当使用导致try catch没用的例子](https://stackoverflow.com/questions/5383310/catch-an-exception-thrown-by-an-async-void-method)
         - 在WebGL中不能使用[这个视频中提到](https://youtu.be/WY-mk-ZGAq8?si=Do5vRtqHYq3gwhwX&t=919)
         - 有些使用协程的api使用起来不方便
     - *`Unity 2023.1`中引入`Awaitable` class，提供`WaitForSecondsAsync`, `NextFrameAsync`等api。
 3. 响应式编程配合生命周期
     - 参考DOTween和UI事件，特定的使用场景
+
+## C#异步编程模型 `async` / `await`
+
+方法使用`async`修饰，方法内部内容会被C#编译器转化为`异步状态机类`，用于实现异步执行的功能。
+> 并使用异步特性修饰方法，以便能够在metadata中查看
+
+### 一些问题
+
+异常捕获问题：
+
+```cs
+如果不Await异常就捕获不了();
+// await 如果不Await异常就捕获不了(); // 如果用注释中的，则能捕获到异常
+await Task.Delay(200);
+
+async Task 如果不Await异常就捕获不了()
+{
+    await Task.Delay(20);
+    throw new Exception(); // 可以试着在console中执行一下，这个异常不会触发断点调试
+}
+```
 
 ## 例子-使用`async` / `await`实现选择窗口
 
@@ -90,3 +111,4 @@ Debug.Log(op.Name);
 - 简单介绍async / await 以及在unity中的使用：[Unity async / await: Coroutine's Hot Sister - Youtube](https://youtu.be/WY-mk-ZGAq8?si=Do5vRtqHYq3gwhwX)
 - [Unity async / await: Awaitable - Youtube](https://www.youtube.com/watch?v=X9Dtb_4os1o)
 - [一个不恰当使用导致try catch没用的例子 - Stackoverflow](https://stackoverflow.com/questions/5383310/catch-an-exception-thrown-by-an-async-void-method)
+- 《CLR Via C# 第四版》28章节中的28.2-28.5介绍了await/async的工作原理，和线程上下文[CLR Via C# -  Jeffrey Richter](https://book.douban.com/subject/26285940/)
