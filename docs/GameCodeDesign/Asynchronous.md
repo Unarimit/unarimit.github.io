@@ -31,7 +31,9 @@
 ## C#异步编程模型 `async` / `await`
 
 方法使用`async`修饰，方法内部内容会被C#编译器转化为`异步状态机类`，用于实现异步执行的功能。
-> 并使用异步特性修饰方法，以便能够在metadata中查看
+- 并使用异步特性修饰方法，以便能够在metadata中查看
+- 仍在unity主线程运行，但不再受生命周期函数的影响（如`FixedUpdate`的默认deltaTime 0.02秒）
+- 可以参考：[一个关于 async / await 的很长的理论文章](https://devblogs.microsoft.com/dotnet/how-async-await-really-works/)，[CLR Via C# 第四版](https://book.douban.com/subject/26285940/)中描述的简单一些。
 
 ### 一些问题
 
@@ -45,7 +47,40 @@ await Task.Delay(200);
 async Task 如果不Await异常就捕获不了()
 {
     await Task.Delay(20);
-    throw new Exception(); // 可以试着在console中执行一下，这个异常不会触发断点调试
+    throw new Exception(); // 这个异常不会触发断点调试(可以试着在console app中执行一下)
+}
+```
+测试运行线程，我想看看`async`方法在这里是怎么调度的
+> 参考[CLR Via C# 第四版](https://book.douban.com/subject/26285940/)在WinForm中描述的`调度上下文`，应该会被调度到Unity的主线程中进行，方便对主线程数据的修改，实际上也确实如此。
+
+> 但是书中没有说对于没有`await`修饰的异步方法调度的根据，进一步看看`SynchronizationContext`的属性吧。
+```cs
+public async Start(){
+    Debug.Log(System.Threading.SynchronizationContext.Current); //  --> UnityEngine.UnitySynchronizationContext
+    var t = new Task(() => dosomething().Wait()); // --> exception, Thread Pool Worker, 没报错
+    t.Start();
+    _ = dosomething(); // --> null, 0.0019407, 没报错
+    await dosomething(); // --> null, 0.0019407, Test EX
+    // dosomething().GetAwaiter().GetResult(); 
+    // 上述代码cause deadlock, more detail: https://stackoverflow.com/questions/39007006/is-getawaiter-getresult-safe-for-general-use 
+    // 如果想看看什么是死锁，在尝试这个用例的时候除了取消注释外，还要把代码放在上面，
+    // 不然就因为 await dosomething() 抛出的异常提前终止了，根本执行不到这里。
+}
+public async Task dosomething()
+{
+    await Task.Delay(500);
+    try
+    {
+        Debug.Log(Time.deltaTime); // 注意，如果在Worker中调用且遇到空引用异常，unity会忽略它
+    }
+    catch(Exception ex)
+    {
+        Debug.Log("can not get time " + ex.ToString());
+    }
+    
+    Debug.Log(Thread.CurrentThread.Name);
+
+    throw new Exception("Test EX");
 }
 ```
 
@@ -111,4 +146,4 @@ Debug.Log(op.Name);
 - 简单介绍async / await 以及在unity中的使用：[Unity async / await: Coroutine's Hot Sister - Youtube](https://youtu.be/WY-mk-ZGAq8?si=Do5vRtqHYq3gwhwX)
 - [Unity async / await: Awaitable - Youtube](https://www.youtube.com/watch?v=X9Dtb_4os1o)
 - [一个不恰当使用导致try catch没用的例子 - Stackoverflow](https://stackoverflow.com/questions/5383310/catch-an-exception-thrown-by-an-async-void-method)
-- 《CLR Via C# 第四版》28章节中的28.2-28.5介绍了await/async的工作原理，和线程上下文[CLR Via C# -  Jeffrey Richter](https://book.douban.com/subject/26285940/)
+- 《CLR Via C# 第四版》28章节中的28.2-28.5介绍了await/async的工作原理，和线程上下文：[CLR Via C# -  Jeffrey Richter](https://book.douban.com/subject/26285940/)
