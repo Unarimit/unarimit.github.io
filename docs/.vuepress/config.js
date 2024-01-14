@@ -119,8 +119,8 @@ module.exports = {
                     { title: "小地图组件使用感想", path:"/CodingRamble/MinimapRamble"},
                     { title: "记一次场景搭建", path:"/CodingRamble/ASceneStructure"},
                     { title: "记一次人物模型的运行时配置", path:"/CodingRamble/HumanModelRuntimeConfig"},
+                    { title: "记初次使用Unity行为树插件-Behavior Designer", path:"/CodingRamble/UseBehaviorDesigner"},
                     { title: "[x]学习一下Unity的TD模板", path:"/CodingRamble/TowerDefenceTemplate"},
-                    
                 ]
             },
             {
