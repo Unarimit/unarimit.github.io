@@ -104,6 +104,7 @@ internal class UIManager : MonoBehaviour
 > 这个ViewModel类我会放在一个`context`类里面，`context`类还定义了一组当前场景下全局可用的方法。
 
 当然，可以用方便的单例模式实现数据交互，但一堆单例会带来代码上的高耦合，不利于后续维护。
+> 具体而言，一个数据存储结构修改后（从List改为Dictionary）依赖他的所有逻辑都需要修改。这也是MVC、MVVM之类设计模式存在的原因。
 
 ### 由UI直接修改，读取Model产生的问题
 
@@ -123,6 +124,7 @@ WIP
 ## 参考
 - [SHFIT UI - Unity Asset](https://assetstore.unity.com/packages/2d/gui/shift-complete-sci-fi-ui-157943)
 
+- 某网课比较基础的实现
 ::: details 达内Unity培训课：
 核心类
 1. Ul 窗口类 UIWindow 
