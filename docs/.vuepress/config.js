@@ -107,6 +107,7 @@ module.exports = {
                 collapsable: true, 
                 children: [
                     { title: "[w]常用语法", path: "/Lua/Grammar" },
+                    { title: "表-关键数据结构", path: "/Lua/Table" },
                     { title: "[x]lua中的面向对象", path: "/Lua/OOPInLua" },
                 ]
             },
