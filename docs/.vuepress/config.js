@@ -52,6 +52,8 @@ module.exports = {
                 children: [
                     { title: "[W]常用规范", path: "/GameCodeDesign/CommonlySpec" },
                     { title: "(游戏中的)设计模式", path: "/GameCodeDesign/DesignPattern" },
+                    { title: "异步编程", path: "/GameCodeDesign/Asynchronous" },
+                    { title: "多线程", path: "/GameCodeDesign/MultiThread" },
                     { title: "[x]启动流程设计", path: "/GameCodeDesign/StartupProcedure"},
                     { title: "[W]游戏上下文系统设计", path: "/GameCodeDesign/GameContextSystem" },
                     { title: "资源系统和服务", path: "/GameCodeDesign/ResourceSystem" },
@@ -61,8 +63,6 @@ module.exports = {
                     { title: "人机切换", path: "/GameCodeDesign/HumanAgentSwitch" },
                     { title: "RTS相机", path: "/GameCodeDesign/RTSCamera" },
                     { title: "事件系统", path: "/GameCodeDesign/EventSystem" },
-                    { title: "异步编程", path: "/GameCodeDesign/Asynchronous" },
-                    { title: "[W]多线程", path: "/GameCodeDesign/MultiThread" },
                     { title: "[W]协同开发", path: "/GameCodeDesign/Coop" }
                 ]
             },
