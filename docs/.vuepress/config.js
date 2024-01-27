@@ -83,7 +83,9 @@ module.exports = {
                 children: [
                     { title: "寻路", path: "/AI/Navigation" },
                     { title: "[W]状态机", path: "/AI/StateMachine" },
-                    { title: "[W]常见AI设计", path: "/AI/AIDesign" }
+                    { title: "[W]常见AI设计", path: "/AI/AIDesign" },
+                    { title: "[W]GOAP", path: "/AI/GOAP" },
+                    //{ title: "[W]行为树", path: "/AI/BehaviorTree" },
                 ]
             },
             {

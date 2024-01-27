@@ -11,7 +11,7 @@
 4. 动态类型
 5. 函数的丢弃规则
 > `function foo(a) return 'a' end`</br>
-> `a, b = foo(c, d)` --可以运行哦--> `a = 'a' b = nil`
+> `a, b = foo(c, d, e)` --可以运行哦--> `a = 'a' b = nil`
 
 ## 基础数据类型
 
