@@ -34,11 +34,11 @@
 
 <img src='../img/goap-1.png'>
 
-通过上述决策图就可以构建一个使用枪械，主动发现敌人，没子弹会撤退换弹，换完子弹继续冲的AI。
+通过上述决策图就可以构建一个使用枪械，主动发现敌人，没子弹会撤退换弹，换完子弹继续冲的AI。等价的代码定义在[BuildHelper.cs](https://github.com/Unarimit/my-topdown-shooting-game/blob/1036f1da9989df0aa24b79d95f4aee7dc8c4e2e7/Assets/Scripts/CombatLogic/GOAPs/Builders/BuildHelper.cs)中。
 
 进一步的，可以融合"攻击技能"和"躲避技能"行为
 
-WIP
+WIP（由于行为实现和测试很麻烦，虽然状态定义好了，还没有实现）
 
 ## 参考
 - 理论-轮子：[游戏AI行为决策——GOAP（目标导向型行动规划）- OwlCat cnblog](https://www.cnblogs.com/OwlCat/p/17936809)
