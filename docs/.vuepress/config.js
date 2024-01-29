@@ -13,6 +13,7 @@ module.exports = {
                 collapsable: false, 
                 children: [
                     { title: "[W]上帝视角射击游戏", path: "/Projects/TopShooting" },
+                    { title: "[W]个人主页-我要成为U3D高手", path: "/Projects/ToBecomeU3dMaster" },
                 ]
             },
             {
@@ -83,9 +84,9 @@ module.exports = {
                 children: [
                     { title: "寻路", path: "/AI/Navigation" },
                     { title: "[W]状态机", path: "/AI/StateMachine" },
-                    { title: "[W]常见AI设计", path: "/AI/AIDesign" },
                     { title: "[W]GOAP", path: "/AI/GOAP" },
                     //{ title: "[W]行为树", path: "/AI/BehaviorTree" },
+                    { title: "[W]常见AI设计", path: "/AI/AIDesign" },
                 ]
             },
             {

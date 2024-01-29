@@ -41,7 +41,7 @@ AI是战斗游戏中比较重要的部分，好的AI能增加玩家的沉浸感�
 
 ## 参考
 ### 书籍
-> 感谢[狐王驾虎](https://home.cnblogs.com/u/OwlCat/)提供的书单
+> 特别感谢[狐王驾虎(OwlCat)](https://home.cnblogs.com/u/OwlCat/)提供的书单
 - [Game AI Pro](http://www.gameaipro.com/)，有中文版《游戏人工智能》但网上好像买不到了，学校图书馆倒是有
 - [人工智能：一种现代的方法（第三版）](https://book.douban.com/subject/25796281/)
 
@@ -51,7 +51,7 @@ AI是战斗游戏中比较重要的部分，好的AI能增加玩家的沉浸感�
 - [游戏AI行为决策方法——HTN 教程（附代码）- Unity开发者社区](https://developer.unity.cn/projects/657fcd52edbc2a002654a6b4)
 
 ### 行为树
-- 理论向-轮子：[游戏AI行为决策——行为树 - cnblog](https://www.cnblogs.com/OwlCat/p/17871494.html)
+- 理论向-轮子：[游戏AI行为决策——行为树 - OwlCat cnblog](https://www.cnblogs.com/OwlCat/p/17871494.html)
 - 理论向-虚幻行为树：[AI行为树在游戏引擎中の原理与应用 - Bilibili](https://www.bilibili.com/video/BV1Bm4y1r79W)
 - 进阶理论向：[[UOD2022]从行为树到状态树 | Epic 周澄清 - Bilibili](https://www.bilibili.com/video/BV1ed4y1b7Zk)
 - UE行为树术语介绍：[UE4学习笔记——AI（行为树 ；EQS；感知系统；调试）- Bilibili CV](https://www.bilibili.com/read/cv8219823)
