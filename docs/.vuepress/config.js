@@ -73,6 +73,7 @@ module.exports = {
                 collapsable: true,
                 children: [
                     { title: "[W]编译", path: "/GameBuild/Compile" },
+                    { title: "[W]程序集", path: "/GameBuild/Assembly" },
                     { title: "[W]热更新", path: "/GameBuild/Mod&Hotfix" },
                     { title: "[W]GC机制", path: "/GameBuild/GC" },
                 ]
