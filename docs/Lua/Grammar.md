@@ -1,6 +1,10 @@
 # 常用语法
 
+汇总了开发常用的语法，并对比了和其他语言(C++, C#)的区别。
+
 ## 烦人的特性
+
+> 和其他语言(C++, C#)不同的地方
 
 1. 符号可以不定义直接使用
 > 如我打开lua console就开始`print(a)`，我会得到`nil`，而不是一个报错。
@@ -12,6 +16,9 @@
 5. 函数的丢弃规则
 > `function foo(a) return 'a' end`</br>
 > `a, b = foo(c, d, e)` --可以运行哦--> `a = 'a' b = nil`
+6. lua的函数并不是像C++一样的“命了名的代码块”，而更像是一种“实例”
+> “lua只有闭包没用函数（只是为了习惯称闭包为函数），函数本身是闭包的原型” </br>
+> `function foo() {body} return` 是 `foo = function() {body} return` 的语法糖
 
 ## 基础数据类型
 
@@ -34,8 +41,6 @@ nil, number(integer, float), boolean, string, userdata, function, thread, table
     - 书中第5章的练习中向我们展示了lua的二义性，真出生啊
 > 使用`type`函数可以获取值对应的类型名词，如`type(true) ---> boolean`
 
-### 算术运算
-
 ## 控制流长啥样
 
 ### for
@@ -51,7 +56,6 @@ if n > N then
 end
 ```
 
-
 ### 一些不同
 - 使用`~=`作为不等判断
 
@@ -61,3 +65,6 @@ end
 - `..`: 链接两个字符串 `print("ab".."cd") --> abcd` 
 - 注释使用`--`(单行)和`--[[ line,line  ]]--`(多行)
     - `--[=[]=]`
+
+## 参考
+- [Lua程序设计 第四版 - Roberto](https://www.lua.org/pil/)

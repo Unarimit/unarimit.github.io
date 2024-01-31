@@ -7,7 +7,7 @@
 ## 热更新方案
 
 - [xlua](https://github.com/Tencent/xLua)
-    - 特性：使用lua（lua在游戏热更新界有一定历史）
+    - 特性：使用lua（lua在游戏热更新界有一定历史，unity和ue都有lua的热更方案）
     - 为什么不选：使用lua写逻辑和c#相差很大
 - ILRuntime
     - 特性：基于Mono，使用C#

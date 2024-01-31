@@ -22,7 +22,9 @@
 这只是Unity提供的一小部分有用的API和组件，它们可以帮助你开发游戏、处理输入、实现物理仿真和处理碰撞等功能。根据你的具体需求，Unity还提供了更多强大的功能和工具，用于实现各种游戏机制和效果。
 :::
 
-Unity提供了一系列api让我们处理3d世界的显示和交互，对这些api都有深刻的认识是很有必要的。大部分常用的都可以在unity doc了解。
+Unity提供了一系列api让我们处理3d世界的显示和交互，对这些api都有深刻的认识是很有必要的。大部分常用的都可以在unity doc了解。例如unity doc的[最佳实践专栏](https://docs.unity3d.com/Manual/best-practice-guides.html)，可以了解游戏开发涉及的常用组件。
+> 除此之外，Unity还提供了几种不同主题的模板，如塔防模板（比较复杂），第三人称模板（简单）等。
 
 ## 参考
 - [Unity User Manual 2021.3 (LTS) 中文](https://docs.unity3d.com/cn/current/Manual/index.html)
+- [Advanced best practice guides - Unity Doc](https://docs.unity3d.com/Manual/best-practice-guides.html)
