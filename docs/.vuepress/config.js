@@ -17,14 +17,6 @@ module.exports = {
                 ]
             },
             {
-                title: 'Gameplay',
-                path: '/Gameplay/Index',
-                collapsable: true, 
-                children: [
-                    { title: "[x]占位符", path: "/WIP" }, // 不加过不了build
-                ]
-            },
-            {
                 title: 'Unity组件',
                 path: '/UnityComponent/Index',
                 collapsable: true,
@@ -91,21 +83,6 @@ module.exports = {
                 ]
             },
             {
-                title: '画面表示',
-                path: '/Shading/index',
-                collapsable: true,
-                children: [
-                    { title: "[x]Shader和渲染", path: "/WIP" },
-                    { title: "URP渲染管线", path: "/Shading/URP_Pipeline" },
-                    { title: "[W]Blender", path: "/Shading/Blender" },
-                    { title: "[W]模型", path: "/Shading/Modeling" },
-                    { title: "渲染风格和手段", path: "/Shading/StyleAndMethod" }, // title 需要修改
-                    { title: "NPR", path: "/Shading/NPR" },
-                    { title: "[x]特效和粒子系统", path: "/WIP" },
-                    { title: "[x]优化策略", path: "/WIP" }
-                ]
-            },
-            {
                 title: 'Lua学习笔记',
                 path: '/Lua/Index',
                 collapsable: true, 
@@ -113,6 +90,7 @@ module.exports = {
                     { title: "[w]常用语法", path: "/Lua/Grammar" },
                     { title: "表-关键数据结构", path: "/Lua/Table" },
                     { title: "[x]lua中的面向对象", path: "/Lua/OOPInLua" },
+                    { title: "[w]使用XLua", path: "/Lua/UseXLua" },
                 ]
             },
             {
@@ -129,11 +107,34 @@ module.exports = {
                 ]
             },
             {
+                title: '模型和渲染',
+                path: '/Shading/index',
+                collapsable: true,
+                children: [
+                    { title: "[x]Shader和渲染", path: "/WIP" },
+                    { title: "URP渲染管线", path: "/Shading/URP_Pipeline" },
+                    { title: "[W]Blender", path: "/Shading/Blender" },
+                    { title: "[W]模型", path: "/Shading/Modeling" },
+                    { title: "渲染风格和手段", path: "/Shading/StyleAndMethod" }, // title 需要修改
+                    { title: "NPR", path: "/Shading/NPR" },
+                    { title: "[x]特效和粒子系统", path: "/WIP" },
+                    { title: "[x]优化策略", path: "/WIP" }
+                ]
+            },
+            {
                 title: '计算机图形学',
                 path: '/ComputerGraphics/Index',
                 collapsable: true, 
                 children: [
                     { title: "[x]四元数", path: "/WIP" },
+                ]
+            },
+            {
+                title: 'Gameplay', // TODO：因为还不够完善，暂且先排在后面
+                path: '/Gameplay/Index',
+                collapsable: true, 
+                children: [
+                    { title: "[x]占位符", path: "/WIP" }, // 不加过不了build
                 ]
             }
         ]
