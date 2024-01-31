@@ -21,8 +21,6 @@
 
 看知乎上的一些讨论，感觉`HybridCLR`倾向于热更新逻辑和框架逻辑在同一个作用域，而其他方案则分离热更新逻辑和框架逻辑。
 
-
-
 ::: tip 相关概念 
 - AOT(Ahead-of-time, 提前编译)
     - 区别于"完全静态编译（Full-ahead-of-time,Full-AOT）:程序运行前，将所有源码编译成目标平台的原生码。" // 感觉怪怪的
@@ -35,9 +33,10 @@
     - 参考Python等解释语言，由于每一段逻辑都要运行时编译，会显著影响效率。
 :::
 
-### xlua
+## AssetBundle和HotFix
+
+无论选择哪种方案，最后都是要将资源打包的。
 
 ## 参考
-dll和lua的区别
 ab包
 - [Unity 中的Mono与IL2CPP - 知乎](https://zhuanlan.zhihu.com/p/663371215)
