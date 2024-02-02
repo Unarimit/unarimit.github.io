@@ -35,7 +35,15 @@ Lua作为一种胶水语言，在游戏热更新中普遍使用。但看了[几�
 #### Q2: 在Unity中，Lua与C#交互的方式有哪些？（Lua通过什么影响游戏世界？）
 
 以XLua为例：
-- 可以通过`LuaBehaviour`，他会按照`Behaviour`生命周期调用指定lua文件的相关函数，并通过`Inspector`中的配置，注入所需的(依赖的)脚本。
+
+参考[Demo2](https://github.com/Tencent/xLua/tree/master/Assets/XLua/Examples/02_U3DScripting)，可以通过设定`LuaBehaviour`，按照`Behaviour`生命周期调用指定lua文件的相关函数，并定义`Inspector`，通过其中的配置，注入所需的(依赖的)对象。其中的关键操作为：
+- 获取`LuaEnv`（教程的写法是共用一个`LuaEnv`，是为了避免lua多次载入CS下命名空间的开销吗？）
+- 以`TextAsset`的形式载入脚本文件，使用`DoString`方法将脚本载入到一个`LuaTable`中，避免命名冲突
+- 在`LuaTable`中使用`Set`方法设置所需的(依赖的)对象
+- 在`LuaTable`中使用`Get`方法获取脚本中的函数，类型为C#的`Action`
+- 在生命周期中调用上一步获取的lua函数
+
+上述例子实现了C#调用Lua(start, update等生命周期函数)，和Lua调用C#(操作注入的对象)
 
 #### Q3: 如何产生Lua端的代码提示？
 
