@@ -35,3 +35,5 @@ WIP
 ## 参考
 - [Unity资源管理方案 Addressable详解 - changyun的文章 - 知乎](https://zhuanlan.zhihu.com/p/635796583)
 - [Unity资源管理系列：Unity Addressable资源管理实战 - 鲨鱼辣椒的文章 - 知乎](https://zhuanlan.zhihu.com/p/541893117)
+- [AssetBundle - Unity Doc](https://docs.unity3d.com/cn/current/Manual/AssetBundlesIntro.html)
+- [Addressables Manual - Unity Doc](https://docs.unity3d.com/Packages/com.unity.addressables@1.20/manual/index.html)
