@@ -12,7 +12,6 @@ Lua是一种解释性语言，意味着和我们学习过的常用编程语言�
 > 他和同为解释性语言的Python倒是有很多相似的地方（连开发时间都很接近呢）。
 
 
-
 ## (我)为什么学习lua？
 
 Lua作为一种胶水语言，在游戏热更新中普遍使用。但看了[几种不同的热更新方案](../GameBuild/Mod&Hotfix)，我最不想用的就是lua（喜欢我动态类型吗），不过鉴于它在游戏开发的活跃程度，还是得学。
@@ -83,3 +82,5 @@ luaenv.Dispose();
 
 ## 参考
 - [Lua程序设计 第四版 - Roberto](https://www.lua.org/pil/)
+- [Lua是一门怎样的语言 - 花桑的博客](https://www.drflower.top/posts/b6dbb21b/)
+- lua实现研究，还没来及看：[Lua5.0原理探究 - 烟雨迷离半世殇的博客](https://www.lfzxb.top/the-theory-of-lua-5-0/)
