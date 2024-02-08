@@ -2,7 +2,7 @@
 
 # 技能系统
 
-技能系统的目的是为了减少后续开发难度，和**热更新**的可能，采用数据驱动方法设计。要求在一开始时就考虑到各种效果的表现方式。并使用继承、封装等编程思想建立统一标准。
+技能系统的目的是为了减少后续开发难度，和**热更新**的可能，采用数据驱动方法设计，再结合外部代码更新方案。要求在一开始时就考虑到各种效果的表现方式。并使用继承、封装等编程思想建立统一标准。
 
 ## 如何设计技能系统
 
@@ -21,6 +21,8 @@
 :::
 
 ## 详细案例
+
+本小节将描述一个技能系统的迭代过程，从一个技能一个类，到数据驱动设计，再到有条理的数据驱动设计，最后结合热更新提供对特定逻辑的支持。
 
 ### 先介绍一个错误实现的例子
 
@@ -191,6 +193,9 @@ LuaTestSkill = function (go, caster_trans, aim_pos)
         end))
 end
 ```
+
+- [lua载入代码,xlua](https://github.com/Unarimit/my-topdown-shooting-game/blob/dev-with-xlua/Assets/Scripts/StartLogic/StartSceneStartup.cs)
+- 完整的[LuaTriggerSelector.cs](https://github.com/Unarimit/my-topdown-shooting-game/blob/dev-with-xlua/Assets/Scripts/CombatLogic/Skill/Selector/LuaTriggerSelector.cs)
 
 ## 总结
 
