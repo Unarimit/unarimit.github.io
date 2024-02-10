@@ -48,9 +48,9 @@ unity提供的简单控制角色的方法，属于物理系统的一部分，有
 
 > 另外他的碰撞检测好像不受与他碰撞的物体的rigidbody中检测方式的影响，一直是离散检测。在做射击检测时发现这个问题。
 
-## 网络传输
+## 网络传输延迟处理和命令模式
 
-WIP
+这是一个比较难的点 WIP
 
 ## 参考
 - [Character Control - Unity Doc](https://docs.unity3d.com/cn/current/Manual/character-control-section.html)
