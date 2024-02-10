@@ -47,7 +47,7 @@ module.exports = {
                     { title: "(游戏中的)设计模式", path: "/GameCodeDesign/DesignPattern" },
                     { title: "异步编程", path: "/GameCodeDesign/Asynchronous" },
                     { title: "多线程", path: "/GameCodeDesign/MultiThread" },
-                    { title: "[x]启动流程设计", path: "/GameCodeDesign/StartupProcedure"},
+                    { title: "启动流程设计", path: "/GameCodeDesign/StartupProcedure"},
                     { title: "[W]游戏上下文系统设计", path: "/GameCodeDesign/GameContextSystem" },
                     { title: "资源系统和服务", path: "/GameCodeDesign/ResourceSystem" },
                     { title: "[W]UI系统设计", path: "/GameCodeDesign/UISystem" },
