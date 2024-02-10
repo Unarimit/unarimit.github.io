@@ -6,12 +6,38 @@
 
 为了了解XLua的使用方式，首先要看XLua仓库下的的Demos，里面详细的介绍了在unity中常见的调用方式和热补丁等特性的配置方式。
 
+> 实际应用中发现lua中的基于表的继承之类的并不重要，反正也不能继承C#的类（但可以[实现接口](https://github.com/Tencent/xLua/blob/master/Assets/XLua/Examples/04_LuaObjectOrented/InvokeLua.cs)），为什么要写那么复杂的对象关系呢？
+
 ## 本地Lua逻辑
 
 > 相对热更新而言的，直接在本地载入txt写的lua文件`TextAsset`。
 
+通过`TestAsset`表示Lua脚本，`luaEnv.DoString`方法执行lua脚本。
+
+以下是一个通过lua脚本配置游戏数据的例子
+```csharp
+ private void luaLogicInject()
+{
+	var luaEnv = MyServices.LuaEnv; // 获取全局的lua环境，充分利用空间
+	// 为每个脚本设置一个独立的环境，可一定程度上防止脚本间全局变量、函数冲突
+	var scriptEnv = luaEnv.NewTable();
+	LuaTable meta = luaEnv.NewTable();
+	meta.Set("__index", luaEnv.Global);
+	scriptEnv.SetMetaTable(meta);
+	meta.Dispose();
+
+	// add injections
+	scriptEnv.Set("self", this);
+	scriptEnv.Set("_database", MyServices.Database);
+
+	// do Lua logic
+	luaEnv.DoString(luaScript.text, "StartupLua", scriptEnv);
+}
+```
 
 ## 热更新Lua逻辑
+
+WIP
 
 ## 配置`[LuaCallCSharp]`、`[CSharpCallLua]`等特性
 
