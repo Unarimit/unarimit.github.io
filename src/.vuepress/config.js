@@ -1,12 +1,12 @@
 import { viteBundler } from '@vuepress/bundler-vite'
-import { defaultTheme } from '@vuepress/theme-default'
+import { hopeTheme } from "vuepress-theme-hope"
 import { defineUserConfig } from 'vuepress'
 
 export default defineUserConfig({
   bundler: viteBundler(),
   title: '我要成为U3D高手',
   description: '个人网站',
-  theme: defaultTheme({
+  theme: hopeTheme({
       nav: [
           { text: '首页', link: '/' },
           { text: 'Github', link: 'https://github.com/unarimit' }

@@ -1,17 +1,19 @@
 {
-  "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.0",
-    "@vuepress/theme-default": "2.0.0-rc.0",
-    "vuepress": "2.0.0-rc.0"
-  },
+  "name": "vuepress-theme-hope-template",
+  "version": "2.0.0",
+  "description": "A project of vuepress-theme-hope",
+  "license": "MIT",
+  "type": "module",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress-vite build src",
+    "docs:clean-dev": "vuepress-vite dev src --clean-cache",
+    "docs:dev": "vuepress-vite dev src",
+    "docs:update-package": "pnpm dlx vp-update"
   },
-  "name": "unarimit.github.io",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/Unarimit/unarimit.github.io.git",
-  "author": "Unarimit <1798907875@qq.com>",
-  "license": "MIT"
+  "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-rc.7",
+    "vue": "^3.4.15",
+    "vuepress": "2.0.0-rc.7",
+    "vuepress-theme-hope": "2.0.0-rc.23"
+  }
 }
