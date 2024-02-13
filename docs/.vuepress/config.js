@@ -1,142 +1,147 @@
-module.exports = {
-    title: '我要成为U3D高手',
-    description: '个人网站',
-    themeConfig: {
-        nav: [
-            { text: '首页', link: '/' },
-            { text: 'Github', link: 'https://github.com/unarimit' }
-        ],
-        sidebar: [
-            {
-                title: '作品',
-                path: '/Projects/Index',
-                collapsable: false, 
-                children: [
-                    { title: "[W]上帝视角射击游戏", path: "/Projects/TopShooting" },
-                    { title: "[W]个人主页-我要成为U3D高手", path: "/Projects/ToBecomeU3dMaster" },
-                ]
-            },
-            {
-                title: 'Unity组件',
-                path: '/UnityComponent/Index',
-                collapsable: true,
-                children: [
-                    { title: "摄像机", path: "/UnityComponent/Camera" },
-                    { title: "生命周期", path: "/UnityComponent/Lifetime" },
-                    { title: "InputSystem", path: "/UnityComponent/Inputsystem" },
-                    { title: "[W]角色控制", path: "/UnityComponent/CharacterController" },
-                    { title: "[W]Animator", path: "/UnityComponent/Animator" },
-                    { title: "[W]碰撞箱", path: "/UnityComponent/BoxCollider" },
-                    { title: "[W]资源管理", path: "/UnityComponent/Resource" },
-                    { title: "UGUI", path: "/UnityComponent/UGUI" },
-                    { title: "TextMeshPro", path: "/UnityComponent/TextMeshPro" },
-                    { title: "[W]常用Transform", path: "/UnityComponent/Transform" },
-                    { title: "[W]音频系统", path: "/UnityComponent/AudioSystem" },
-                    { title: "[W]UnityObject", path: "/UnityComponent/UnityObject" },
-                    { title: "自定义Editor", path: "/UnityComponent/CustomEditor" },
-                    { title: "数据持久化", path: "/UnityComponent/DataPersistence" },
-                    { title: "TimeLine", path: "/UnityComponent/TimeLine" },
-                ]
-            },
-            {
-                title: '代码设计',
-                path: '/GameCodeDesign/Index',
-                collapsable: true,
-                children: [
-                    { title: "[W]常用规范", path: "/GameCodeDesign/CommonlySpec" },
-                    { title: "(游戏中的)设计模式", path: "/GameCodeDesign/DesignPattern" },
-                    { title: "异步编程", path: "/GameCodeDesign/Asynchronous" },
-                    { title: "多线程", path: "/GameCodeDesign/MultiThread" },
-                    { title: "启动流程设计", path: "/GameCodeDesign/StartupProcedure"},
-                    { title: "[W]游戏上下文系统设计", path: "/GameCodeDesign/GameContextSystem" },
-                    { title: "资源系统和服务", path: "/GameCodeDesign/ResourceSystem" },
-                    { title: "[W]UI系统设计", path: "/GameCodeDesign/UISystem" },
-                    { title: "技能系统设计", path: "/GameCodeDesign/AbilitySystem" },
-                    { title: "[W]环境交互", path: "/GameCodeDesign/Interaction" },
-                    { title: "人机切换", path: "/GameCodeDesign/HumanAgentSwitch" },
-                    { title: "RTS相机", path: "/GameCodeDesign/RTSCamera" },
-                    { title: "事件系统", path: "/GameCodeDesign/EventSystem" },
-                    { title: "[W]协同开发", path: "/GameCodeDesign/Coop" }
-                ]
-            },
-            {
-                title: '编译&运维相关',
-                path: '/GameBuild/Index',
-                collapsable: true,
-                children: [
-                    { title: "[W]编译", path: "/GameBuild/Compile" },
-                    { title: "[W]程序集", path: "/GameBuild/Assembly" },
-                    { title: "热更新", path: "/GameBuild/Mod&Hotfix" },
-                    { title: "[W]GC机制", path: "/GameBuild/GC" },
-                ]
-            },
-            {
-                title: 'AI (NPC&人机&Boot)',
-                path: '/AI/index',
-                collapsable: true,
-                children: [
-                    { title: "寻路", path: "/AI/Navigation" },
-                    { title: "[W]状态机", path: "/AI/StateMachine" },
-                    { title: "[W]GOAP", path: "/AI/GOAP" },
-                    //{ title: "[W]行为树", path: "/AI/BehaviorTree" },
-                    { title: "[W]常见AI设计", path: "/AI/AIDesign" },
-                ]
-            },
-            {
-                title: 'Lua学习笔记',
-                path: '/Lua/Index',
-                collapsable: true, 
-                children: [
-                    { title: "[w]常用语法", path: "/Lua/Grammar" },
-                    { title: "表-关键数据结构", path: "/Lua/Table" },
-                    { title: "[x]lua中的面向对象", path: "/Lua/OOPInLua" },
-                    { title: "[w]使用XLua", path: "/Lua/UseXLua" },
-                ]
-            },
-            {
-                title: '代码杂谈',
-                path: '/CodingRamble/Index',
-                collapsable: true, 
-                children: [
-                    { title: "记Leetcode第373次周赛", path: "/CodingRamble/LeetcodeWeekContest373" },
-                    { title: "小地图组件使用感想", path:"/CodingRamble/MinimapRamble"},
-                    { title: "记一次场景搭建", path:"/CodingRamble/ASceneStructure"},
-                    { title: "记一次人物模型的运行时配置", path:"/CodingRamble/HumanModelRuntimeConfig"},
-                    { title: "记初次使用行为树插件", path:"/CodingRamble/UseBehaviorDesigner"},
-                    { title: "[x]学习一下Unity的TD模板", path:"/CodingRamble/TowerDefenceTemplate"},
-                ]
-            },
-            {
-                title: '模型和渲染',
-                path: '/Shading/index',
-                collapsable: true,
-                children: [
-                    { title: "[x]Shader和渲染", path: "/WIP" },
-                    { title: "URP渲染管线", path: "/Shading/URP_Pipeline" },
-                    { title: "[W]Blender", path: "/Shading/Blender" },
-                    { title: "[W]模型", path: "/Shading/Modeling" },
-                    { title: "渲染风格和手段", path: "/Shading/StyleAndMethod" }, // title 需要修改
-                    { title: "NPR", path: "/Shading/NPR" },
-                    { title: "[x]特效和粒子系统", path: "/WIP" },
-                    { title: "[x]优化策略", path: "/WIP" }
-                ]
-            },
-            {
-                title: '计算机图形学',
-                path: '/ComputerGraphics/Index',
-                collapsable: true, 
-                children: [
-                    { title: "[x]四元数", path: "/WIP" },
-                ]
-            },
-            {
-                title: 'Gameplay', // TODO：因为还不够完善，暂且先排在后面
-                path: '/Gameplay/Index',
-                collapsable: true, 
-                children: [
-                    { title: "[x]占位符", path: "/WIP" }, // 不加过不了build
-                ]
-            }
-        ]
-    },
-}
+import { viteBundler } from '@vuepress/bundler-vite'
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress'
+
+export default defineUserConfig({
+  bundler: viteBundler(),
+  title: '我要成为U3D高手',
+  description: '个人网站',
+  theme: defaultTheme({
+      nav: [
+          { text: '首页', link: '/' },
+          { text: 'Github', link: 'https://github.com/unarimit' }
+      ],
+      sidebar: [
+          {
+              text: '作品',
+              link: '/Projects/index.html',
+              collapsible: false, 
+              children: [
+                  { text: "[W]上帝视角射击游戏", link: "/Projects/TopShooting" },
+                  { text: "[W]个人主页-我要成为U3D高手", link: "/Projects/ToBecomeU3dMaster" },
+              ]
+          },
+          {
+              text: 'Unity组件',
+              link: '/UnityComponent/index.html',
+              collapsible: true,
+              children: [
+                  { text: "摄像机", link: "/UnityComponent/Camera" },
+                  { text: "生命周期", link: "/UnityComponent/Lifetime" },
+                  { text: "InputSystem", link: "/UnityComponent/Inputsystem" },
+                  { text: "[W]角色控制", link: "/UnityComponent/CharacterController" },
+                  { text: "[W]Animator", link: "/UnityComponent/Animator" },
+                  { text: "[W]碰撞箱", link: "/UnityComponent/BoxCollider" },
+                  { text: "[W]资源管理", link: "/UnityComponent/Resource" },
+                  { text: "UGUI", link: "/UnityComponent/UGUI" },
+                  { text: "TextMeshPro", link: "/UnityComponent/TextMeshPro" },
+                  { text: "[W]常用Transform", link: "/UnityComponent/Transform" },
+                  { text: "[W]音频系统", link: "/UnityComponent/AudioSystem" },
+                  { text: "[W]UnityObject", link: "/UnityComponent/UnityObject" },
+                  { text: "自定义Editor", link: "/UnityComponent/CustomEditor" },
+                  { text: "数据持久化", link: "/UnityComponent/DataPersistence" },
+                  { text: "TimeLine", link: "/UnityComponent/TimeLine" },
+              ]
+          },
+          {
+              text: '代码设计',
+              link: '/GameCodeDesign/index.html',
+              collapsible: true,
+              children: [
+                  { text: "[W]常用规范", link: "/GameCodeDesign/CommonlySpec" },
+                  { text: "(游戏中的)设计模式", link: "/GameCodeDesign/DesignPattern" },
+                  { text: "异步编程", link: "/GameCodeDesign/Asynchronous" },
+                  { text: "多线程", link: "/GameCodeDesign/MultiThread" },
+                  { text: "启动流程设计", link: "/GameCodeDesign/StartupProcedure"},
+                  { text: "[W]游戏上下文系统设计", link: "/GameCodeDesign/GameContextSystem" },
+                  { text: "资源系统和服务", link: "/GameCodeDesign/ResourceSystem" },
+                  { text: "[W]UI系统设计", link: "/GameCodeDesign/UISystem" },
+                  { text: "技能系统设计", link: "/GameCodeDesign/AbilitySystem" },
+                  { text: "[W]环境交互", link: "/GameCodeDesign/Interaction" },
+                  { text: "人机切换", link: "/GameCodeDesign/HumanAgentSwitch" },
+                  { text: "RTS相机", link: "/GameCodeDesign/RTSCamera" },
+                  { text: "事件系统", link: "/GameCodeDesign/EventSystem" },
+                  { text: "[W]协同开发", link: "/GameCodeDesign/Coop" }
+              ]
+          },
+          {
+              text: '编译&运维相关',
+              link: '/GameBuild/index.html',
+              collapsible: true,
+              children: [
+                  { text: "[W]编译", link: "/GameBuild/Compile" },
+                  { text: "[W]程序集", link: "/GameBuild/Assembly" },
+                  { text: "热更新", link: "/GameBuild/Mod&Hotfix" },
+                  { text: "[W]GC机制", link: "/GameBuild/GC" },
+              ]
+          },
+          {
+              text: 'AI (NPC&人机&Boot)',
+              link: '/AI/index.html',
+              collapsible: true,
+              children: [
+                  { text: "寻路", link: "/AI/Navigation" },
+                  { text: "[W]状态机", link: "/AI/StateMachine" },
+                  { text: "[W]GOAP", link: "/AI/GOAP" },
+                  //{ text: "[W]行为树", link: "/AI/BehaviorTree" },
+                  { text: "[W]常见AI设计", link: "/AI/AIDesign" },
+              ]
+          },
+          {
+              text: 'Lua学习笔记',
+              link: '/Lua/index.html',
+              collapsible: true, 
+              children: [
+                  { text: "[w]常用语法", link: "/Lua/Grammar" },
+                  { text: "表-关键数据结构", link: "/Lua/Table" },
+                  { text: "[x]lua中的面向对象", link: "/Lua/OOPInLua" },
+                  { text: "[w]使用XLua", link: "/Lua/UseXLua" },
+              ]
+          },
+          {
+              text: '代码杂谈',
+              link: '/CodingRamble/index.html',
+              collapsible: true, 
+              children: [
+                  { text: "记Leetcode第373次周赛", link: "/CodingRamble/LeetcodeWeekContest373" },
+                  { text: "小地图组件使用感想", link:"/CodingRamble/MinimapRamble"},
+                  { text: "记一次场景搭建", link:"/CodingRamble/ASceneStructure"},
+                  { text: "记一次人物模型的运行时配置", link:"/CodingRamble/HumanModelRuntimeConfig"},
+                  { text: "记初次使用行为树插件", link:"/CodingRamble/UseBehaviorDesigner"},
+                  { text: "[x]学习一下Unity的TD模板", link:"/CodingRamble/TowerDefenceTemplate"},
+              ]
+          },
+          {
+              text: '模型和渲染',
+              link: '/Shading/index.html',
+              collapsible: true,
+              children: [
+                  { text: "[x]Shader和渲染", link: "/WIP" },
+                  { text: "URP渲染管线", link: "/Shading/URP_Pipeline" },
+                  { text: "[W]Blender", link: "/Shading/Blender" },
+                  { text: "[W]模型", link: "/Shading/Modeling" },
+                  { text: "渲染风格和手段", link: "/Shading/StyleAndMethod" }, // text 需要修改
+                  { text: "NPR", link: "/Shading/NPR" },
+                  { text: "[x]特效和粒子系统", link: "/WIP" },
+                  { text: "[x]优化策略", link: "/WIP" }
+              ]
+          },
+          {
+              text: '计算机图形学',
+              link: '/ComputerGraphics/index.html',
+              collapsible: true, 
+              children: [
+                  { text: "[x]四元数", link: "/WIP.html" },
+              ]
+          },
+          {
+              text: 'Gameplay', // TODO：因为还不够完善，暂且先排在后面
+              link: '/Gameplay/index.html',
+              collapsible: true, 
+              children: [
+                  { text: "[x]占位符", link: "/WIP" }, // 不加过不了build
+              ]
+          }
+      ]
+  },
+)})
