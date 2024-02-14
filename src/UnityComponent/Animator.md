@@ -1,4 +1,4 @@
-# 动画机
+# 动画机(Animator)
 
 本章包括：
 - `Animator组件`介绍（Animator Component）

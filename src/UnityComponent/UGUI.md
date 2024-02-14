@@ -1,4 +1,4 @@
-# UGUI(功能实现)
+# UGUI(api功能部分)
 
 需要在场景添加eventsystem组件，一般会在创建ui组件时自动添加。使用inputsystem时需要简单设置一下。
 
