@@ -2,9 +2,12 @@
 
 个人主页记录了我的学习过程和学习成果，写文章是为了回顾学会或看到的知识，而且公开的方式也更能督促自己完善一些概念。
 
+开发使用VuePress V2和hope theme作为框架，以文档形式组织内容。
+
 > “我要成为U3D高手”这一副标题取自2023年8、9月份的时候看到的（流行的）很有趣的标题“我要成为xxx(x)高手”
 
 由于自己写作水平和知识储备都处于初学者阶段，故考虑规范化文章整体内容和逻辑，减少“原创”内容（指没有参考，凭经验信口开来的内容），多总结别人的观点（尤其是对一种技术或方案的说明）。
+
 
 ## 规范化
 
@@ -44,3 +47,7 @@
 
 
 ## 参考
+
+vue press api
+- [hope主题集成的api说明 - official](https://theme-hope.vuejs.press/zh/get-started/)
+- [VuePress V2 - official](https://vuejs.press/zh/guide/introduction.html)

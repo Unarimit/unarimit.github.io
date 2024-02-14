@@ -1,6 +1,6 @@
 # 个人项目展示页面 | Personal Page for project display
 
-使用vue-press v1构建的个人主页，规划和总结“U3D客户端开发”的学习。
+使用vue-press v2和hope theme构建的个人主页，规划和总结“U3D客户端开发”的学习。
 
 ## 参考 | Reference
 https://vuepress.vuejs.org/zh/guide/#%E5%AE%83%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84

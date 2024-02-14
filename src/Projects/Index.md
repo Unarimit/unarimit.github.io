@@ -25,7 +25,7 @@
 
 个人主页记录了我的学习过程和学习成果，写文章是为了回顾学会或看到的知识，而且公开的方式也更能督促自己完善一些概念。为了使文章更有条理，总结了一套书写模式。
 
-开发环境和使用工具：VuePress V1，VS Code，Git
+开发环境和使用工具：VuePress V2，VS Code，Git
 
 项目开源到[GitHub](https://github.com/Unarimit/unarimit.github.io)
 
