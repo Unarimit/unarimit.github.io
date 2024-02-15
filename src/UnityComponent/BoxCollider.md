@@ -61,9 +61,20 @@ Rigidbody组件是Unity中用于模拟物体物理行为的组件之一。它可
 
 :::
 
-## 数学检测
+## 实现原理和使用须知
 
-例：圆形影响区域+遍历受影响对象
+Unity作为一个成熟的游戏引擎，配置正确的Layer可以使碰撞运算的性能达到state of art，除非有一些特殊的需求（例如多线程模拟人物骨骼，或一个简化的检测系统等），一般都可以用碰撞箱做范围检测。
+
+例如：
+- 在射击游戏内检测子弹是否命中敌人（如果出于一些原因勾选`IsTrigger`导致rigidbody的`ContinueDetection`不能生效，可能需要自行处理运动过快导致的碰撞未触发问题）
+- 在塔防游戏内检测敌人是否在攻击范围
+- 在rpg中检测可交互物体是否在交互范围
+- 等等
+
+需要注意的是，尽量使用Unity提供的基础碰撞体（Box，Sphere，Capsule等），避免MeshCollider的使用。
+
+关于其原理，检测部分应该涉及空间分割算法和包围盒等优化；物体计算方面比较复杂，一般使用外部的物理模拟库实现。
+> 补充更多内容和参考文章，如服务端计算、空间算法等 WIP
 
 ## 参考
 [Colliders - Unity Official Tutorials - Youtube](https://www.youtube.com/watch?v=bh9ArKrPY8w)

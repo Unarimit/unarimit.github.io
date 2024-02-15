@@ -155,7 +155,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
 
 双缓存模式主要用于GPU的渲染，单缓存可能会出现GPU读到脏数据的情况。
 
-另外也可以用作帧同步（每帧的执行结果不受MonoBehavior顺序的影响），通过给每个状态设置：
+另外也可以用作帧同步（每帧的执行结果不受MonoBehavior生命周期函数执行顺序的影响），通过给每个状态设置：
 ```cs
 {
     T current_state;
@@ -222,9 +222,7 @@ WIP，需要更多实践以拓展内容
 
 > GPP：“允许一个单一的实体跨越多个不同的域而不会导致耦合。”
 
-Unity框架的核心`GameObject`完全围绕组件模式来设计。
-
-如同transform在继承了Monobehaviour的类中都可以访问到，开发者也可以设计类似的管理`GameObject`所有组件的类，相比直接`GetComponent()`，通过管理类应该更能明确调用关系。
+Unity框架的核心`GameObject`完全围绕组件模式来设计。如同transform在继承了Monobehaviour的类中都可以访问到，开发者也可以设计类似的管理`GameObject`所有组件的类，相比直接`GetComponent()`，通过管理类应该更能明确调用关系(如下方所示的代码，通过`GetComponent<OperatorManager>().xxx`调用，更能看出引用关系)。
 
 ```csharp
 // 战斗单位管理类
@@ -240,10 +238,10 @@ public class OperatorManager : MonoBehaviour{
 > 一个属于某个对象的组件，由于其“属于某个对象”的特点，必然会产生关联的逻辑。
 
 可以从以下角度解决组件之间的通讯问题：
-1. 容器对象Model
-    - 如Unity中的transform可以看作一个特殊的Model
+1. 显式管理物体上挂载的组件
+    - 如上述`OperatorManager`中的代码。
 2. 直接关联
-    - 如AI逻辑控制脚本和`NavMeshAgent`，需要主动调用`NavMeshAgent`的寻路方法
+    - 如AI控制组件和`NavMeshAgent`，需要主动调用`NavMeshAgent`的寻路方法。但其他组件不应该调用`NavMeshAgent`的方法，`NavMeshAgent`的引用应该被AI控制组件设为私有。（`NavMeshAgent`是Unity中的AI寻路组件）
 3. 事件广播
     - 如Inputsystem的`PlayerInput`组件，会向挂载的GameObject的全部组件广播事件
 
