@@ -1,6 +1,6 @@
-<img  width="100%" src="./../img/gameplay.png" />
-
 # Gameplay
+
+<img  width="100%" src="./../img/gameplay.png" />
 
 这是一个前导性质（看看别人游戏怎么做的）的篇章，不涉及代码和具体技术。可能发表一些游玩其他游戏时的感想之类的，并探讨一些功能是如何实现的（仅从理论方面）。
 

@@ -1,6 +1,6 @@
-<img src="../img/minimap.png">
-
 # 小地图组件使用感想
+
+<img src="../img/minimap.png">
 
 最近使用`UGUI Minimap`插件实现游戏中的`小地图`和`战略地图`功能，记录下使用他的感想。
 - `小地图`: 展示玩家操控角色附近的物体和地形。

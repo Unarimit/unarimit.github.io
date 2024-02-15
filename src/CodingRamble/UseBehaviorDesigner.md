@@ -1,6 +1,6 @@
-<img src='../img/UseBehaviorDesigner-0.png'>
-
 # 记初次使用行为树插件-Behavior Designer
+
+<img src='../img/UseBehaviorDesigner-0.png'>
 
 最近在尝试AI模块的开发，小记一下
 > 可以先提前学习一下行为树的理论知识，推荐这篇文章：[游戏AI行为决策——行为树 - cnblog](https://www.cnblogs.com/OwlCat/p/17871494.html)

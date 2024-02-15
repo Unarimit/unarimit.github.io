@@ -1,6 +1,6 @@
-<img src="../img/codeRamble-0.png">
-
 # 代码杂谈
+
+<img src="../img/codeRamble-0.png">
 
 这里会随心所欲的分享一些写代码时的分享
 

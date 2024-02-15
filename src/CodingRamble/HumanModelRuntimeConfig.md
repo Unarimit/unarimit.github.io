@@ -1,6 +1,6 @@
-<img src="../img/runtimeModelConfig-0.gif">
-
 # 记一次人物模型的运行时配置
+
+<img src="../img/runtimeModelConfig-0.gif">
 
 ::: warning
 所使用资源来自网络，可能会引起各种版权问题，仅做学习交流使用。如文中有侵犯权益的行为，请联系Github中的邮箱，我将于24小时之内删除。

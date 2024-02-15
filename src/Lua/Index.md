@@ -1,6 +1,6 @@
-<img src='../img/lua-0.png'>
-
 # Lua学习笔记
+
+<img src='../img/lua-0.png'>
 
 ::: tip
 由于我有一些C#开发经验和其他语言的轻度使用经验（C++、Python等），所以可能会默认读者也知道这些知识。

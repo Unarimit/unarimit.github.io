@@ -1,6 +1,7 @@
+# 代码设计
+
 <img src="../img/code-design.png">
 
-# 代码设计
 ::: tip
 “优雅，永不过时”
 :::

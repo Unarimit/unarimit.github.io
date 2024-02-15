@@ -1,6 +1,6 @@
-<img src="../img/camera-0.png">
-
 # 摄像机
+
+<img src="../img/camera-0.png">
 
 摄像机作为游戏制作的3C之一，... 后面忘了
 
