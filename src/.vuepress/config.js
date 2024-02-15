@@ -139,6 +139,7 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/ComputerGraphics/index.html" },
+                    { text: "栅格化", link: "/ComputerGraphics/Rasterization" },
                     { text: "[x]四元数", link: "/WIP.html" },
                 ]
             },
