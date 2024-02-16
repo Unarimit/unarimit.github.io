@@ -1,11 +1,15 @@
-<img src='../img/rasterization-0.png'>
+# 光栅化 Rasterization
 
-# 光栅化
+<img src='../img/rasterization-0.png'>
 
 光栅化指将图形对象转换为图像的过程，一个狭义点的例子是在屏幕坐标上根据信息绘制三角形。
 
 是将模型映射到屏幕上的过程之一
 > 坐标变换 -> (三角面)顶点映射 -> 光栅化
+
+图：光栅化之前的步骤
+
+<img width="500" src='../img/rasterization-3.png'>
 
 
 ## 光栅化的过程和问题

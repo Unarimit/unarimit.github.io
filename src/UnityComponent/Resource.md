@@ -50,6 +50,7 @@ Resource的工作流程分为两个个步骤：
 
 ## Addressable
 
+https://docs.unity3d.com/cn/current/Manual/AssetBundlesIntro.html 有一些图，挺好的
 WIP
 
 ## 参考
