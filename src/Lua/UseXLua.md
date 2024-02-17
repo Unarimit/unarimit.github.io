@@ -37,6 +37,8 @@
 
 ## 热更新Lua逻辑
 
+需要利用AssetBundle和相应策略，暂时搁置一下。
+
 WIP
 
 ## 配置`[LuaCallCSharp]`、`[CSharpCallLua]`等特性

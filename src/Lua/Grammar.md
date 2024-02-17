@@ -2,6 +2,8 @@
 
 汇总了开发常用的语法，并对比了和其他语言(C++, C#)的区别。
 
+> "解释型语言的区分并不在于源码是否被编译，而在于是否有能力（且轻易的）执行动态生成的代码"
+
 ## 烦人的特性
 
 > 和其他语言(C++, C#)不同的地方
@@ -67,6 +69,32 @@ end
 - `..`: 链接两个字符串 `print("ab".."cd") --> abcd` 
 - 注释使用`--`(单行)和`--[[ line,line  ]]--`(多行)
     - `--[=[]=]`
+
+
+## 分号的必要性
+
+> lua的分号是可有可无的
+
+我在尝试匿名函数的调用时发现了一个“有趣”的bug
+
+```lua
+function a()
+    print("ok")
+end
+a() -- 在后面加上分号就好了
+
+(function ()
+    print("233")
+end)()
+```
+
+它的执行结果是`.\test.lua:4: attempt to call a nil value stack traceback:`，很显然它识别错了语法，尝试调用`a()()`。
+
+## 异常处理家族
+
+- `error()`: 类似 throw ex
+- `assert()`：一种封装了判断功能的 throw ex
+- `pcall()`: 实现try-catch结构
 
 ## 参考
 - [Lua程序设计 第四版 - Roberto](https://www.lua.org/pil/)
