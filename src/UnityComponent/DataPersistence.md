@@ -21,6 +21,19 @@ Application中定义了5个Path，我认为两个Path比较常用，分别是`Ap
 
 ### 简要介绍一下序列化问题
 
+::: warning 注意
+
+以下序列化使用传统的`BinaryFormatter`类去做，它是由`[Serializable]`特性控制哪些类可以被序列化，用`[NonSerialized]`控制哪些成员是不需被序列化的，所有成员在类被标记为`[Serializable]`时，都可以被序列化（属性会序列化其背后的`Field`，事件会序列化对应的委托类(他的名字)和里面存储的监听对象(使用时要谨慎)）。
+
+还有一些序列化类如`JsonSerializer`，则使用另一套特性去控制序列化，并有一些潜在规则（例如默认忽略`Field`）。
+
+`BinaryFormatter`在[.Net文档](https://learn.microsoft.com/zh-cn/dotnet/standard/serialization/binaryformatter-security-guide)被标记为obsolete，需要在使用它时好好考虑。
+
+另外除了传统二进制序列化（通过`BinaryFormatter`）和Json序列化（通过`JsonSerializer`）之外，还有ProtoBuf等方案，它们有各式各样的用途（ProtoBuf主要解决序列化的压缩问题，使其更有效率）。
+
+:::
+
+
 理论上，只要给序列化的类，和他里面包含的`field`的定义类(class和struct)都加上`[Serializable]`特性即可，另外对于一些不想被序列化的`field`加上`[NonSerialized]`特性，对于不想被序列化的事件，需要加上`[field: NonSerialized]`。
 > 委托和枚举类型都是默认带`[Serializable]`特性的，而struct和class不是。一般没有人想序列化事件吧，对象图中的事件还牵扯一堆订阅类。
 

@@ -141,7 +141,6 @@ export default defineUserConfig({
                     { text: "总览", link: "/ComputerGraphics/index.html" },
                     { text: "栅格化", link: "/ComputerGraphics/Rasterization" },
                     { text: "着色", link: "/ComputerGraphics/Shading" },
-                    { text: "[x]四元数", link: "/WIP.html" },
                 ]
             },
             {
