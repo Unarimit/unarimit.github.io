@@ -141,7 +141,8 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/ComputerGraphics/index.html" },
-                    { text: "栅格化", link: "/ComputerGraphics/Rasterization" },
+                    { text: "坐标变换", link: "/ComputerGraphics/Transformation" },
+                    { text: "光栅化", link: "/ComputerGraphics/Rasterization" },
                     { text: "着色", link: "/ComputerGraphics/Shading" },
                 ]
             },
