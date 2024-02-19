@@ -110,6 +110,7 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/CodingRamble/index.html" },
+                    { text: "问题清单", link: "/CodingRamble/QuestionList.md" },
                     { text: "记Leetcode第373次周赛", link: "/CodingRamble/LeetcodeWeekContest373" },
                     { text: "小地图组件使用感想", link: "/CodingRamble/MinimapRamble" },
                     { text: "记一次场景搭建", link: "/CodingRamble/ASceneStructure" },

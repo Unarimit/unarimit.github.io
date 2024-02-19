@@ -17,27 +17,23 @@
     - 如：RTS相机，RPG中的换手等。
 - Unity里的异步、多线程和协同开发
 
-## 问题
+## 如何做出更好的设计？
 
-下列是我在游戏卡发中遇到的一些问题，做归档和回顾使用
+总之就是先看看别人是怎么做的。
 
-### 设计层面
+### 学习基础的设计思想
 
-1. controller在oop中的作用，是否需要额外的model数据类？
-2. 在editor中测试，经常出现数据还没加载好就被访问的情况，如何改善？
-> 将初始化脚本执行顺序调高，见[同一函数的更新顺序](../UnityComponent/Lifetime.html#同一函数的更新顺序)
+如MVC，MVVM等软件架构，DDD等设计方法。
 
-3. 统一管理类创造原型（实例化prefab） vs 原型Controller静态方法创造原型，哪个更好？（更利于理解游戏逻辑）
+### 分析一些完成度高的游戏
 
-### 性能层面
+WIP
 
-1. update中遍历cnt100的数组和碰撞检测哪个更性能友好？
-    - 分片算法的优化程度
+### 从一些框架出发
+- QFramework, GameFramework
+- *ECS：面向数据，Cache友好的设计（这是个特例）
 
-### 插件使用
 
-1. DOTween的`DelayCall`和`OnComplete`中报错，只会记录调用某个函数发生错误，不会深入函数中，影响debug。（尝试复现的时候没有发现此现象，可能是我记错了？）
-> 可以仅在委托中改变控制变量，利用委托等方式绕开DOTween的调用栈。或在一些独立的模块的开发过程中，先执行以下试试。
 
 ## 参考
 - [Game Programming Patterns](https://gameprogrammingpatterns.com/)

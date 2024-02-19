@@ -1,6 +1,8 @@
 # Unity组件
 
-可以简单看看gpt老师对Unity组件的总结
+这里总结了我对Unity常用内置组件的学习，主要方式是看API文档再结合实践。在每种组件的介绍中都至少附带一个实例，也代表着这部分的内容主要以实践为主。如果想要理解其背后的理论知识，可以参考《游戏引擎架构》这本书。
+
+如果是初学者，可以简单看看gpt老师对Unity组件的总结：
 
 ::: tip gpt:
 当涉及到Unity中提供的方便的API和组件时，有很多可以谈论的内容。以下是一些常用的API和组件的简要介绍：
@@ -28,3 +30,4 @@ Unity提供了一系列api让我们处理3d世界的显示和交互，对这些a
 ## 参考
 - [Unity User Manual 2021.3 (LTS) 中文](https://docs.unity3d.com/cn/current/Manual/index.html)
 - [Advanced best practice guides - Unity Doc](https://docs.unity3d.com/Manual/best-practice-guides.html)
+- [游戏引擎架构（第2版）- 【美】Jason Gregory](https://book.douban.com/subject/34864920/)
