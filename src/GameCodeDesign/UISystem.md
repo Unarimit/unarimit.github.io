@@ -36,18 +36,21 @@ UI系统的设计需要考虑下列因素：
 如下图所示：
 
 <center> 
-<img src="../img/uisystem-5.png">
-</br>UIManager(Scriptable Object)
+<img width='400' src="../img/uisystem-5.png">
+
+UIManager(Scriptable Object)
 </center>
 </br>
 <center> 
-<img src="../img/uisystem-3.png">
-</br>Main(Component), Component = Button
+<img width='400'src="../img/uisystem-3.png">
+
+Main(Component), Component = Button
 </center>
 </br>
 <center> 
-<img src="../img/uisystem-4.png">
-</br>UIManager(Component), Component = Text
+<img width='400'src="../img/uisystem-4.png">
+
+UIManager(Component), Component = Text
 </center>
 
 这些组件的存在可以使主题的变更变得很轻松，在Main(Component)中，可以方便的做本地化，不觉得这很cool吗？

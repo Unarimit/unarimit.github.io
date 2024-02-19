@@ -55,7 +55,7 @@ export default defineUserConfig({
                     { text: "异步编程", link: "/GameCodeDesign/Asynchronous" },
                     { text: "多线程", link: "/GameCodeDesign/MultiThread" },
                     { text: "启动流程设计", link: "/GameCodeDesign/StartupProcedure" },
-                    { text: "[W]游戏上下文系统设计", link: "/GameCodeDesign/GameContextSystem" },
+                    { text: "游戏上下文设计", link: "/GameCodeDesign/GameContextSystem" },
                     { text: "资源系统和服务", link: "/GameCodeDesign/ResourceSystem" },
                     { text: "[W]UI系统设计", link: "/GameCodeDesign/UISystem" },
                     { text: "技能系统设计", link: "/GameCodeDesign/AbilitySystem" },
