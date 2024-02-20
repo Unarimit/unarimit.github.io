@@ -116,6 +116,7 @@ export default defineUserConfig({
                     { text: "记一次场景搭建", link: "/CodingRamble/ASceneStructure" },
                     { text: "记一次人物模型的运行时配置", link: "/CodingRamble/HumanModelRuntimeConfig" },
                     { text: "记初次使用行为树插件", link: "/CodingRamble/UseBehaviorDesigner" },
+                    { text: "初探碰撞系统", link: "/CodingRamble/CollisionSystem" },
                     { text: "[x]学习一下Unity的TD模板", link: "/CodingRamble/TowerDefenceTemplate" },
                 ]
             },
