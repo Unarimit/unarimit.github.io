@@ -66,7 +66,7 @@
 <center><img width='400' src='../img/collisionSystem-8.png'></center>
 <center><b>二维的</b>不相交例子</center>
 
-- 球体和（AABB或OBB）：方法可能不是很直观，这里仅列出伪代码，可以去[知乎的一篇翻译文章](https://zhuanlan.zhihu.com/p/405154230)中看解释
+- 球体和（AABB或OBB）：方法可能不是很直观，这里仅列出伪代码，可以去[知乎的一篇翻译文章](https://zhuanlan.zhihu.com/p/405154230)中看解释。对球体来说，AABB和OBB差别不大。
 
 <center><img width='600' src='../img/collisionSystem-9.jpg'></center>
 
@@ -106,7 +106,14 @@
 
 ## 碰撞查询
 
-如raycast，trigger
+游戏中，我们可能会需要查询下一时刻两个物体是否会发生碰撞。如射击检测，找出半径范围的敌人，汽车从A点移动至B点是否碰到障碍物等。具体到实现，可以分为：
+- 射线检测，返回物体的首次接触点。如unity的`RayCast`
+- 物体投射，范围形状的首次接触点。如unity的`SphereCast`
+- “幻影”碰撞器，可以理解为零距离形状投射，常用于判断碰撞体是否在范围内。如unity里collider的`IsTrigger`参数
+- 等等
+
+这类问题可以归纳为[几何查询（geometric query）问题](https://en.wikipedia.org/wiki/Computational_geometry#Geometric_query_problems)，也适用于上述的检测优化算法。另外，这些投射算法不会发生碰撞穿透问题。
+- 可以看看名为[“空间数据库”](https://en.wikipedia.org/wiki/Spatial_database)的解决方案
 
 ## 参考
 - [游戏引擎架构（第2版）- 【美】Jason Gregory](https://book.douban.com/subject/34864920/)
@@ -114,3 +121,5 @@
 - [22.13包围盒（Bounding-Volume）/包围盒相交 Justin - 知乎](https://zhuanlan.zhihu.com/p/405154230)
     - 对[《Real-Time Rendering, Fourth Edition - Tomas》](https://book.douban.com/subject/30296179/)的翻译
 - [Capsule Collision Detection - wicked engine](https://wickedengine.net/2020/04/26/capsule-collision-detection/)
+- [几何查询（geometric query） - wiki](https://en.wikipedia.org/wiki/Computational_geometry#Geometric_query_problems)
+- [空间数据库（Spatial Database） - wiki](https://en.wikipedia.org/wiki/Spatial_database)
