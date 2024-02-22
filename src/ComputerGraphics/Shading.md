@@ -46,7 +46,7 @@
 
 ::: tip 通过点乘判断向量是否接近
 
-a·b = sinθ|a||b|  // sin(0) = 1
+a·b = sinθ|a||b|  // 注：sin(0) = 1
 
 :::
 
@@ -81,11 +81,27 @@ a·b = sinθ|a||b|  // sin(0) = 1
 
 :::
 
+## uv采样
+
+通过uv（贴图转化的坐标系的两个轴，常常通过其进行指代）获取顶点或像素的颜色。
+
+uv、uv采样（中心坐标和深度）、uv的抗锯齿采样（如双线性插值）、uv过大时的处理（mipmap，产生1/3的额外存储空间）
+> 在过大的uv上进行采样，除非使用超大的超采样，否则会产生摩尔纹和锯齿
+
+mipmap进行连续范围查找的关键：又是插值
+
+<img width="500" src='../img/shading-8.png'>
+
+解决mipmap产生的over-blur，引入各向[异性过滤（Anisotropic Filtering）](https://en.wikipedia.org/wiki/Anisotropic_filtering)，解决垂直和水平拉伸的产生的采样问题，但存储开销变为原来的**三倍（随着2x,4x,8x的提高，收敛到三倍）**（主要依赖显存，运算开销不高）。
+- 没能解决其他角度的拉伸问题（如对角线方向拉伸），也有其他办法，但有更多的额外开销。。
+
 ## 未分类
 
 图：渲染发生在渲染管线的哪个step和可编程渲染管线（Shader）
 
 <img width="500" src='../img/shading-7.png'>
+
+
 
 ## 参考
 - [GAMES101-闫令琪-Shading Bilibili](https://www.bilibili.com/video/BV1X7411F744/?p=7)
