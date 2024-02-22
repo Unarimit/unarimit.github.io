@@ -100,7 +100,7 @@ export default defineUserConfig({
                     { text: "[w]常用语法", link: "/Lua/Grammar" },
                     { text: "表-关键数据结构", link: "/Lua/Table" },
                     { text: "动态性", link: "/Lua/Dynamic" },
-                    { text: "[x]lua中的面向对象", link: "/Lua/OOPInLua" },
+                    { text: "lua中的面向对象", link: "/Lua/OOPInLua" },
                     { text: "使用XLua", link: "/Lua/UseXLua" },
                 ]
             },
