@@ -16,14 +16,14 @@
 目前主要包含下列内容：
 - Unity 3D 开发常用的 API，即[Unity组件](./UnityComponent/index.md)部分
 - 游戏开发涉及的设计模式，即[代码设计](./GameCodeDesign/index.md)部分
-- 程序编译和编译后的维护方案（如热更新），即[编译&运维](./GameBuild/index.md)部分
-- 游戏常见的AI设计，即[AI(NPC&人机&Boot)](./AI/index.md)部分
+- 渲染管线相关的基础知识，即[计算机图形学部分](./ComputerGraphics/index.md)部分，是看GAMES101时做的笔记。
 - 包括Lua基础和XLua热更新方案的[Lua学习笔记](./Lua/index.md)部分
+- 游戏常见的AI设计，即[AI(NPC&人机&Boot)](./AI/index.md)部分
 - 算法问题、特定的解决方案、开源模板项目的学习，收录到[代码杂谈](./CodingRamble/index.md)部分
 
 还有一些挖坑不填的内容：
 - 模型和渲染部分，计划之后学习一下人物建模和风格化渲染，补全该部分。
-- 计算机图形学部分，计划之后学习一下Games101，补全该部分。
+- 程序编译和编译后的维护方案（如热更新），计划根据之后开发周期遇到的问题补全该部分。
 - Gameplay部分，讨论一些比较好的游戏玩法和理论上的实现方式。
 
 ## 联系我

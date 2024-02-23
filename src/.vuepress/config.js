@@ -67,15 +67,14 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: '编译&运维相关',
-                link: '/GameBuild/index.html',
+                text: '计算机图形学',
+                link: '/ComputerGraphics/index.html',
                 collapsible: true,
                 children: [
-                    { text: "总览", link: "/GameBuild/index.html" },
-                    { text: "[W]编译", link: "/GameBuild/Compile" },
-                    { text: "[W]程序集", link: "/GameBuild/Assembly" },
-                    { text: "热更新", link: "/GameBuild/Mod&Hotfix" },
-                    { text: "[W]GC机制", link: "/GameBuild/GC" },
+                    { text: "总览", link: "/ComputerGraphics/index.html" },
+                    { text: "坐标变换", link: "/ComputerGraphics/Transformation" },
+                    { text: "光栅化", link: "/ComputerGraphics/Rasterization" },
+                    { text: "着色", link: "/ComputerGraphics/Shading" },
                 ]
             },
             {
@@ -138,14 +137,15 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: '计算机图形学',
-                link: '/ComputerGraphics/index.html',
+                text: '编译&运维相关',
+                link: '/GameBuild/index.html',
                 collapsible: true,
                 children: [
-                    { text: "总览", link: "/ComputerGraphics/index.html" },
-                    { text: "坐标变换", link: "/ComputerGraphics/Transformation" },
-                    { text: "光栅化", link: "/ComputerGraphics/Rasterization" },
-                    { text: "着色", link: "/ComputerGraphics/Shading" },
+                    { text: "总览", link: "/GameBuild/index.html" },
+                    { text: "[W]编译", link: "/GameBuild/Compile" },
+                    { text: "[W]程序集", link: "/GameBuild/Assembly" },
+                    { text: "热更新", link: "/GameBuild/Mod&Hotfix" },
+                    { text: "[W]GC机制", link: "/GameBuild/GC" },
                 ]
             },
             {
