@@ -121,7 +121,7 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: '模型和渲染',
+                text: '模型和渲染 [低完成度]',
                 link: '/Shading/index.html',
                 collapsible: true,
                 children: [
@@ -137,7 +137,7 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: '编译&运维相关',
+                text: '编译&运维相关 [低完成度]',
                 link: '/GameBuild/index.html',
                 collapsible: true,
                 children: [
@@ -149,7 +149,7 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: 'Gameplay', // TODO：因为还不够完善，暂且先排在后面
+                text: 'Gameplay [低完成度]', // TODO：因为还不够完善，暂且先排在后面
                 link: '/Gameplay/index.html',
                 collapsible: true,
                 children: [

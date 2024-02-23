@@ -43,11 +43,17 @@ Unity底层有个Canvas管理器， 管理器里存着Canvas数组，每一帧�
 
 而很多人优化的时候说动静分离其实是说将属性更新频率比较大的一些顶点单独放一个canvas，这样就不会影响属性不怎么变化的节点，减少其计算量。
 
+### 其他UI优化思路
+- 独立不常用的ui组件
+- ui组件预加载
+
 ### 使用Z轴
 
-RectTransform的Z轴并没有什么卵用
+TODO：重新实践修改这部分
 
-有时候需要规定某些ui永远显示在上方，除了通过hierarchy中的排序之外：
+RectTransform的Z轴在Canvas的`Overlay`模式下没有什么卵用
+
+但`Overlay`模式下有时候需要规定某些ui永远显示在上方，除了通过hierarchy中的排序之外：
 - 为UI组件添加`Canvas`和`GraphicRaycaster`（如果这个ui不需要互动事件也可以不勾选），勾选重写顺序选项，通过order字段修改优先级。
 - 通过多个`Canvas`实现，或配合额外的`Camera`实现分层渲染。
 
