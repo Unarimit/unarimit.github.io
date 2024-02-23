@@ -7,6 +7,8 @@
 - 作为面向对象设计的`类`，通过原型模式
 - 元方法实现运算符重载和其他特性
 
+注意：lua中的表，类似C#中的引用类型，赋值会进行浅拷贝
+
 ## 表的基本操作
 
 由于lua是动态类型的，你可以往表里面塞任何东西，通过`string`和`number`索引就行
@@ -81,7 +83,7 @@ print(a.undefine) -- nil
 获取和设定元表：`getmetatable(table)` 和 `setmetatable(table, metatable)`
 > 可以通过设置`__metatable`控制是否允许访问metatable
 
-表相关的元方法
+常用的表相关的元方法
 
 > “`__index`用于表的查询而`__newindex`用于表的更新”
 
@@ -92,9 +94,16 @@ print(a.undefine) -- nil
 - `__newindex`：添加表中不存在的`key`会执行元表的`__newindex`方法，`__newindex`同样也可以是一个表。
     - 方法可以阻止向表中添加元素，也可以结合`__index`方法利用“代理”概念进一步控制。
     - 当`__newindex`为表时，添加元素将在`__newindex`表中进行。
+- `__gc`: 析构器，垃圾回收相关
 - 更多应用
     - 追踪表的修改：保持表是空的，在元表中“代理”对表的操作
     - 默认值和对偶表示
+    - 使用 `rawset` 和 `rawget` 绕过元方法
+
+常用的表相关的元字段
+
+- `__mode`: 标记弱引用表的字段，垃圾回收相关
+- `__metatable`：控制是否允许访问metatable
 
 可以在[lua中的面向对象](./OOPInLua.html)中，进一步了解面向对象相关的知识
 

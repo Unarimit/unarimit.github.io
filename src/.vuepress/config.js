@@ -101,6 +101,8 @@ export default defineUserConfig({
                     { text: "动态性", link: "/Lua/Dynamic" },
                     { text: "lua中的面向对象", link: "/Lua/OOPInLua" },
                     { text: "使用XLua", link: "/Lua/UseXLua" },
+                    { text: "Lua中的GC", link: "/Lua/GCInLua" },
+                    { text: "[w]Lua常用功能", link: "/Lua/CommonLuaFunction" },
                 ]
             },
             {
