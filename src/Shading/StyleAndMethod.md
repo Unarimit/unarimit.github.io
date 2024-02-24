@@ -22,9 +22,11 @@ NPR是一种渲染技术，旨在模拟或呈现非真实世界的图像效果�
 
 <br>
 
-<center><img  width="80%" src="./../img/whatIsPBR.jpg" /></center>
+<center><img  width="80%" src="./../img/whatIsPBR.png" /></center>
 
 <center>一张图表达PBR的特点，最明显的是瞄准镜的反光更加真实了。</center>
+
+<center>（用作镜像的gitee不让过，估计是枪械太真实了，想看图的点参考里面的链接吧..）</center>
 
 ## 讨论
 
