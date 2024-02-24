@@ -33,7 +33,7 @@ export default defineUserConfig({
                     { text: "[W]角色控制", link: "/UnityComponent/CharacterController" },
                     { text: "[W]动画机", link: "/UnityComponent/Animator" },
                     { text: "碰撞箱", link: "/UnityComponent/BoxCollider" },
-                    { text: "[W]资源管理", link: "/UnityComponent/Resource" },
+                    { text: "资源管理", link: "/UnityComponent/Resource" },
                     { text: "UGUI", link: "/UnityComponent/UGUI" },
                     { text: "TextMeshPro", link: "/UnityComponent/TextMeshPro" },
                     { text: "[W]常用Transform操作", link: "/UnityComponent/Transform" },
