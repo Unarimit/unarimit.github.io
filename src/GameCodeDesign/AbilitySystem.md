@@ -197,6 +197,76 @@ end
 - [lua载入代码,xlua](https://github.com/Unarimit/my-topdown-shooting-game/blob/dev-with-xlua/Assets/Scripts/StartLogic/StartSceneStartup.cs)
 - 完整的[LuaTriggerSelector.cs](https://github.com/Unarimit/my-topdown-shooting-game/blob/dev-with-xlua/Assets/Scripts/CombatLogic/Skill/Selector/LuaTriggerSelector.cs)
 
+### 优化-使用对象池
+
+在“更好的实现-释放、选择、影响”中，我们使用技能需要频繁的使用反射去构造选择器和释放器，这不好，而且如果我们的技能是一种射击出的子弹（频繁创建和销毁），那使用反射就更成问题啦。
+
+这时候不难想起我们的[优化型模式之对象池](./DesignPattern.html#优化型模式)，而且unity也定义了一些api方便我们开发，先列出一些注意事项吧：
+- 对象池管理的关键在于合理的“释放”逻辑
+    - 将对象的状态重置的和新创建的一样，但又保留了需要大量时间初始化的内容（如反射初始化的子类型）
+- 正确的将对象分类
+    - 例如可以根据技能类型不同划分不同的对象池
+- 释放需要调用对象池的方法（`ObjectPool<T>.Release()`），不要直接`Destroy`哦
+- 不要忘记更新应该更新的属性
+
+于是现在我们的 `SkillManager` 类除了负责释放技能外，还负责“销毁”技能
+
+<center> 
+<br><img width='300' src='../img/abilitySystem-7.png' ></br>
+<br>黄线为新增加的成员</br>
+</center>
+
+我认为其中的`getXXXReleaser`和`FinalizerSkill`是比较重要的，放一下代码
+
+```csharp
+private Dictionary<CombatSkill, ObjectPool<RangeReleaser>> rangeReleaserPool = new Dictionary<CombatSkill, ObjectPool<RangeReleaser>>();
+internal void FinalizerSkill(BaseReleaser releaser)
+{
+    if(releaser is MeleeReleaser)
+    {
+        // 。。。没必要看的逻辑
+    }
+    else if(releaser is RangeReleaser)
+    {
+        rangeReleaserPool[releaser.Skill].Release(releaser as RangeReleaser);
+    }
+}
+private RangeReleaser getRangeReleaser(CombatSkill skill)
+{
+    if (rangeReleaserPool.ContainsKey(skill) is false)
+    {
+        rangeReleaserPool.Add(skill, new ObjectPool<RangeReleaser>(
+                () => // createfunc
+                {
+                    var prefab = ResourceManager.Load<GameObject>("Skills/" + skill.PrefabResourceUrl);
+                    var skillGo = Instantiate(prefab, _context.Enviorment);
+                    return skillGo.AddComponent<RangeReleaser>();
+                },
+                (range) => // actionOnGet
+                {
+                    range.gameObject.SetActive(true);
+                },
+                (range) => // actionOnRelease
+                {
+                    range.gameObject.SetActive(false);
+                },
+                (range) =>// actionOnDestroy
+                {
+                    Destroy(range.gameObject);
+                }
+            ));
+    }
+    return rangeReleaserPool[skill].Get();
+}
+```
+
+当然还有一些关键的复位（Reset）逻辑在 `Releaser` 中，可以自行去代码仓库查看哦，这里附上当时增加这段逻辑的commit们，按时间从早到晚排序。
+- [[Game logic] change skill pass param logic - github commit](https://github.com/Unarimit/my-topdown-shooting-game/commit/4c195637e06f67a70387efff12c28eafe17e9c11)
+- [[Game logic] add ObjectPool in skill system - github commit](https://github.com/Unarimit/my-topdown-shooting-game/commit/79d240f3d031e0892dc5aec22f126cd2b1f944f2)
+
+
+
+
 ## 总结
 
 以上，文章所描述的技能系统的设计就先到此为止了，这里留下了一个问题：怎样设计出具有可拓展性和鲁棒性的技能系统呢？如果考虑热更新又如何？
