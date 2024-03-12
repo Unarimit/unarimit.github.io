@@ -38,6 +38,7 @@ https://unity.cn/university
 ## 未包含的内容
 
 - 服务端计算， 参考[et框架-github](https://github.com/egametang/ET/tree/master)
+    - [【网络同步】浅析帧同步和状态同步 - 曾志伟 知乎](https://zhuanlan.zhihu.com/p/357973435?utm_id=0)
 - 性能优化
     - [了解 Unity 中的优化 - unity doc](https://docs.unity3d.com/cn/current/Manual/BestPracticeUnderstandingPerformanceInUnity.html)
 - 针对几种不同类型的泛用设计模式（卡牌对战，FPS等）

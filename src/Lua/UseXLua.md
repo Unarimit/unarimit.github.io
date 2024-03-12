@@ -89,3 +89,4 @@ end
 - [XLua - Github Official](https://github.com/Tencent/xLua)
 - [给XLua生成Unity Api的EmmyLua代码提示 - CSDN](https://blog.csdn.net/ak47007tiger/article/details/127940571)
 - [EmmyLuaUnity - visualstudio market](https://marketplace.visualstudio.com/items?itemName=CppCXY.emmylua-unity)
+- [深入xLua实现原理之Lua如何调用C#](https://www.cnblogs.com/iwiniwin/p/15307368.html)

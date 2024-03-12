@@ -36,6 +36,7 @@
 ## 基础数据类型
 
 nil, number(integer, float), boolean, string, userdata, function, thread, table
+- userdata, function, thread, table 属于引用类型，userdata还有轻量级版本（light userdata）
 - number于5.3开始区分integer和float
     - `//`是整除，`%`很特殊，`3.14 % 1 = 0.14`
     - `"10" + 1 --> 11.0`

@@ -24,6 +24,8 @@
 
 <img src="../img/computer_graphics-1.png">
 
+<img src="../img/computer_graphics-3.png">
+
 
  
 ## 参考

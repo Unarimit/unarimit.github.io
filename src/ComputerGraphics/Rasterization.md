@@ -43,7 +43,7 @@ void fresh_screen(){
         - MSAA（Multi Sample Anti-Aliasing）：靠模糊解决走样问题，计算量增加k倍，k为每个像素计算模糊的采样次数（没有考虑可复用的采样点）
         - FXAA（Fast Approximate AA）：基于后处理的AA，检测边缘，替换成平滑的边缘
         - TAA（Temporal AA）：保留上一帧的值，使其参与这一帧的采样。计算量⬇ 空间占用⬆，对于快速运动需要特殊处理
-
+    > 顺便一提 Aliasing 也有"别名"的意思，如`int &r = a`，就可以说`r`是`a`的 Aliasing（别名）。
 代码：一种 MSAA 2*2 的计算方法
 ```cpp
 void fresh_screen(){
