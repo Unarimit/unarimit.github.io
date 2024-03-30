@@ -91,6 +91,15 @@ export default defineUserConfig({
                 ]
             },
             {
+                text: '编程语言的学习方法',
+                link: '/Language/index.html',
+                collapsible: true,
+                children: [
+                    { text: "总览", link: "/Language/index.html" },
+                    { text: "内存管理", link: "/Language/MemoryManage" },
+                ]
+            },
+            {
                 text: 'Lua学习笔记',
                 link: '/Lua/index.html',
                 collapsible: true,
