@@ -91,12 +91,14 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: '编程语言的学习方法',
+                text: '编程语言的学习方法[WIP]',
                 link: '/Language/index.html',
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/Language/index.html" },
                     { text: "内存管理", link: "/Language/MemoryManage" },
+                    { text: "一些“有趣”的问题", link: "/Language/Questions" },
+                    
                 ]
             },
             {
