@@ -97,6 +97,10 @@ export default defineUserConfig({
                 children: [
                     { text: "总览", link: "/Language/index.html" },
                     { text: "内存管理", link: "/Language/MemoryManage" },
+                    { text: "编译（C++）", link: "/Language/CompileCpp" },
+                    { text: "编译（C#）", link: "/Language/CompileCsharp" },
+                    { text: "面向对象编程", link: "/Language/OOP" },
+                    { text: "泛型", link: "/Language/Generic" },
                     { text: "一些“有趣”的问题", link: "/Language/Questions" },
                     
                 ]

@@ -32,6 +32,33 @@ private:
 ```
 考察类的const方法
 
+2. 虚函数和隐藏
+```cpp
+struct A{
+    void testHide(){
+        cout << "A";
+    }
+    virtual void testVirtual(){
+        cout << "A";
+    }
+    void testHide2(){
+        cout << "A";
+    }
+};
+struct B: public A{
+    void testHide(){ // 隐藏了A中的函数
+        cout << "B";
+    }
+    void testVirtual(){ // 建议补上override或final增加可读性
+        cout << "B";
+    }
+    virtual void testHide2(){ // 隐藏了A中的函数
+        cout << "B";
+    }
+};
+```
+其实这个概念凭直觉大概率能猜对。另外还可以引申出一些其他问题，如B如何调用被隐藏的A方法。
+
 
 ### 内存管理
 
