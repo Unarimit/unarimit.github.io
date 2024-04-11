@@ -1,16 +1,36 @@
 # 编译（C++）
 
+本页将记录c++的编译流程和查看其汇编代码的方法。当然并不涉及cmake等编译工具的使用，主要是针对语言本身的特点进行描述。
+
 ## 编译流程介绍
 
-<img src='../img/Compile-1.jpg'>
+一个经典的c程序的编译过程如下图所示：
+> c++和c的编译过程是相似的，区别主要源于C++比C提供了更多的特性，比如类、模板、异常处理等。这些特性在编译过程中需要额外的处理。
 
-### 特殊语法的编译流程
+<img src='../img/cpp_compile-1.jpg'>
+
+还有一页我认为看着不错的ppt：
+
+<img src='../img/cpp_compile-3.png' width="600">
+
+一个cpp文件编译后的可执行文件的结构（以压缩文件打开）如下图所示：
+
+<img src='../img/cpp_compile-2.png' width="600">
+
+## 针对c++特性的特殊处理
+
+c++提供类、模板、lambda表达式、异常处理等特性，为了支持这些特性需要在编译时对其特殊处理。具体而言：
+- 类中的成员变量、虚函数特性，分别产生了this指针、虚表这些概念来配合实现
+- 模板需要在编译时生成对应类型的代码
+- 当定义lambda时，编译器会生成一个与lambda对应的新类型和对象。
+> 类拥有复杂的规则，展开谈可以单开一页。模板由于其抽象的约束模式和“模板元编程”，也可以单开一页。c++的异常处理我还不太了解，就先忽略了。
 
 ## 查看编译过程的汇编代码
 
 对于c++语言，有两种选择，一种是查看 `.s` 文件，一种是对 `.exe` 文件执行 `objdump -d` 指令。
 
 现在有如下代码，将通过两种方式观察其汇编代码。
+> 这其实是一个相对复杂的例子，涉及字面量（char *）到字符串的转换，还有cout的调用。
 
 ```cpp
 //#include <bits/stdc++.h>
@@ -23,7 +43,7 @@ int main(){
 }
 ```
 
-#### **通过 `.s` 文件**
+### **通过 `.s` 文件**
 
 执行命令行: `g++ -S -fverbose-asm main.cpp` 获取 `main.cpp` 编译过程中的汇编代码。
 
@@ -46,8 +66,7 @@ int main(){
 
 结合注释看这段代码，好像是在描述`string str = "hello world!";`的拷贝过程。
 
-
-#### **通过 `.exe` 文件**
+### **通过 `.exe` 文件**
 
 执行命令行: `objdump -d test.exe > disassembly.txt` 获取 `.exe` 中机器码对应的反汇编代码
 
@@ -80,6 +99,7 @@ int main(){
 简单看一下，如果不是其中的 `stringIcSt11char` 我根本看不出来它和我的程序有什么关系..
 
 ## 参考
+- [《C++ Primer 第五版》](https://book.douban.com/subject/10505113/)
 - [cpp separate complilation - hackingcpp](https://hackingcpp.com/cpp/lang/separate_compilation.html)
-- [2015 CMU 15-213 CSAPP 深入理解计算机系统 课程视频 - Bilibili](https://www.bilibili.com/video/BV1iW411d7hd?p=5&vd_source=23f1f06b4fe8584d2ba54d7e6a5dd238)
+- 相关阅读-汇编语言和gdb的使用：[2015 CMU 15-213 CSAPP 深入理解计算机系统 课程视频 - Bilibili](https://www.bilibili.com/video/BV1iW411d7hd?p=5&vd_source=23f1f06b4fe8584d2ba54d7e6a5dd238)
     - P5-P9
