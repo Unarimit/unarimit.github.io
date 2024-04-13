@@ -96,6 +96,28 @@ C++的静态变量是在没有实际的cpp开发经验的话，很容易忽略�
 
 > 顺便说一下，C#只有成员静态变量一说（没有局部静态变量，即不能在函数里定义静态变量），且在 `类型对象` 第一次初始化时初始化成员静态变量。
 
+### 模板
+
+1. 模板和静态成员
+
+`Foo<int>::cnt`成员的初始化和实例化分别发生在下方代码的哪个地方？
+
+```cpp
+template<class T>
+struct Foo{
+    T data;
+    static int cnt;
+};
+
+template<typename T>
+int Foo<T>::cnt = 111;
+
+int main(){
+    auto f1 = Foo<int>();
+    auto f2 = Foo<float>();
+}
+```
+
 ## C#
 
 ### 函数

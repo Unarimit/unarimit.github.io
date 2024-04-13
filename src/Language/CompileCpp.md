@@ -100,6 +100,8 @@ int main(){
 
 ## 参考
 - [《C++ Primer 第五版》](https://book.douban.com/subject/10505113/)
+    - 14.8.1 lambda是函数对象
+    - 19.2 运行时类型识别
 - [cpp separate complilation - hackingcpp](https://hackingcpp.com/cpp/lang/separate_compilation.html)
 - 相关阅读-汇编语言和gdb的使用：[2015 CMU 15-213 CSAPP 深入理解计算机系统 课程视频 - Bilibili](https://www.bilibili.com/video/BV1iW411d7hd?p=5)
     - P5-P9
