@@ -103,3 +103,12 @@ int main(){
 - [cpp separate complilation - hackingcpp](https://hackingcpp.com/cpp/lang/separate_compilation.html)
 - 相关阅读-汇编语言和gdb的使用：[2015 CMU 15-213 CSAPP 深入理解计算机系统 课程视频 - Bilibili](https://www.bilibili.com/video/BV1iW411d7hd?p=5)
     - P5-P9
+- 补充：U++
+    - [UE4的C++与一般的C++有什么不同？需要先单独学C++吗？ - 西海的回答 - 知乎](https://www.zhihu.com/question/397725385/answer/1251427434)
+:::details gpt谈u++
+虚幻引擎中的C++常常被人戏称为U++，这是因为在虚幻引擎中，C++编程与一般的C++有一些不同之处。让我来解释一下：
+
+虚幻引擎的编译流程规则：虚幻引擎定义了一套特定的编译流程规则，使得C++代码能够获得一些高级功能，例如类反射等，类似于Java或C#中的特性。
+UBT和UHT：虚幻引擎使用构建工具（UBT）和反射编译器（UHT）来处理C++代码。这导致虚幻引擎的语法在某些方面独立于标准C++，因此被戏称为U++。
+总之，虚幻引擎的C++编程不仅需要掌握C++本身，还需要理解其特定的编译流程和引擎内部机制。
+:::
