@@ -44,6 +44,7 @@
 
 ## 参考
 - [《C++ Primer 第五版》](https://book.douban.com/subject/10505113/)
+- [cppreference.com](https://en.cppreference.com/w/cpp/language/basic_concepts)
 - [《Essential C# 7.0》](https://book.douban.com/subject/33474759)
 - [《CLR via C# 第四版》](https://book.douban.com/subject/26285940)
 - [图解系统系列 - 小林coding](https://www.xiaolincoding.com/os)

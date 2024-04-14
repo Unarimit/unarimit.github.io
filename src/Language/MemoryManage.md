@@ -1,5 +1,7 @@
 # 内存管理
 
+内存管理是编程语言中最重要的部分之一，理解内存管理的细节和良好的编程习惯可以减少程序出现**内存泄漏**的可能。
+
 ## 操作系统的内存安排
 
 在[图解系统](https://www.xiaolincoding.com/os/3_memory/malloc.html#linux-%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83%E9%95%BF%E4%BB%80%E4%B9%88%E6%A0%B7)中，描述了32位linux系统中进程内存的安排，如下图所示：
@@ -18,6 +20,16 @@
 
 在销毁内存时则使用 `delete` 操作符，它同样可以被重载，一般是在里面调用 `free` 函数释放分配给对象的内存。
 
+::: tip 检验
+下方代码中，`new` 和 `delete` 分别做了什么？
+```cpp
+class TestClass{};
+auto t = new TestClass();
+delete t;
+```
+可以参考[《C++ Primer 第五版》](https://book.douban.com/subject/10505113/)19.1节
+:::
+
 特别的：
 - 对于数组对象，在删除时记得使用 `delete[]` 告诉编译器需要删除的对象是一个数组。
 - 若想在已经分配的内存中直接初始化（而非通过new临时量再赋值的方式），可以使用 定位new，配合 `operator new` 分配空间（ 后面推出了 `allocator` stl类，标准化了 `operator new` 、`operator delete` 和 定位new 的作用）。
@@ -35,7 +47,10 @@
 > 如何证明这一点，除了直接看元素的虚拟地址之外，还可以分配一个 “size乘对象” 大小超过栈上限的数组，若出现栈溢出，则。。
 
 
-> TODO：左值右值也可以看作一种辅助内存管理的特性，这一点应该补充一下
+### 其他管理内存的概念和特性
+
+由类型支持的特性：左值右值、RAII（Resource Acquisition ls Initialization，资源获取即初始化）将在[类型](./Class)中讨论。
+
 
 ## C#：托管堆和GC
 
@@ -60,6 +75,10 @@ WIP
 ### C#中
 
 WIP
+
+## 未包含的部分
+
+1. 因多线程影响而出现的特性
 
 ## 参考
 - [图解系统，4.2 malloc 是如何分配内存的？#Linux 进程的内存分布长什么样？ - 小林coding](https://www.xiaolincoding.com/os/3_memory/malloc.html#linux-%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83%E9%95%BF%E4%BB%80%E4%B9%88%E6%A0%B7)

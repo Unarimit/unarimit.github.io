@@ -99,9 +99,9 @@ export default defineUserConfig({
                     { text: "内存管理", link: "/Language/MemoryManage" },
                     { text: "编译（C++）", link: "/Language/CompileCpp" },
                     { text: "编译（C#）", link: "/Language/CompileCsharp" },
+                    { text: "类型", link: "/Language/Class" },
                     { text: "模板（C++）", link: "/Language/Template" },
                     { text: "泛型（C#）", link: "/Language/Generic" },
-                    { text: "类型", link: "/Language/Class" },
                     { text: "一些“有趣”的问题", link: "/Language/Questions" },
                     
                 ]
