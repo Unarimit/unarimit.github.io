@@ -10,6 +10,10 @@
 ## 一般认为
 Gameplay是指**游戏客户端**开发者所必备的技能集合，即掌握基本几种游戏的玩法实现方式。但工作中要求美术素材的导入、性能优化等，需要对涉及游戏开发的各个领域都有所了解。**目前主流的游戏类型都有开源或收费的框架（FPS，RPG等），可以参照这些实现，提高自己的水平。** 
 
+下面一张思维导图，汇总了我对gameplay程序员的理解:
+
+<img src='../img/gameplay-1.png'>
+
 ## 可以参考
 - [游戏Gameplay程序员的核心竞争力是什么？ - 大钊的回答 - 知乎](https://www.zhihu.com/question/601194013/answer/3030169440)
 - [[Unity教程]-如何制作技能系统 | Prototype系列](https://www.bilibili.com/video/BV1LV411S7d8)

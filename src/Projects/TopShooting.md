@@ -17,7 +17,11 @@
 
 游戏想法&大纲：
 
-<img  width="600" src="../img/my-tds-1.png" />
+<img  src="../img/my-tds-1.png" />
+
+游戏遇到的问题和解决方案：
+
+<img  src="../img/my-tds-2.png" />
 
 ## 原型 8月21 - 8月27
 1. 在unity的第三人称模板基础上改进
