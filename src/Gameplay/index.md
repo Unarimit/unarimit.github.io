@@ -18,5 +18,5 @@ Gameplay是指**游戏客户端**开发者所必备的技能集合，即掌握�
 - [游戏Gameplay程序员的核心竞争力是什么？ - 大钊的回答 - 知乎](https://www.zhihu.com/question/601194013/answer/3030169440)
 - [[Unity教程]-如何制作技能系统 | Prototype系列](https://www.bilibili.com/video/BV1LV411S7d8)
     - 实际上在讲怎么制作一个游戏原型
-- [游戏引擎架构-第2版](https://book.douban.com/subject/34864920/)
+- [《游戏引擎架构 第2版》](https://book.douban.com/subject/34864920/)
 - [Game Developers Conference, GDC - Youtube channel](https://www.youtube.com/@Gdconf/videos)
