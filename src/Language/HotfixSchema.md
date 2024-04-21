@@ -1,4 +1,4 @@
-# 热更新
+# 热更新方案
 
 <img src='../img/hotfix-0.png'>
 
@@ -12,9 +12,20 @@
 
 > 感觉**资源热更新**的难点主要在打包、解包和包的管理上面，可以参考[资源管理页面](../UnityComponent/Resource)。
 
-## 外部代码
+## 外部代码和交互
 
-WIP
+热更新技术一般会引入外部代码（通常是lua或ts写的），因为引擎使用的脚本语言很难动态加载：
+- Unity中的C#由于IL2cpp优化技术和IOS平台的奇怪政策，基于C#的热更新不太好做（2023年起，HybridCLR可能会产生一些不同）。
+- UE的U++是怎么个事呢，暂时不知道捏
+
+那么在unity中，需要考虑C#和**外部代码的交互**。原理方面可以看看C#的平台调用方式 `P/Invoke` (Platform Invoke, 平台调用)，而实现细节方面可以看看一些分析文章，或直接硬啃热特定更技术的代码（如XLua）。交互过程可以分为以下两个部分：
+- 通过签名调用指定的函数 
+    - C#的 `P/Invoke` 情况下：C#调用外部代码（extern和DllImport），外部代码回调C#（委托和传入调用）
+    - 热更新情况的优化，反射和反射表，又或是更复杂的策略，如ToLua的warp(参考[【Unity游戏开发】tolua之wrap文件的原理与使用 - 马三小伙儿，cnblog](https://www.cnblogs.com/msxh/p/9813147.html))
+- 参数传递（写入和读取）
+    - sturct和class的优化？结合具体的方案来看，更多的还是看源码吧。
+
+> 在简单的虚拟机情况下，这个情况会简单不少，因为一句虚拟机代码通常会对应一个宿主代码函数（如C++和Lua的情况，参考[C++/Lua交互指南 - Ocean藏心，知乎](https://zhuanlan.zhihu.com/p/40406096)）。<br>但在游戏引擎中就大大增加了复杂度。在unity的xlua方案情况下，脚本语言为C#，C#通过 `P/Invoke` 调用C++编译的Lua虚拟机代码库，而且由于 `IL2Cpp` 、代码剪裁等优化，最终**可能**会是"C++版的 `P/Invoke` " 调用C++编译的Lua虚拟机代码库。（这方面我也不是很了解，很好奇 `IL2Cpp` 后的 `P/Invoke` 是什么玩意，以后有空再来探索吧 TODO）
 
 ## 热更新方案
 
@@ -72,5 +83,6 @@ WIP
 
 ## 参考
 - 头图：[20.1 Hotfix Update - infiniteflight](https://infiniteflight.com/timeline/20-1-hotfix-update)
+- [平台调用 (P/Invoke) - learn.microsoft.com](https://learn.microsoft.com/zh-cn/dotnet/standard/native-interop/pinvoke)
 - [Unity 中的Mono与IL2CPP - 知乎](https://zhuanlan.zhihu.com/p/663371215)
 - [Unity - AssetBundle和XLua热更新教程（简单详细） - 长生但酒狂 csdn](https://blog.csdn.net/qq_28299311/article/details/104870024)
