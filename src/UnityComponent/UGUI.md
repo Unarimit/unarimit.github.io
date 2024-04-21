@@ -2,10 +2,6 @@
 
 需要在场景添加eventsystem组件，一般会在创建ui组件时自动添加。使用inputsystem时需要简单设置一下。
 
-本章包括内容：
-
-[[toc]]
-
 ::: tip
 UGUI的代码是公开的，想要了解组件是如何工作的可以看看。（例如`GridLayoutGroup`是如何计算每个ui的位置的。
 :::

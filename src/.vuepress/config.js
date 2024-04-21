@@ -102,7 +102,11 @@ export default defineUserConfig({
                     { text: "类型", link: "/Language/Class" },
                     { text: "模板（C++）", link: "/Language/Template" },
                     { text: "泛型（C#）", link: "/Language/Generic" },
+                    { text: "垃圾回收", link: "/Language/GC" },
+                    { text: "其他特性", link: "/Language/OtherFeatures" },
                     { text: "一些“有趣”的问题", link: "/Language/Questions" },
+                    { text: "*Unity的编译", link: "/Language/UnityCompile" },
+                    { text: "*热更新方案", link: "/Language/HotfixSchema" },
                     
                 ]
             },
@@ -152,18 +156,6 @@ export default defineUserConfig({
                     { text: "NPR", link: "/Shading/NPR" },
                     { text: "[x]特效和粒子系统", link: "/WIP" },
                     { text: "[x]优化策略", link: "/WIP" }
-                ]
-            },
-            {
-                text: '编译&运维相关 [低完成度]',
-                link: '/GameBuild/index.html',
-                collapsible: true,
-                children: [
-                    { text: "总览", link: "/GameBuild/index.html" },
-                    { text: "[W]编译", link: "/GameBuild/Compile" },
-                    { text: "[W]程序集", link: "/GameBuild/Assembly" },
-                    { text: "热更新", link: "/GameBuild/Mod&Hotfix" },
-                    { text: "[W]GC机制", link: "/GameBuild/GC" },
                 ]
             },
             {
