@@ -53,7 +53,7 @@ int main(){
 
 截取其中一部分代码：
 
-```
+```asm
  # c:\programdata\chocolatey\lib\mingw\tools\install\mingw64\include\c++\12.2.0\bits\basic_string.tcc:241: 	} __guard(this);
 	movq	16(%rbp), %rdx	 # this, tmp98
 	leaq	-24(%rbp), %rax	 #, tmp99
@@ -76,7 +76,7 @@ int main(){
 
 它的 `<main>` 代码块如下：
 
-```
+```asm
 00000001400015e0 <main>:
    1400015e0:	55                   	push   %rbp
    1400015e1:	53                   	push   %rbx
@@ -99,6 +99,38 @@ int main(){
 ```
 
 简单看一下，如果不是其中的 `stringIcSt11char` 我根本看不出来它和我的程序有什么关系..
+
+### 通过分析软件
+
+分析软件往往附带可读性更高的交互UI（如在线工具[Compiler Explorer](https://godbolt.org/)），又或是清晰的断点调试（如Visual Studio）。
+
+以在线工具[Compiler Explorer](https://godbolt.org/)为例，输入上述代码，得到以下汇编代码。
+> 还附带交互UI，建议点进去试试
+
+```asm
+.LC0:
+    .string "hello world!"
+main:
+    push    rbp
+    mov     rbp, rsp
+    push    rbx
+    sub     rsp, 56
+    lea     rax, [rbp-25]
+    mov     QWORD PTR [rbp-24], rax
+    nop
+    nop
+    lea     rdx, [rbp-25]
+    lea     rax, [rbp-64]
+    mov     esi, OFFSET FLAT:.LC0
+    mov     rdi, rax
+    call    std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+    lea     rax, [rbp-25]
+    mov     rdi, rax
+    call    std::__new_allocator<char>::~__new_allocator() [base object destructor]
+# 后面太多了，省略...
+```
+
+可以看出他对函数id的解析可读性更高一些。
 
 ## 参考
 - [《C++ Primer 第五版》](https://book.douban.com/subject/10505113/)
