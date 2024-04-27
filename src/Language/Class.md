@@ -117,6 +117,13 @@ C++的拷贝控制函数有哪些呢？
 
 可以看出C++的拷贝控制是相当复杂的，有5个可用于拷贝控制的函数。其中“移动”开头的函数需要结合“移动语义”去理解。在实现类的时候一般需要遵循“三五原则”，即考虑移动语义，实现五个，不考虑移动语义，则实现三个。
 
+对于移动语义（和右值引用），它的提出用于解决某种情况下指针的滥用问题，在[《HOPL4 C++》4.2.3 移动语义](https://github.com/Cpp-Club/Cxx_HOPL4_zh/blob/main/04.md#423-%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89)中就设计层面已给出了详细的解释。详细理解移动语义需要考虑 `std::move()`、`std::forward<T>()`、`T&&` 的使用和意义：
+- `std::move()`：将一个任意类型`static_cast`成一个右值引用并返回，表示移动语义
+- `std::forward<T>()`：用于保留函数实参的语义，若为右值则是移动语义。通常被称为完美转发。
+-  `T&&`
+    - 作为形参时，因为引用折叠规则，表示“万能引用”，即可以根据实参自行推断出 `T&&`、`T&`、`const T&`（当存在重载版本，且该类型为`const T&`时，按照匹配优先级，`T&&`将只匹配右值(移动语义)，可以参考[`vector<T>` 的实现](./Template.md#试写-vector-t)）。
+    - 作为实参时，实际上是一个左值，但具有右值的“潜质”（可以被 `std::forward<T>()` “激活”移动语义）
+
 ::: details 简单的测试类
 
 以下代码展示了一个简单的拷贝控制测试类
@@ -148,7 +155,23 @@ public:
 ``` 
 :::
 
+::: details 测试移动语义
+
+`TestClass`是一个拥有拷贝构造函数和移动拷贝构造函数的类，下面代码中，哪些会调用该类的移动拷贝构造函数？
+
+```cpp
+int main() {
+    TestClass&& t1 = TestClass();
+    TestClass t2 = t1; // 拷贝构造函数
+    TestClass t3 = std::forward<TestClass>(t1); // 移动拷贝构造函数
+    TestClass t4 = std::move(t1); // 移动拷贝构造函数
+    return 0;
+}
+```
+:::
+
 在拷贝控制函数中，主要关注“像值的类”和“像指针的类”的处理。在[《C++ Primer 第五版》](https://book.douban.com/subject/10505113/)第13章拷贝控制中，已给出详尽的解释。进一步，可以结合容器类的设计去理解这一过程。
+
 
 除此之外，还需注意：
 - 隐式转换的影响和explict
@@ -257,6 +280,7 @@ WIP
     - 8.2 实例构造器和结构（值类型）
 - [《HOPL4 C++》，Bjarne Stroustrup](https://github.com/Cpp-Club/Cxx_HOPL4_zh/tree/main)
 - [《C++ Primer 第五版》](https://book.douban.com/subject/10505113/)
+    - 16.2.5 模板实参推断和引用（这里介绍了引用折叠）
 - [C++ 虚函数表 - 编程指北](https://csguide.cn/cpp/object_oriented/virtual_function.html#c-%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B)
 - [强制类型转换运算符的说明 - C++面试问题，作者：huihui，github](https://github.com/huihut/interview/blob/master/README.md#%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6)
 - 拓展（好像是设计思想）：[《深度探索C++对象模型》[美] Stanley B. Lippman，侯捷译](https://book.douban.com/subject/10427315/)
