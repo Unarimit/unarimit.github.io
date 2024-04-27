@@ -60,7 +60,7 @@ internal class HomeStartup : MonoBehaviour{
 我认为上述说明已经足够，直接从一个例子开始吧。
 
 在[My-TDS战斗场景](https://github.com/Unarimit/my-topdown-shooting-game/tree/dev/Assets/Scripts/CombatLogic)中，有一个即时事件系统的设计，用于结算战斗时什么时候满足战斗目标，触发战斗结算。做了以下工作：
-- [在`GameLevelManager`中记录`事件标记`](https://github.com/Unarimit/my-topdown-shooting-game/blob/dev/Assets/Scripts/CombatLogic/LevelLogic/GameLevelManager.cs)。
+- 在[`GameLevelManager`](https://github.com/Unarimit/my-topdown-shooting-game/blob/dev/Assets/Scripts/CombatLogic/LevelLogic/GameLevelManager.cs)中。记录`事件标记`
 - 在`GameLevelManager`的添加`事件标记`方法中检测是否满足目标。
 - *这里我把敌人的掉落物和`事件标记`混合了起来取巧，使其一起被检测，不用独立掉落物存储和注册回调逻辑了。但不相关物体会对性能产生一点点影响（如果继续向内部函数传key的话可以实现O(1)的不相关过滤，这里是懒得做了吧）。
 
