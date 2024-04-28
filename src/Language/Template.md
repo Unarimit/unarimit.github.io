@@ -97,7 +97,31 @@ template<typename _Seq = _Sequence, typename _Requires = typename
 
 ## 传参：`forward` 和 `&&`（C++ 11）
 
+`forward` 一般配合模板引用 `T&&`  实现保留语义（如常量左值、右值）的参数转发。下方代码进行举例说明：
 
+`entrance` 将右值语义和左值语义参数分配转发到了 `func(TestClass&&)` 和 `func(const TestClass&)`
+
+```cpp
+void func(TestClass&& rvalue){
+    cout << "rvalue func call" << endl;
+}
+void func(const TestClass& lvalue){
+    cout << "lvalue func call" << endl;
+}
+template<class T>
+void entrance(T&& value){
+    func(std::forward<T>(value));
+}
+int main() {
+    TestClass&& t1 = TestClass();
+    entrance(std::move(t1)); // lvalue func call
+    entrance(t1); // rvalue func call
+
+    return 0;
+}
+```
+
+如果一个类中封装了一个 `vector<T>` 则可以利用此规则通过传参不同调用 `vector<T>` 中不同版本的 `push_back`。另外可以利用包转发实现原地构造（即类似 `vector<T>` 中的 `emplace_back` 的功能）
 
 ## 试写 `vector<T>`
 
@@ -127,6 +151,7 @@ private:
 
 ## 试写 `function<>`
 
+没看懂里面怎么写的，WIP。
 
 ## 参考
 - [《HOPL4 C++》，Bjarne Stroustrup](https://github.com/Cpp-Club/Cxx_HOPL4_zh/tree/main)
