@@ -75,6 +75,7 @@ export default defineUserConfig({
                     { text: "坐标变换", link: "/ComputerGraphics/Transformation" },
                     { text: "光栅化", link: "/ComputerGraphics/Rasterization" },
                     { text: "着色", link: "/ComputerGraphics/Shading" },
+                    { text: "阴影", link: "/ComputerGraphics/Shadow" },
                 ]
             },
             {
@@ -99,6 +100,7 @@ export default defineUserConfig({
                     { text: "内存管理", link: "/Language/MemoryManage" },
                     { text: "编译（C++）", link: "/Language/CompileCpp" },
                     { text: "编译（C#）", link: "/Language/CompileCsharp" },
+                    { text: "函数", link: "/Language/Function" },
                     { text: "类型", link: "/Language/Class" },
                     { text: "模板（C++）", link: "/Language/Template" },
                     { text: "泛型（C#）", link: "/Language/Generic" },
