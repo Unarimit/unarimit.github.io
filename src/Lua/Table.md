@@ -75,8 +75,12 @@ print(a.undefine) -- nil
 
 ## 元表（metatable）
 
+> "Lua语言中的每一个值都可以有元表" —— [《Lua程序设计 第四版》](https://www.lua.org/pil/)
+
 元表是表的表，元表中的方法（叫做元方法），提供了类似重载运算符（如`__add`和`__concat`）、重载api实现（如`__tostring`、`__metatable`和`__pairs`）和重载表相关的元方法（如`__index`）。
 > 也可以是任何类型的表，但修改其他类型的元表在lua语言中是做不到的
+
+<center><img src='../img/lua_table-1.svg'></center>
 
 通过元表，延伸出了面向对象设计和沙箱运行环境等特殊做法。
 

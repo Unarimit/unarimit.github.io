@@ -10,7 +10,7 @@ lua的设计模式就不太支持OO（面向对象），光是想实现“实例
 
 :::details gpt带你咬文嚼字：
 
-Q：Lua程序设计》书中提到“可以使用lua实现类的继承和私有”，他为什么不说是“封装”而说是“私有”呢？这两个概念有什么区别？
+Q：《Lua程序设计》书中提到“可以使用lua实现类的继承和私有”，他为什么不说是“封装”而说是“私有”呢？这两个概念有什么区别？
 
 A：在《Lua程序设计》中提到“可以使用Lua实现类的继承和私有”，在这里使用“私有”而不是“封装”可能是因为在Lua中并没有像其他面向对象编程语言一样提供内置的私有访问控制。在传统的面向对象编程语言中，私有性是通过访问修饰符（如private）来实现的，以确保某些属性或方法只能在类的内部访问。
 
@@ -68,7 +68,7 @@ Account = {balance = 0}
 
 function Account:new (o)
     o = o or {}
-    self.__index = self
+    self.__index = self -- 若要实现多继承，则考虑将__index改为一个函数而非一个表
     setmetatable(o, self)
     return o
 end
@@ -85,9 +85,10 @@ function SuperAccount:deposit(v)
 end
 
 -- 操作
-print(SuperAccount.balance) -- 0，是Account中的0
-SuperAccount:deposit(50)
-print(SuperAccount.balance) -- 100，是SuperAccount中的100
+local sa = SuperAccount:new() -- 实例化SuperAccount
+print(sa.balance) -- 0，是元表的元表（Account）中的0
+sa:deposit(50)
+print(sa.balance) -- 100，是SuperAccount中的100
 ```
 
 `SuperAccount` 的特点是存款（`deposit`）会变为两倍！
