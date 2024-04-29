@@ -81,6 +81,36 @@ c('print(y)'); -- 输出6 \n 10
 
 ## 反射
 
+> “反射式编程（英语：reflective programming）或反射（英语：reflection），是指计算机程序在运行时（runtime）可以访问、检测和修改它本身状态或行为的一种能力。用比喻来说，反射就是程序在运行的时候能够“观察”并且修改自己的行为。”
+
+目前了解到的有两种风格的反射，C#那种（Java、U++有类似实现）和Lua那种：
+- C#的反射是对类观察（获取构造器、成员和 `attribute` ）修改和实例化、对函数观察（获取参数列表）和调用，是通过读取[metadata](./CompileCsharp.md#metadata)实现的。
+- Lua中由于没有“所有都是类”这一设定，它的反射主要用于观察虚拟机的栈或追踪程序的执行。
+
+下方是一个来自[wiki](https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%B0%84%E5%BC%8F%E7%BC%96%E7%A8%8B#C#)的C#的例子。例子中，使用反射实例化了特定名称的类和方法。
+> C#给类或方法“打上”特性(如`[Serialize]`)，再通过反射读取可以做很多有趣的事。例如在Unity中给所有测试方法映射一个按钮，参考[自定义Editor#利用反射测试](../UnityComponent/CustomEditor.md#例子-用反射-reflect-和特性-attribute-来测试)
+
+```csharp
+// Without reflection
+Foo foo = new Foo();
+foo.PrintHello();
+
+// With reflection
+Object foo = Activator.CreateInstance("complete.classpath.and.Foo");
+MethodInfo method = foo.GetType().GetMethod("PrintHello");
+method.Invoke(foo, null);
+```
+
+Lua中，由于可以直接观察调用栈，所以能做的事情会比较多（分散），不再针对类型。例如：
+- 访问任意局部变量
+- 访问上值(up value)
+- 追踪程序执行了多少行，并在满足特定条件下执行动作
+- 追溯某函数的运行
+- ...
+
+在[《Programming in Lua》 第23章，调试库](https://www.lua.org/pil/23.html) 中描述了一些，对应[第四版书（Lua5.3）](https://www.lua.org/pil/)的内容则是第25章（反射）
+
+
 ## 模块化
 C#：程序集（Assembly）
 
@@ -98,3 +128,7 @@ C++：C++20的import
 - Lua闭包实现
     - [Functions & Closures Implement - poga, github page](https://poga.github.io/lua53-notes/function_closure.html)
     - [The Implementation of Lua 5.0 - Roberto Ierusalimschy](https://www.jucs.org/jucs_11_7/the_implementation_of_lua/jucs_11_7_1159_1176_defigueiredo.html)
+- 反射
+    - [反射式编程 - wikepedia](https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%B0%84%E5%BC%8F%E7%BC%96%E7%A8%8B#)
+    - [.NET 中的反射 - learn.microsoft](https://learn.microsoft.com/zh-cn/dotnet/fundamentals/reflection/reflection)
+    - [Lua程序设计 第四版 - Roberto](https://www.lua.org/pil/)

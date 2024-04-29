@@ -12,6 +12,10 @@ WIP
 
 <img src='../img/csharp-compile-2.png'>
 
+### metadata
+
+WIP
+
 ### 编译的中间语言IL
 
 WIP
