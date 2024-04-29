@@ -1,0 +1,64 @@
+<mxfile host="Electron" modified="2024-04-29T13:12:13.559Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="VuOa7S9dOBUJL74O3F1i" version="23.1.5" type="device">
+  <diagram name="第 1 页" id="fCG4wPiDvozYshyLHUEu">
+    <mxGraphModel dx="732" dy="559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-1" value="&lt;font style=&quot;font-size: 14px;&quot; face=&quot;Consolas&quot;&gt;...&lt;br&gt;local t = {}&lt;br&gt;&amp;gt;&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;glass=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="110" width="530" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="u-CXdGGWJtKEq46qbfQG-2" target="u-CXdGGWJtKEq46qbfQG-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-2" value="&lt;font style=&quot;font-size: 14px;&quot; face=&quot;Consolas&quot;&gt;t.foo()&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="220" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="u-CXdGGWJtKEq46qbfQG-3" target="u-CXdGGWJtKEq46qbfQG-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-3" value="&lt;font style=&quot;font-size: 14px;&quot; face=&quot;Consolas&quot;&gt;b = t+t&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="400" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="u-CXdGGWJtKEq46qbfQG-4" target="u-CXdGGWJtKEq46qbfQG-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-4" value="&lt;font style=&quot;font-size: 14px;&quot; face=&quot;Consolas&quot;&gt;print(t.val)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="340" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="u-CXdGGWJtKEq46qbfQG-5" target="u-CXdGGWJtKEq46qbfQG-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-5" value="&lt;font style=&quot;font-size: 14px;&quot; face=&quot;Consolas&quot;&gt;t[&#39;nu&#39;] = 10&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="280" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-6" value="找元表" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="220" width="106" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-8" value="&lt;font face=&quot;Consolas&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;__index&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="220" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-9" value="&lt;font face=&quot;Consolas&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;__newindex&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="280" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-10" value="&lt;font face=&quot;Consolas&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;__index&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="340" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-11" value="&lt;font face=&quot;Consolas&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;__add&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="400" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-12" value="不存在的方法" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="230" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-13" value="赋值不存在的元素" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="290" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-14" value="访问不存在的元素" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="350" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u-CXdGGWJtKEq46qbfQG-15" value="重载运算符" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="410" width="80" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
