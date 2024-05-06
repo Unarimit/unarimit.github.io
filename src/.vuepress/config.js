@@ -101,6 +101,7 @@ export default defineUserConfig({
                     { text: "编译（C++）", link: "/Language/CompileCpp" },
                     { text: "编译（C#）", link: "/Language/CompileCsharp" },
                     { text: "函数", link: "/Language/Function" },
+                    { text: "数值", link: "/Language/Number" },
                     { text: "类型", link: "/Language/Class" },
                     { text: "模板（C++）", link: "/Language/Template" },
                     { text: "泛型（C#）", link: "/Language/Generic" },
