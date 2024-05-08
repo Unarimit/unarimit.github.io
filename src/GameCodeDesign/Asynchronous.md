@@ -6,7 +6,7 @@
 
 本文主要介绍异步编程需要的组件和他们的区别：
 - `Coroutine`是异步编程
-- `async` / `await` 是异步编程
+- `async` / `await` 是异步编程（注：Task不等于异步编程）
 - *响应式编程配合生命周期也可以是异步编程（混沌邪恶
 
 ## 三种方案的优缺点
@@ -20,6 +20,7 @@
         - 写起来逻辑更清晰
         - 提供比协程更多的逻辑控制（`cancellationToken`）
         - 同步异步都能用
+        - 考虑多线程，由 `SynchronizationContext` 处理“线程处理模型”产生的额外影响
     - 缺点：
         - 比协程复杂一点，要了解它的工作方式，不了解的话，可能会引起：[一个不恰当使用导致try catch没用的例子](https://stackoverflow.com/questions/5383310/catch-an-exception-thrown-by-an-async-void-method)
         - 在WebGL中不能使用[这个视频中提到](https://youtu.be/WY-mk-ZGAq8?si=Do5vRtqHYq3gwhwX&t=919)
@@ -53,34 +54,44 @@ async Task 如果不Await异常就捕获不了()
 测试运行线程，我想看看`async`方法在这里是怎么调度的
 > 参考[CLR Via C# 第四版](https://book.douban.com/subject/26285940/)在WinForm中描述的`调度上下文`，应该会被调度到Unity的主线程中进行，方便对主线程数据的修改，实际上也确实如此。
 
-> 但是书中没有说对于没有`await`修饰的异步方法调度的根据，进一步看看`SynchronizationContext`的属性吧。
+> `await`之后的代码保证在游戏主线程中调用（因为Unity中一些属性只能游戏主线程访问，参考[UnityEngine.UnitySynchronizationContext](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/Scripting/UnitySynchronizationContext.cs)）
 ```cs
-public async Start(){
-    Debug.Log(System.Threading.SynchronizationContext.Current); //  --> UnityEngine.UnitySynchronizationContext
-    var t = new Task(() => dosomething().Wait()); // --> exception, Thread Pool Worker, 没报错
-    t.Start();
-    _ = dosomething(); // --> null, 0.0019407, 没报错
-    await dosomething(); // --> null, 0.0019407, Test EX
-    // dosomething().GetAwaiter().GetResult(); 
-    // 上述代码cause deadlock, more detail: https://stackoverflow.com/questions/39007006/is-getawaiter-getresult-safe-for-general-use 
-    // 如果想看看什么是死锁，在尝试这个用例的时候除了取消注释外，还要把代码放在上面，
-    // 不然就因为 await dosomething() 抛出的异常提前终止了，根本执行不到这里。
-}
-public async Task dosomething()
-{
-    await Task.Delay(500);
-    try
-    {
-        Debug.Log(Time.deltaTime); // 注意，如果在Worker中调用且遇到空引用异常，unity会忽略它
+class TestMono : MonoBehaviour{
+    public async void Start(){
+        Debug.Log(System.Threading.SynchronizationContext.Current); //  --> UnityEngine.UnitySynchronizationContext
+        var t = new Task(() => dosomething().Wait()); // --> null(无SynchronizationContext), exception, Thread Pool Worker, 没报错
+        t.Start();
+        _ = dosomething(); // --> UnityEngine.UnitySynchronizationContext, 没报错, 0.0019407, 没报错
+        await dosomething(); // --> UnityEngine.UnitySynchronizationContext, 没报错, 0.0019407, Test EX
+        // dosomething().GetAwaiter().GetResult(); 
+        // 上述代码cause deadlock, more detail: https://stackoverflow.com/questions/39007006/is-getawaiter-getresult-safe-for-general-use 
+        // 如果想看看什么是死锁，在尝试这个用例的时候除了取消注释外，还要把代码放在上面，
+        // 不然就因为 await dosomething() 抛出的异常提前终止了，根本执行不到这里。
     }
-    catch(Exception ex)
+    public async Task dosomething()
     {
-        Debug.Log("can not get time " + ex.ToString());
-    }
-    
-    Debug.Log(Thread.CurrentThread.Name);
+        // 打印同步上下文
+        Debug.Log(System.Threading.SynchronizationContext.Current);
 
-    throw new Exception("Test EX");
+        // 一个await测试
+        await Task.Delay(500);
+
+        // 测试访问只有游戏主线程能访问的
+        try
+        {
+            Debug.Log(Time.deltaTime); // 注意，如果在Worker中调用且遇到空引用异常，unity会忽略它
+        }
+        catch(Exception ex)
+        {
+            Debug.Log("can not get time " + ex.ToString());
+        }
+        
+        // 打印线程名字
+        Debug.Log(Thread.CurrentThread.Name);
+
+        // 抛出异常，看是否可以被程序捕获
+        throw new Exception("Test EX");
+    }
 }
 ```
 
@@ -146,4 +157,5 @@ Debug.Log(op.Name);
 - 简单介绍async / await 以及在unity中的使用：[Unity async / await: Coroutine's Hot Sister - Youtube](https://youtu.be/WY-mk-ZGAq8?si=Do5vRtqHYq3gwhwX)
 - [Unity async / await: Awaitable - Youtube](https://www.youtube.com/watch?v=X9Dtb_4os1o)
 - [一个不恰当使用导致try catch没用的例子 - Stackoverflow](https://stackoverflow.com/questions/5383310/catch-an-exception-thrown-by-an-async-void-method)
-- 《CLR Via C# 第四版》28章节中的28.2-28.5介绍了await/async的工作原理，和线程上下文：[CLR Via C# -  Jeffrey Richter](https://book.douban.com/subject/26285940/)
+- 《CLR Via C# 第四版》28章节中的28.2-28.5介绍了await/async的工作原理，28.9介绍了线程上下文：[CLR Via C# -  Jeffrey Richter](https://book.douban.com/subject/26285940/)
+- [C#/Unity中的异步编程 - wudaijun's blog](https://wudaijun.com/2021/11/c-sharp-unity-async-programing/)
