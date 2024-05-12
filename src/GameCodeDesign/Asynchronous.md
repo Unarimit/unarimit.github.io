@@ -14,7 +14,7 @@
 1. `Coroutine`
     - 优点：unity原生，很多api都是用协程实现（例如`LoadSceneAsync`）
     - 缺点：`IEnumarable`没有返回值，不方便复杂的逻辑。
-2. `async` / `await`
+2. `async` / `await`: 利用 Task 和被称为 异步函数 的C#语言功能的一种[编程模型](../Language/OtherFeatures.md#c-异步编程)
     - 优点：
         - 有返回值
         - 写起来逻辑更清晰

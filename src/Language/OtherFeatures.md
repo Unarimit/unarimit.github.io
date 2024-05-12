@@ -111,6 +111,23 @@ Lua中，由于可以直接观察调用栈，所以能做的事情会比较多�
 在[《Programming in Lua》 第23章，调试库](https://www.lua.org/pil/23.html) 中描述了一些，对应[第四版书（Lua5.3）](https://www.lua.org/pil/)的内容则是第25章（反射）
 
 
+## C#异步编程
+
+C#提供了三种异步编程模型。
+
+WIP
+
+async/await 关键字
+- async 关键字，将函数变为异步函数
+- await 关键字，等待异步函数执行
+    - 只能在异步函数中使用
+    - 在这里发生 任务调度
+    - 对象也不一定非得是异步函数，只要实现 `Awaiter GetAwaiter()` 方法就好
+- 注意
+    - 默认使用当前线程的同步上下文
+        > 可以设置  ConfigureAwait(false) ，在回调时不检查同步上下文
+    
+
 ## 模块化
 C#：程序集（Assembly）
 

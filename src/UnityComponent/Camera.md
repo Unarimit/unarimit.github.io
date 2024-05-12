@@ -114,3 +114,4 @@ TODO: 不知道是不是我导入其他后处理效果导致的（关闭导入�
 - URP 相机-overlay和base模式，多相机：[Unity URP相机使用简介 - CSDN](https://blog.csdn.net/aaa27987/article/details/129753424)
 - Built-in Pipeline 相机层次渲染：[World Space canvas on top of “everything” ? - unity discussions](https://discussions.unity.com/t/world-space-canvas-on-top-of-everything/128165/3)
 - 头图：[稀音精二立绘, 明日方舟 - 萌娘百科](https://zh.moegirl.org.cn/%E7%A8%80%E9%9F%B3)
+- 带躲避的第三人称相机：[Orbit Camera](https://catlikecoding.com/unity/tutorials/movement/orbit-camera/)
