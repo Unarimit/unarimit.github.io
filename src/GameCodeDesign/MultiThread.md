@@ -146,8 +146,53 @@ public class MyScheduledJob : MonoBehaviour
 使用C# Task，相对JobSystem的繁文缛节，它更加易用。但相对的，开发者需要自行管理多线程可能会出现的脏读写问题，以及与Unity API的兼容问题。
 > 可以查看[Unity 中的 .NET 概述 - Unity Doc](https://docs.unity3d.com/cn/current/Manual/overview-of-dot-net-in-unity.html)中的"Limitations of async and await tasks"部分
 
+C# Task 是对**线程池**的又一层封装，提供了返回值的支持：
 
-WIP
+```csharp
+ThreadPool.QueueUserWorkItem(Foo, 5); // Calling [void Foo(int num)]
+new Task(Foo, 5).Start(); // Equivalent of preceding using Task
+Task.Run(() => Foo(5)); // Another equivalent
+```
+
+### 调度选项和任务取消
+
+除了`Result`和`Exception`外，这两个引入的Feature也应该好好理解。
+
+- 调度选项：通过配置 `TaskScheduler` 达成目的，一般用于在GUI应用中，让一部分改变GUI的代码在主线程中执行。
+- 任务取消：通过配置 `CancellationToken` 达成目的，程序员写的代码需要根据传入的token打断当前逻辑。
+
+### 处理主线程调用
+
+由于Unity API并不能保证线程安全，所以Unity API被认为只应该在主线程调用（在Dev下会抛异常，Build下会造成未定义的错误）。Unity也为此实现了同步上下文（主要用于异步编程），那么使用Task时也可以利用这一点，将Task调度到主线程上。
+
+```csharp
+void Start() // (假设)有一个(多线程)计算任务结束时，需要将结果展示在游戏中
+{
+    var t1 = new Task<int>(() => { 
+        return 648; 
+    });
+    t1.Start();
+    
+    var ct = t1.ContinueWith(task => {
+        Debug.Log(System.Threading.SynchronizationContext.Current);
+        GameObject.CreatePrimitive(PrimitiveType.Cube); // 拉一个cube
+        Debug.Log(Time.deltaTime * t1.Result);
+    }, 
+    TaskScheduler.FromCurrentSynchronizationContext()); // 指定调度方式
+}
+```
+### Task注意事项
+
+1. 要记得处理异常，调用 `Wait`、`Result` 或 `ContinueWith` 中设置 `TaskContinuationOptions.OnlyOnFaulted`
+    > 以Task为代表的异步编程模型在执行程序员定义的代码时，会捕获异常存起来，也可以实现一套异步编程模型，设置遇到异常的逻辑。
+
+### Task的拓展方法
+
+- Task工厂：TaskFactory，辅助对任务构造和调度。
+- Task的群体等待方法。
+- 并行For：Parallel，提供对并行循环和区域的支持。
+
+可以参考[Task 类 - learn.microsoft](https://learn.microsoft.com/zh-cn/dotnet/api/system.threading.tasks.task?view=netframework-4.8)
 
 ## 参考
 - [Job system - Unity Documentation](https://docs.unity3d.com/Manual/JobSystem.html)
