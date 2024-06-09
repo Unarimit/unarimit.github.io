@@ -1,13 +1,13 @@
-<img src="../img/async-0.png">
-
 # 异步编程
+
+<img src="../img/async-0.png">
 
 在Unity中，异步编程的思想可以应用到很多方面，通常用于处理需要一段时间才能完成的任务，例如加载资源、网络请求或动画效果等。通过异步，可以避免阻塞主线程，保持游戏或应用程序的流畅性。
 
 本文主要介绍异步编程需要的组件和他们的区别：
 - `Coroutine`是异步编程
 - `async` / `await` 是异步编程（注：Task不等于异步编程）
-- *响应式编程配合生命周期也可以是异步编程（混沌邪恶
+- *回调函数配合生命周期也可以是异步编程（混沌邪恶
 
 ## 三种方案的优缺点
 
@@ -31,14 +31,17 @@
 
 ## C#异步编程模型 `async` / `await`
 
-方法使用`async`修饰，方法内部内容会被C#编译器转化为`异步状态机类`，用于实现异步执行的功能。
-- 并使用异步特性修饰方法，以便能够在metadata中查看
-- 仍在unity主线程运行，但不再受生命周期函数的影响（如`FixedUpdate`的默认deltaTime 0.02秒）
-- 可以参考：[一个关于 async / await 的很长的理论文章](https://devblogs.microsoft.com/dotnet/how-async-await-really-works/)，[CLR Via C# 第四版](https://book.douban.com/subject/26285940/)中描述的简单一些。
+方法使用`async`修饰，方法内部内容会被C#编译器转化为`异步状态机类`，用于实现异步执行的功能。并使用异步特性修饰方法，以便能够在metadata中查看。在使用时，有下列需要注意的事项：
 
-### 一些问题
+1. 逻辑仍(默认)在unity主线程“运行”，但不再受生命周期函数的上下文影响（如`FixedUpdate`中的deltaTime(默认)是0.02秒）
+    - 这里的“运行”指的是一种特殊的Task调度模式，为了避免多线程产生的脏读写，异步方法中的代码会被调度到主线程运行。如果想修改这一调度方式，可以重新配置环境的同步上下文`System.Threading.SynchronizationContext.Current` 或通过Task的 `ConfigureAwait(false)` 方法。
+2. 小心异常逃逸！该异步模型是基于 `Task` 的，`Task` 中的异常会被“收集”起来。使用 `await` 等待异步函数时会将异常抛出。
 
-异常捕获问题：
+\*可以参考：[一个关于 async / await 的很长的理论文章](https://devblogs.microsoft.com/dotnet/how-async-await-really-works/)，[CLR Via C# 第四版](https://book.douban.com/subject/26285940/)中描述的简单一些。
+
+### 异常捕获问题
+
+直接上示例代码
 
 ```cs
 如果不Await异常就捕获不了();
@@ -51,10 +54,14 @@ async Task 如果不Await异常就捕获不了()
     throw new Exception(); // 这个异常不会触发断点调试(可以试着在console app中执行一下)
 }
 ```
-测试运行线程，我想看看`async`方法在这里是怎么调度的
+
+### 以不同的方式执行异步代码
+
+测试运行线程，我想看看`async`方法在这里是怎么调度的。这里使用了一个“引理”，那就是unity在dev模式下的非主线程中调用unity api函数会抛出异常。
+
 > 参考[CLR Via C# 第四版](https://book.douban.com/subject/26285940/)在WinForm中描述的`调度上下文`，应该会被调度到Unity的主线程中进行，方便对主线程数据的修改，实际上也确实如此。
 
-> `await`之后的代码保证在游戏主线程中调用（因为Unity中一些属性只能游戏主线程访问，参考[UnityEngine.UnitySynchronizationContext](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/Scripting/UnitySynchronizationContext.cs)）
+> `await`之后的代码保证在游戏主线程中调用（因为Unity中一些属性只能游戏主线程访问，参考[UnityEngine.UnitySynchronizationContext](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/Scripting/UnitySynchronizationContext.cs)），也可以看看[如何对控件进行线程安全的调用（Windows 窗体 .NET）](https://learn.microsoft.com/zh-cn/dotnet/desktop/winforms/controls/how-to-make-thread-safe-calls?view=netdesktop-7.0)
 ```cs
 class TestMono : MonoBehaviour{
     public async void Start(){
