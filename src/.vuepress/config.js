@@ -52,8 +52,9 @@ export default defineUserConfig({
                     { text: "总览", link: "/GameCodeDesign/index.html" },
                     { text: "[W]常用规范", link: "/GameCodeDesign/CommonlySpec" },
                     { text: "(游戏中的)设计模式", link: "/GameCodeDesign/DesignPattern" },
-                    { text: "异步编程", link: "/GameCodeDesign/Asynchronous" },
                     { text: "多线程", link: "/GameCodeDesign/MultiThread" },
+                    { text: "异步编程", link: "/GameCodeDesign/Asynchronous" },
+                    { text: "[W]响应式编程", link: "/GameCodeDesign/ReactiveProgramming/Page" },
                     { text: "启动流程设计", link: "/GameCodeDesign/StartupProcedure" },
                     { text: "游戏上下文设计", link: "/GameCodeDesign/GameContextSystem" },
                     { text: "资源系统和服务", link: "/GameCodeDesign/ResourceSystem" },
@@ -63,7 +64,8 @@ export default defineUserConfig({
                     { text: "人机切换", link: "/GameCodeDesign/HumanAgentSwitch" },
                     { text: "RTS相机", link: "/GameCodeDesign/RTSCamera" },
                     { text: "事件系统", link: "/GameCodeDesign/EventSystem" },
-                    { text: "[W]协同开发", link: "/GameCodeDesign/Coop" }
+                    { text: "[W]协同开发", link: "/GameCodeDesign/Coop" },
+                    { text: "[W]Tag和Layer", link: "/GameCodeDesign/TagAndLayer" },
                 ]
             },
             {
@@ -141,6 +143,8 @@ export default defineUserConfig({
                     { text: "记一次人物模型的运行时配置", link: "/CodingRamble/HumanModelRuntimeConfig" },
                     { text: "记初次使用行为树插件", link: "/CodingRamble/UseBehaviorDesigner" },
                     { text: "初探碰撞系统", link: "/CodingRamble/CollisionSystem" },
+                    { text: "[W]第一个月工作有感", link:"/CodingRamble/FirstMonthWorkLog"},
+                    { text: "[W]性能优化-UI篇", link:"/CodingRamble/PerformanceOptimizeInUI"},
                     { text: "[w]游戏常用的几何算法", link: "/CodingRamble/GameGeometry" },
                     { text: "[x]学习一下Unity的TD模板", link: "/CodingRamble/TowerDefenceTemplate" },
                 ]
