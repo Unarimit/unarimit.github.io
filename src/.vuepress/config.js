@@ -143,7 +143,7 @@ export default defineUserConfig({
                     { text: "记一次人物模型的运行时配置", link: "/CodingRamble/HumanModelRuntimeConfig" },
                     { text: "记初次使用行为树插件", link: "/CodingRamble/UseBehaviorDesigner" },
                     { text: "初探碰撞系统", link: "/CodingRamble/CollisionSystem" },
-                    { text: "[W]第一个月工作有感", link:"/CodingRamble/FirstMonthWorkLog"},
+                    { text: "第一个月工作有感", link:"/CodingRamble/FirstMonthWorkLog"},
                     { text: "[W]性能优化-UI篇", link:"/CodingRamble/PerformanceOptimizeInUI"},
                     { text: "[w]游戏常用的几何算法", link: "/CodingRamble/GameGeometry" },
                     { text: "[x]学习一下Unity的TD模板", link: "/CodingRamble/TowerDefenceTemplate" },
