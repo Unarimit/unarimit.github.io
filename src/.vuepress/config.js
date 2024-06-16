@@ -54,7 +54,7 @@ export default defineUserConfig({
                     { text: "(游戏中的)设计模式", link: "/GameCodeDesign/DesignPattern" },
                     { text: "多线程", link: "/GameCodeDesign/MultiThread" },
                     { text: "异步编程", link: "/GameCodeDesign/Asynchronous" },
-                    { text: "[W]响应式编程", link: "/GameCodeDesign/ReactiveProgramming/Page" },
+                    { text: "[W]响应式编程", link: "/GameCodeDesign/ReactiveProgramming/index.html" },
                     { text: "启动流程设计", link: "/GameCodeDesign/StartupProcedure" },
                     { text: "游戏上下文设计", link: "/GameCodeDesign/GameContextSystem" },
                     { text: "资源系统和服务", link: "/GameCodeDesign/ResourceSystem" },
