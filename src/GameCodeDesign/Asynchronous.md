@@ -36,6 +36,10 @@
 1. 逻辑仍(默认)在unity主线程“运行”，但不再受生命周期函数的上下文影响（如`FixedUpdate`中的deltaTime(默认)是0.02秒）
     - 这里的“运行”指的是一种特殊的Task调度模式，为了避免多线程产生的脏读写，异步方法中的代码会被调度到主线程运行。如果想修改这一调度方式，可以重新配置环境的同步上下文`System.Threading.SynchronizationContext.Current` 或通过Task的 `ConfigureAwait(false)` 方法。
 2. 小心异常逃逸！该异步模型是基于 `Task` 的，`Task` 中的异常会被“收集”起来。使用 `await` 等待异步函数时会将异常抛出。
+3. `async void`是一类特殊的异步方法，通常用作异步开始的“入口”。
+    - 特点是异常不可`try catch`，但可以正常抛到同步上下文（而非task那样塞到自己的属性里）
+    - 为了正常使用，不应在其中出现`ConfigureAwait(false)`等将线程调至线程池的做法。
+    - 对`async void`不应该滥用，有一种解释是它只应该用于“某个事件处理程序的订阅者”，如unity中的按钮、生命周期函数、各种触发函数(如OnCollision)等。
 
 \*可以参考：[一个关于 async / await 的很长的理论文章](https://devblogs.microsoft.com/dotnet/how-async-await-really-works/)，[CLR Via C# 第四版](https://book.douban.com/subject/26285940/)中描述的简单一些。
 
@@ -64,7 +68,7 @@ async Task 如果不Await异常就捕获不了()
 > `await`之后的代码保证在游戏主线程中调用（因为Unity中一些属性只能游戏主线程访问，参考[UnityEngine.UnitySynchronizationContext](https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/Scripting/UnitySynchronizationContext.cs)），也可以看看[如何对控件进行线程安全的调用（Windows 窗体 .NET）](https://learn.microsoft.com/zh-cn/dotnet/desktop/winforms/controls/how-to-make-thread-safe-calls?view=netdesktop-7.0)
 ```cs
 class TestMono : MonoBehaviour{
-    public async void Start(){
+    public async void Start(){ // 顶层异步入口 "async void"
         Debug.Log(System.Threading.SynchronizationContext.Current); //  --> UnityEngine.UnitySynchronizationContext
         var t = new Task(() => dosomething().Wait()); // --> null(无SynchronizationContext), exception, Thread Pool Worker, 没报错
         t.Start();
@@ -166,3 +170,5 @@ Debug.Log(op.Name);
 - [一个不恰当使用导致try catch没用的例子 - Stackoverflow](https://stackoverflow.com/questions/5383310/catch-an-exception-thrown-by-an-async-void-method)
 - 《CLR Via C# 第四版》28章节中的28.2-28.5介绍了await/async的工作原理，28.9介绍了线程上下文：[CLR Via C# -  Jeffrey Richter](https://book.douban.com/subject/26285940/)
 - [C#/Unity中的异步编程 - wudaijun's blog](https://wudaijun.com/2021/11/c-sharp-unity-async-programing/)
+- [《Essential C# 7.0》](https://book.douban.com/subject/27009371/)
+    - 19.5 基于任务的异步模式
