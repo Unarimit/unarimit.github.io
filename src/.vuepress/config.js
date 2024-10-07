@@ -145,6 +145,7 @@ export default defineUserConfig({
                     { text: "初探碰撞系统", link: "/CodingRamble/CollisionSystem" },
                     { text: "第一个月工作有感", link:"/CodingRamble/FirstMonthWorkLog"},
                     { text: "性能优化-UI篇", link:"/CodingRamble/PerformanceOptimizeInUI"},
+                    { text: "随笔-反人类Web前端", link:"/CodingRamble/FuckWebChapter1"},
                     { text: "[w]游戏常用的几何算法", link: "/CodingRamble/GameGeometry" },
                     { text: "[x]学习一下Unity的TD模板", link: "/CodingRamble/TowerDefenceTemplate" },
                 ]
