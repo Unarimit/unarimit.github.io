@@ -14,12 +14,20 @@
 无论采用哪种方法，都需要进行充分的测试和调试，确保异步计算不会影响游戏的帧率和流畅度。关注合理的任务调度和控制计算量是保证游戏帧数不受影响的重要因素。
 :::
 
-Unity的生命周期都是在主线程中进行的，协程属于一种异步封装，也是在主线程中运行。如果有**计算量大**的任务，应该创建线程，在线程中运行。
+Unity的生命周期都是在主线程中进行的，Unity协程属于一种（分帧）异步封装，也是在主线程中运行。如果有**计算量大**的任务，应该创建线程，在线程中运行。
 > 对于单线程平台`WEBGL`，使用多线程会相对困难
 
 这里计划对Unity使用的两种多线程API做简单介绍
 - Unity JobSystem
-- *C# Task (WIP)*
+- C# Task (注意和异步函数声明的Task区分)
+
+::: tip 与异步的区别
+本文事实上主要讨论将任务分配到其他线程的方法，所以这里的多线程主要强调 “需要多个线程的场景”。
+
+如同多线程是单线程的反义词，异步是同步的反义词，这两个概念还是难以区分的，例如：
+- 可以说在两个线程中，他们的信息传递是异步的。
+- 可以说在异步函数中配置了调度参数，使其调度到另一个线程，变成了多线程。
+:::
 
 ## 使用Unity JobSystem
 
@@ -194,8 +202,24 @@ void Start() // (假设)有一个(多线程)计算任务结束时，需要将结
 
 可以参考[Task 类 - learn.microsoft](https://learn.microsoft.com/zh-cn/dotnet/api/system.threading.tasks.task?view=netframework-4.8)
 
+
+## 同步锁
+
+> 对于包含静态条件的代码，（中间忘了）。为了性能，使用互锁（Interlocked类）和易变（Volatile类）这样低级的基元构造，会让情况更加复杂。在好的多线程编程中，“越简单越好”或许才是最重要的原则。- 《Essential C# 7.0》
+
+
+## 我的多线程问题合集
+
+1. 同一个进程中的多线程，是否要考虑线程上下文切换的内存载入问题？（高内存使用场景）
+    - 简化问题为：线程调度是否涉及内存页的调度？那答案应该是“要考虑”
+
+2. Thread.Sleep()和Task.Delay()的使用都应该仔细权衡，看是否有替代方案。
+    - 如果要等待一个事件触发，可以使用消息通知。如Task的`TaskCompletionSource`
+
 ## 参考
 - [Job system - Unity Documentation](https://docs.unity3d.com/Manual/JobSystem.html)
 - [继承IJob的示例 - Unity Documentation](https://docs.unity3d.com/cn/current/ScriptReference/Unity.Jobs.IJob.html)
 - [Unity JobSystem使用及技巧 - cnblog](https://www.cnblogs.com/FlyingZiming/p/17241013.html)
 - 评论区吵架很有意思：[Blittable ECS？- 知乎](https://zhuanlan.zhihu.com/p/83120068)
+- [《Essential C# 7.0》](https://book.douban.com/subject/27009371/)
+    - 19.1 多线程处理基础
