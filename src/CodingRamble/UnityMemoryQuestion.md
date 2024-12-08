@@ -10,6 +10,8 @@ PrefabUtility有好多方法，其中 `PrefabUtility.ApplyPrefabInstance` 和 `P
 
 最近突然注意到profiler中托管内存（Managed Heap）占比很高，而且看起来好像一直超出上限不断做gc，就去排查。最后发现这是unity2022.3.8中使用低版本Profiler时的正常的表现。。[相关问题中建议使用最新版本的 Memory Profiler](https://discussions.unity.com/t/memory-leak-reserved-going-10-gb/945249)
 
+> 作者的[blog](https://unity.com/blog/engine-platform/everything-you-need-to-know-about-memory-profiler)中也提到，MemoryProfiler主要用于分析Asset加载所占用的内存（即Unity Objects view），原话是 “The Unity Objects view is where you will likely spend the most time.”
+
 ### 2.1 现象
 
 ![](../img/UnityMemoryQuestion-1.gif)
@@ -39,7 +41,10 @@ Profiler中确实这段内存不会再看起来像“内存不断分配再GC”�
 
 ** unity
 
+如果要追踪托管内存的情况，首先应该考虑实机表现并配套相关的可视化工具，并参考一些[Unity文档中描述的track 托管堆的方法](https://docs.unity3d.com/Manual/performance-track-garbage-collection.html)
+
 ## 参考
 - [PrefabUtility - Unity Scripting API](https://docs.unity3d.com/2022.3/Documentation/ScriptReference/PrefabUtility.html)
 - [Everything you need to know about Memory Profiler 1.0.0 - Unity Blog](https://unity.com/blog/engine-platform/everything-you-need-to-know-about-memory-profiler)
     - 相关问题 [Memory Leak - “Reserved” Going 10+ GB](https://discussions.unity.com/t/memory-leak-reserved-going-10-gb/945249)
+- [Tracking garbage collection allocations - Unity Manual](https://docs.unity3d.com/Manual/performance-track-garbage-collection.html)
