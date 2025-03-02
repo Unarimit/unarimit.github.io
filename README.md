@@ -18,4 +18,8 @@ https://blog.csdn.net/weixin_43019353/article/details/130757392
 根据上方的`配置Action自动部署`链接，配置`ACCESS_TOKEN`
 
 ## 本地运行
-在根目录下执行`yarn docs:dev`
+
+装`nodejs`和`pnpm`
+> 这两个环境在win上可以用`choco`安装，方便一点
+
+在根目录下执行`pnpm docs:dev`
