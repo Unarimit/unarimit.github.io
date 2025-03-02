@@ -1,7 +1,7 @@
 # 性能优化-UI篇
 
 UI的性能优化可以分为三个方向：
-1. 减少draw call提交的I/O
+1. 减少draw call提交的次数，从而减小总I/O
     - 触发动态合批（dynamic batching），首先通过图集合并细小的UI，会增加一定量的CPU开销。
     - 减少图片大小，使用平铺、非焦点图低像素等技巧。
 2. 减少CPU计算
@@ -17,19 +17,31 @@ UI的性能优化可以分为三个方向：
 
 ## 动态合批
 
-动态合批中unity的解释
+UI的合批规则和3d物体的合批规则之间有一定的差距，而且还随unity版本不同，合批规则也有一定差距。
+> 由于UI动态合批的规则代码并没有公开，所以想要理解这一点更为困难。
+
+> 对于URP管线，Canva是Screen Base：代码入口从 `UniversalRenderPipeline.RenderSingleCamera` 开始，经过 `ScriptableRenderer.Execute` 和具体的渲染Pass，就到了 `_Internal` 结尾的内部方法中了。然后偷偷的调 `Canvas.RenderSubBatch`
 
 
-问题：看不到源码，逻辑的判定点不明
-- 入口：UniversalRenderPipeline.RenderSingleCamera -> ScriptableRenderer.Execute -> DrawObjectsPass.Execute(Name:"Render Transparents") -> ScriptableRenderContext -> _Internal
-- 要看看是什么Pass
-- CommandBuffer是渲染命令
+### 问题：看不到源码，逻辑的判定点不明
+
+> 入口：UniversalRenderPipeline.RenderSingleCamera -> ScriptableRenderer.Execute -> "UGUI Render Logic" -> _Internal
+
+> CommandBuffer是渲染命令
+
+NGUI的DrawCall提交代码是能看的，可以根据这个参考合批做的事情和一些逻辑。
+
+### 动态合批-性能分析
+
+TODO: 分析合批前和合批后的性能。
 
 
 ## 动静分离
 
-动静结合，合批是否合理。
+动静分离，主要用于减少CPU重建画布的开销。
 
+
+## 尝试自己写合批代码
 
 
 ## 参考
