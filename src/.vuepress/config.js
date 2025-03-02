@@ -173,7 +173,7 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/Gameplay/index.html" },
-                    { text: "[x]占位符", link: "/WIP" }, // 不加过不了build
+                    { text: "UI缓动动画", link: "/Gameplay/UITween" },
                 ]
             }
         ]
