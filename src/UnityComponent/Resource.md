@@ -4,7 +4,7 @@ Unity提供`Resources`、`AssetsBundle`(俗称ab包)和`Addressable`API用于管
 > Unity2018之前关于自行构建使用`AssetsBundle`的资源管理的方案已被标记为"out of date"，被`Addressable`替代。
 
 以下是这些API的区别：
-- *在编辑器中直接引用-`AssetDatabase`：简单易用😁，unity会按场景和共用资源提供一定的管理🤔，包体过大问题😡，不支持热更新😡
+- *在编辑器中直接引用-`AssetDatabase`：简单易用（仅限Editor中）😁，unity会按场景和共用资源提供一定的管理🤔
 - `Resources`: 简单易用😁，文件过多时会导致[各种问题](https://learn.unity.com/tutorial/assets-resources-and-assetbundles#5c7f8528edbc2a002053b5a6)😡，[灾难性的内存管理](https://docs.unity3d.com/cn/current/Manual/BestPracticeUnderstandingPerformanceInUnity6.html)😡，文件夹下资源全部发布😡，不支持热更新😡
 - `AssetsBundle`: 根据需要装载和卸载资源😁，依赖问题和装载卸载控制使管理较为困难😡
 - `Addressable`(一套`AssetsBundle`的管理方案): 分组管理😁，异步加载😁，有一定学习成本😅
