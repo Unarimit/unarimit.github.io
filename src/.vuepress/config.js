@@ -108,6 +108,7 @@ export default defineUserConfig({
                     { text: "模板（C++）", link: "/Language/Template" },
                     { text: "泛型（C#）", link: "/Language/Generic" },
                     { text: "垃圾回收", link: "/Language/GC" },
+                    { text: "异步（C#）", link: "/Language/AsyncCSharp"},
                     { text: "其他特性", link: "/Language/OtherFeatures" },
                     { text: "一些“有趣”的问题", link: "/Language/Questions" },
                     { text: "*Unity的编译", link: "/Language/UnityCompile" },

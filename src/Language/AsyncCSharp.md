@@ -1,0 +1,93 @@
+# 异步（C#）
+
+C#提供了[三种异步编程模型](https://learn.microsoft.com/zh-cn/dotnet/standard/asynchronous-programming-patterns/)。**基于任务的异步模式(TAP)** 、基于事件的异步模式 (EAP)、异步编程模型 (APM) 。其中，后两者较少使用，故文档中不多涉及。
+
+[代码设计-异步编程](../GameCodeDesign/Asynchronous)中介绍了一些TAP的用法和注意事项。
+
+其他的一些使用方法，甚至是不常用的“取消”和“进度报告”，[文档中已经描述的很清楚了](https://learn.microsoft.com/zh-cn/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
+
+特点：
+- 高封装度，通过`async`和`await`修饰符，就可以使用
+   - 相对而言，由于高封装度的影响，要理解调度机制才可顺利使用
+   - 需要一定的代码规范（比如async方法以Async结尾）
+- 控制流更明确
+- WIP
+
+::: details 问GPT：如果想要掌握“基于任务的异步模式”，需要了解哪些类的作用？
+
+基本类：`Tasks.Task`、`Tasks.Task<TResult>` 和 `Tasks.TaskCompletionSource<TResult>`
+
+任务取消相关类：`CancellationToken` 和 `CancellationTokenSource`
+
+任务组合相关类和方法：`Task.WhenAll` 和 `Task.WhenAny`
+
+调度上下文相关类：`SynchronizationContext` 和 `TaskScheduler`
+
+性能优化：`ValueTask` 和 `ValueTask<TResult>`
+
+辅助工具类：例如 `SemaphoreSlim` 和 `AsyncLocal<T>`
+
+## 学习路径示例
+1. **基本任务管理：**
+   - 学习`Task`和`Task<TResult>`的基础用法，包括创建、等待、返回值和异常处理。
+2. **深入理解`async`和`await`：**
+   - 了解同步上下文、状态机生成、`ConfigureAwait(false)`的影响。
+3. **任务组合：**
+   - 学习`Task.WhenAll`和`Task.WhenAny`来组合和管理多个任务。
+4. **取消任务：**
+   - 理解`CancellationToken`和`CancellationTokenSource`的用法。
+5. **异常处理：**
+   - 掌握任务的异常传播和捕获。
+6. **性能优化：**
+   - 了解`ValueTask`、`TaskCompletionSource`和其他高性能选项。
+
+:::
+
+## Awaitable-如何构造可等待对象
+
+一种方式是：通过一个继承自 `TaskCompletionSource<T>` 或 `TaskCompletionSource` 的类，在适当的时机调用 `SetResult` 方法或其他转换任务状态的方法。
+
+另一种是：通过一个继承 `Task`类，可以参考[Task.Delay](https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs,14879c32ba2be734)的实现，就是通过一个继承自`Task`的 `DelayPromise`对象
+
+最后一种则是实现 ​​Awaitable 模式​​，这样提供了更高的自由度，如下方代码所示，`CustomAwaitable`是一个可等待对象
+
+```csharp
+public class CustomAwaitable
+{
+    public CustomAwaiter GetAwaiter() => new CustomAwaiter();
+}
+
+public struct CustomAwaiter : INotifyCompletion
+{
+    public bool IsCompleted => /* 逻辑 */;
+    public void OnCompleted(Action continuation) => /* 逻辑 */;
+    public int GetResult() => /* 结果 */;
+}
+```
+
+总结一下，一般而言应该使用“继承自 `TaskCompletionSource<T>`类​”的方式，而对性能敏感或需要更高自定义的情景，则使用“实现 ​​Awaitable 模式​”的方式
+
+## TaskScheduler-如何构造调度器
+
+WIP
+
+## 针对Unity API依赖主线程的解决方案-UniTask
+
+UniTask是一个开源项目，主要解决在Unity环境中，使用Task代替coroutine时，Task“不够好用”的问题，例如：
+- 提供值类型的Task以及配套方法，避免因异步任务产生的GC
+- 完全运行在Unity主线程（Runs completely on Unity's PlayerLoop），避免Task的误用产生错误调度到非Unity主线程，导致访问不了UnityAPI的情况。
+
+仓库：https://github.com/Cysharp/UniTask
+
+
+## 其他
+
+volatile 关键字：用于指示一个字段可以由多个同时执行的线程修改。保证编译器，运行时系统甚至硬件不重新排列对存储器位置的读取和写入。
+
+lock 关键字：同步一段代码块的逻辑用的
+
+## 参考
+- [.Net异步编程模式 - learn.microsoft](https://learn.microsoft.com/zh-cn/dotnet/standard/asynchronous-programming-patterns/)
+- [UniTask - Github](https://github.com/Cysharp/UniTask)
+- [Task的源码 - dot.net](https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs)
+- [volatile（C# 参考）- learn.microsoft](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/volatile)

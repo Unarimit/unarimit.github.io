@@ -41,6 +41,8 @@
     - 为了正常使用，不应在其中出现`ConfigureAwait(false)`等将线程调至线程池的做法。
     - 对`async void`不应该滥用，有一种解释是它只应该用于“某个事件处理程序的订阅者”，如unity中的按钮、生命周期函数、各种触发函数(如OnCollision)等。
 
+关于原理部分，可以查看：[编程语言的学习方法-异步（C#）](../Language/AsyncCSharp)
+
 \*可以参考：[一个关于 async / await 的很长的理论文章](https://devblogs.microsoft.com/dotnet/how-async-await-really-works/)，[CLR Via C# 第四版](https://book.douban.com/subject/26285940/)中描述的简单一些。
 
 ### 异常捕获问题
