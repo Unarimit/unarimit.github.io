@@ -69,7 +69,12 @@ public struct CustomAwaiter : INotifyCompletion
 
 ## TaskScheduler-如何构造调度器
 
-WIP
+> "FCL提供了两个派生自`TaskScheduler`的类型：线程池任务调度器（thread pool task scheduler），和同步上下文任务调度器（synchronization context task scheduler）"。前者用于将任务调度到线程池，后者将任务调度到对应的主线程（如WPF的GUI线程、Unity的主线程等）
+
+Unity在处理GameObject相关API，在异步函数调用时的线程不安全问题时，只重写了调度上下文类（`UnitySynchronizationContext : SynchronizationContext`），继续使用同步上下文任务调度器。
+> Github: https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/Scripting/UnitySynchronizationContext.cs
+
+确实大部分情况下不需要再对TaskScheduler本身进行修改，在[.net文档 TaskScheduler Class](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskscheduler?view=net-9.0)中给出的例子是：一种限制线程数量的调度器。
 
 ## 针对Unity API依赖主线程的解决方案-UniTask
 
@@ -91,3 +96,5 @@ lock 关键字：同步一段代码块的逻辑用的
 - [UniTask - Github](https://github.com/Cysharp/UniTask)
 - [Task的源码 - dot.net](https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs)
 - [volatile（C# 参考）- learn.microsoft](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/volatile)
+- [《CLR via C# 第四版》](https://book.douban.com/subject/26285940)
+   - 27.5.7 任务调度器
