@@ -113,6 +113,7 @@ export default defineUserConfig({
                     { text: "一些“有趣”的问题", link: "/Language/Questions" },
                     { text: "*Unity的编译", link: "/Language/UnityCompile" },
                     { text: "*热更新方案", link: "/Language/HotfixSchema" },
+                    { text: "*Effective C#读书笔记", link: "/Language/EffectiveCSharp"},
                     
                 ]
             },
