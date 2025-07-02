@@ -3,28 +3,45 @@
 ## 按章节记录
 ### 第一章　C#语言的编程习惯（Language Idioms）
 1. 优先使用隐式类型的局部变量
+    - 即多用`var`关键字
 2. 考虑用readonly代替const
+    - 难评，rider会建议用const替换readonly
 3. 优先考虑is或as运算符，尽量少用强制类型转换
-4. 用内插字符串取代string.Format()
-5. 用FormattableString取代专门为特定区域而写的字符串
-6. 不要用表示符号名称的硬字符串来调用 API
+    - 基操
+4. 用内插字符串取代`string.Format()`
+    - 但是做多语言的时候，不得不用`string.Format()`
+5. 用`FormattableString`取代专门为特定区域而写的字符串
+    - 可以用`FormattableString`作为`$`式内插声明的返回值，可以细致的处理地区文化差异。但还是一样的问题，做多语言的时候，不得不用`string.Format()`
+6. 不要用表示符号名称的硬字符串来调用 API（Avoid String-ly Typed APIs）
+    - 用`nameof`，别写魔法string
 7. 用委托表示回调
+    - 解耦的时候用
+    - 我认为：如果逻辑本身就是耦合的，还是持有对象调public方法比较好
 8. 用null条件运算符调用事件处理程序
+    - let's say `action?.invoke()`
 9. 尽量避免装箱与取消装箱这两种操作
+    - 能想到的话当然会避免（TODO：后面单开一个章节讨论吧）
 10. 只有在应对新版基类与现有子类之间的冲突时才应该使用 new修饰符
+    - 如字面意思，挺少见的情况
 
 ### 第二章　.NET的资源管理（.NET Resource Management）
 11. 理解并善用 .NET的资源管理机制
     - 在？[看看GC](../Language/GC) 
-
-12. 声明字段时，尽量直接为其设定初始值
-    - 减少重复赋值
-
+12. 声明字段时，尽量直接为其设定初始值（Prefer Member Initializers to Assignment Statements）
+    - 减少重复赋值，即有限使用初始化器
+    - 文章中对值类型拆装箱有错误描述，说IL指令initObj会触发拆装箱，[文档](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.emit.opcodes.initobj)里没看到呢
 13. 用适当的方式初始化类中的静态成员
+    - 参照各种singleton写法
+    - 在游戏开发中因为考虑重登，要保证销毁起来简单，防止脏数据
 14. 尽量删减重复的初始化逻辑
+    - 简单的构造器调用复杂的构造器，增加复用
 15. 不要创建无谓的对象
+    - `String` -> `StringBuilder`，每次创建 -> 静态字段
 16. 绝对不要在构造函数里面调用虚函数
-17. 实现标准的dispose 模式
+    - 八股文，和C++的情况不同
+17. 实现标准的 dispose 模式
+    - 很少用，最近搞ab包有用到
+
 
 ### 第三章 合理地运用泛型（Working with Generics）
 
@@ -59,10 +76,10 @@
     - 兼容旧api
 
 27. 只把必备的契约定义在接口中，把其他功能留给扩展方法去实现
-    - 如linq
+    - 如Linq
 
 28. 考虑通过扩展方法增强已构造类型的功能
-    - 如linq，或以拓展方法的方式定义 差异化/优化 操作
+    - 如Linq，或以拓展方法的方式定义 差异化/优化 操作
 
 ### 第四章 合理地运用LINQ（Working with LINQ）
 
@@ -153,3 +170,5 @@
 - [Effective C#（原书第3版） - 爱飞翔 译](https://book.douban.com/subject/30223371/)
     - 买不到中文版实体书，微信读书上可以看..
 - [Effective C#（第3版）：编写高质量C#代码的50条有效方法（英文版）](https://book.douban.com/subject/30262029/)
+- [IL规范文档 ecma335](https://ecma-international.org/publications-and-standards/standards/ecma-335/)
+    - 这里也写了一些，可以在线看[OpCodes Class - learn.ms](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.emit.opcodes)
