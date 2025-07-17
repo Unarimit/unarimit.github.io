@@ -45,27 +45,43 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: '代码设计',
-                link: '/GameCodeDesign/index.html',
+                text: '代码设计-基础',
+                link: '/CodeBase/index.html',
                 collapsible: true,
                 children: [
-                    { text: "总览", link: "/GameCodeDesign/index.html" },
-                    { text: "[W]常用规范", link: "/GameCodeDesign/CommonlySpec" },
-                    { text: "(游戏中的)设计模式", link: "/GameCodeDesign/DesignPattern" },
-                    { text: "多线程", link: "/GameCodeDesign/MultiThread" },
-                    { text: "异步编程", link: "/GameCodeDesign/Asynchronous" },
-                    { text: "[W]响应式编程", link: "/GameCodeDesign/ReactiveProgramming/index.html" },
-                    { text: "启动流程设计", link: "/GameCodeDesign/StartupProcedure" },
-                    { text: "游戏上下文设计", link: "/GameCodeDesign/GameContextSystem" },
-                    { text: "资源系统和服务", link: "/GameCodeDesign/ResourceSystem" },
-                    { text: "[W]UI系统设计", link: "/GameCodeDesign/UISystem" },
-                    { text: "技能系统设计", link: "/GameCodeDesign/AbilitySystem" },
-                    { text: "[W]环境交互", link: "/GameCodeDesign/Interaction" },
-                    { text: "人机切换", link: "/GameCodeDesign/HumanAgentSwitch" },
-                    { text: "RTS相机", link: "/GameCodeDesign/RTSCamera" },
-                    { text: "事件系统", link: "/GameCodeDesign/EventSystem" },
-                    { text: "[W]协同开发", link: "/GameCodeDesign/Coop" },
-                    { text: "[W]Tag和Layer", link: "/GameCodeDesign/TagAndLayer" },
+                    { text: "总览", link: "/CodeBase/index.html" },
+                    { text: "(游戏中的)设计模式", link: "/CodeBase/DesignPattern" },
+                    { text: "[W]常用规范", link: "/CodeBase/CommonlySpec" },
+                    { text: "多线程", link: "/CodeBase/MultiThread" },
+                    { text: "异步编程", link: "/CodeBase/Asynchronous" },
+                    { text: "[W]响应式编程", link: "/CodeBase/ReactiveProgramming/index.html" },
+                    { text: "事件系统", link: "/CodeBase/EventSystem" },
+                    { text: "[W]协同开发", link: "/CodeBase/Coop" },
+                ]
+            },
+            {
+                text: '代码设计-原型实现',
+                link: '/CodeImplement/index.html',
+                collapsible: true,
+                children: [
+                    { text: "总览", link: "/CodeImplement/index.html" },
+                    { text: "技能系统设计", link: "/CodeImplement/AbilitySystem" },
+                    { text: "[W]环境交互", link: "/CodeImplement/Interaction" },
+                    { text: "人机切换", link: "/CodeImplement/HumanAgentSwitch" },
+                    { text: "RTS相机", link: "/CodeImplement/RTSCamera" },
+                    { text: "[W]Tag和Layer", link: "/CodeImplement/TagAndLayer" },
+                ]
+            },
+            {
+                text: '代码设计-框架',
+                link: '/CodeFramework/index.html',
+                collapsible: true,
+                children: [
+                    { text: "总览", link: "/CodeFramework/index.html" },
+                    { text: "启动流程设计", link: "/CodeFramework/StartupProcedure" },
+                    { text: "游戏上下文设计", link: "/CodeFramework/GameContextSystem" },
+                    { text: "资源系统和服务", link: "/CodeFramework/ResourceSystem" },
+                    { text: "[W]UI系统设计", link: "/CodeFramework/UISystem" },
                 ]
             },
             {
