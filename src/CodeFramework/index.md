@@ -21,11 +21,11 @@
 ## RoadMap
 
 1. 学习基础的设计思想
-- 如MVC，MVVM等软件架构。
+    - 如MVC，MVVM等软件架构。
 2. 从一些框架出发，看别人的博客和自己总结
-- QFramework, GameFramework
+    - QFramework, GameFramework
 3. 看一些其他方向的框架，如性能特化的ECS
-- *ECS：面向数据，Cache友好的设计
+    - *ECS：面向数据，Cache友好的设计
 
 
 ## 参考
