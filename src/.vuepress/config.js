@@ -85,6 +85,14 @@ export default defineUserConfig({
                 ]
             },
             {
+                text: '性能优化',
+                link: '/Profiler/index.html',
+                collapsible: true,
+                children: [
+                    { text: "总览", link: "/Profiler/index.html" },
+                ]
+            },
+            {
                 text: '计算机图形学',
                 link: '/ComputerGraphics/index.html',
                 collapsible: true,
