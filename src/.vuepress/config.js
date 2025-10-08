@@ -178,7 +178,7 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: '模型和渲染 [低完成度]',
+                text: '游戏引擎和渲染 [低完成度]',
                 link: '/Shading/index.html',
                 collapsible: true,
                 children: [
@@ -187,10 +187,11 @@ export default defineUserConfig({
                     { text: "URP渲染管线", link: "/Shading/URP_Pipeline" },
                     { text: "[W]Blender", link: "/Shading/Blender" },
                     { text: "[W]模型", link: "/Shading/Modeling" },
-                    { text: "渲染风格和手段", link: "/Shading/StyleAndMethod" }, // text 需要修改
+                    { text: "渲染风格和方法论", link: "/Shading/StyleAndMethod" },
                     { text: "NPR", link: "/Shading/NPR" },
                     { text: "[x]特效和粒子系统", link: "/WIP" },
-                    { text: "[x]优化策略", link: "/WIP" }
+                    { text: "[x]优化策略", link: "/WIP" },
+                    { text:"天空和云", link: "/Shading/SkyAndCloud"}
                 ]
             },
             {
