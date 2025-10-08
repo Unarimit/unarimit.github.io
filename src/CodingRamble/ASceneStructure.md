@@ -87,6 +87,7 @@ ProBuilder版本 Version 5.0.7 - April 12, 2023，Unity版本2021.3
 ### 一种卡通水的实现
 
 [Making My First Open World Game | Devlog #1 - Youtube](https://www.youtube.com/watch?v=WnnaI_OXeEA)视频中，就实现了相当方便，视觉也还可以的卡通水效果（感觉不如....）。视频中显示了可以在Unity中方便的编辑（如下图所示），和使用Shader Graph实现水流渲染。
+
 <img src="../img/terrain-6.png">
 
 他也实现了简单的特效。

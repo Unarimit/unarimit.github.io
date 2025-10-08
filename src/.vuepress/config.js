@@ -102,7 +102,7 @@ export default defineUserConfig({
                     { text: "坐标变换", link: "/ComputerGraphics/Transformation" },
                     { text: "光栅化", link: "/ComputerGraphics/Rasterization" },
                     { text: "着色", link: "/ComputerGraphics/Shading" },
-                    { text: "阴影", link: "/ComputerGraphics/Shadow" },
+                    { text: "[W]阴影", link: "/ComputerGraphics/Shadow" },
                 ]
             },
             {
@@ -183,6 +183,8 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/Shading/index.html" },
+                    { text: "天空和云", link: "/Shading/SkyAndCloud"},
+                    { text: "地形", link: "/Shading/Terrain"},
                     { text: "[x]Shader和渲染", link: "/WIP" },
                     { text: "URP渲染管线", link: "/Shading/URP_Pipeline" },
                     { text: "[W]Blender", link: "/Shading/Blender" },
@@ -190,8 +192,6 @@ export default defineUserConfig({
                     { text: "渲染风格和方法论", link: "/Shading/StyleAndMethod" },
                     { text: "NPR", link: "/Shading/NPR" },
                     { text: "[x]特效和粒子系统", link: "/WIP" },
-                    { text: "[x]优化策略", link: "/WIP" },
-                    { text:"天空和云", link: "/Shading/SkyAndCloud"}
                 ]
             },
             {

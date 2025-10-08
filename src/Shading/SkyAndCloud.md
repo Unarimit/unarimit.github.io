@@ -1,5 +1,6 @@
 # 天空和云
 本章是对GAMES104现代游戏引擎课程的第六讲（下）中提到的技术的总结[1]，并结合了相关资料。
+> 使用LLM生成总结
 
 ## 天空盒
 简单的天空盒一般会将一些高清的立方体纹理（cubemap）映射到天空盒的6个面，而一些具有特殊美术风格的游戏，会考虑利用简单公式和因素叠加，来产生可以动态调节参数的过程化天空盒[2]。
@@ -21,17 +22,17 @@
 ## 云的渲染
 
 ### 云的种类
-<img src="../img/Shading/SkyAndCloud-1.png" width=600/>
+<img src="../img/Shading/SkyAndCloud-1.jpg" width=600/>
 
 ### 云的三种实现方法
 - 基于网格的云建模（Mesh-Based Cloud Modeling）：优点是质量高，缺点是整体开销大，不支持动态天气。
     > 通过简单模型＋shader实现 
 
-    <img src="../img/Shading/SkyAndCloud-2.png" width=600/>
+    <img src="../img/Shading/SkyAndCloud-2.jpg" width=600/>
 
 - 公告板云（Billboard Cloud）：优点是高效，缺点是视觉效果有限，支持的云类型少。
 
-    <img src="../img/Shading/SkyAndCloud-3.png" width=300/>
+    <img src="../img/Shading/SkyAndCloud-3.jpg" width=300/>
 
 - 体积云建模（Volumetric Cloud Modeling）：优点是能呈现各种云的外观、支持大尺度云、支持动态天气和体积光照/阴影，缺点是需要考虑效率问题，是当前实现真实感云渲染的主流方法。
 
