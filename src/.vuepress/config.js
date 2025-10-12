@@ -103,6 +103,7 @@ export default defineUserConfig({
                     { text: "光栅化", link: "/ComputerGraphics/Rasterization" },
                     { text: "着色", link: "/ComputerGraphics/Shading" },
                     { text: "[W]阴影", link: "/ComputerGraphics/Shadow" },
+                    { text: "环境光遮蔽", link: "/ComputerGraphics/AmbientOcclusion" },
                 ]
             },
             {
