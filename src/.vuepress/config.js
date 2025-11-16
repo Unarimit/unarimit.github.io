@@ -186,6 +186,8 @@ export default defineUserConfig({
                     { text: "总览", link: "/Shading/index.html" },
                     { text: "天空和云", link: "/Shading/SkyAndCloud"},
                     { text: "地形", link: "/Shading/Terrain"},
+                    { text: "雾效", link: "/Shading/Fog"},
+                    { text: "后处理", link: "/Shading/PostProcess"},
                     { text: "[x]Shader和渲染", link: "/WIP" },
                     { text: "URP渲染管线", link: "/Shading/URP_Pipeline" },
                     { text: "[W]Blender", link: "/Shading/Blender" },

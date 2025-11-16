@@ -1,6 +1,6 @@
 # 环境光遮蔽
 
-环境光遮蔽 (Ambient Occlusion, AO)。因为环境光这一比较粗暴概念的存在，AO可以根据几何自遮挡，提供暗处细节的表达。起到对阴影的补充作用
+环境光遮蔽 (Ambient Occlusion, AO)。因为环境光这一比较粗暴概念的存在，AO可以根据几何自遮挡，提供暗处细节的表达，起到对阴影的补充作用。方法的理论来自于GAMES104课程[1]，光追方向的实践可以参考ue的Lumen[2]。
 
 ![alt text](../img/ComputerGraphics/AmbientOcclusion-1.png)
 
@@ -14,5 +14,6 @@
 - 基于光追的AO：逐像素的raycast，会用分时做优化（类抗锯齿的那个TAA）
 
 ## 参考
-2. [GAMES104- 王希 Bilibili](https://www.bilibili.com/video/BV1kY411P7QM)
+1. [GAMES104- 王希 Bilibili](https://www.bilibili.com/video/BV1kY411P7QM)
     - 07.游戏中渲染管线、后处理和其他的一切 09:08 AO
+2. [虚幻引擎5通过Lumen全力发展动态全局光照 - ue blog](https://www.unrealengine.com/zh-CN/tech-blog/unreal-engine-5-goes-all-in-on-dynamic-global-illumination-with-lumen)

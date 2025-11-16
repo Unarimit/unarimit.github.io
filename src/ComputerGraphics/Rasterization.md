@@ -41,7 +41,7 @@ void fresh_screen(){
     - Anti-Aliasing（反走样，抗锯齿），是一个信号处理问题
         - 简单的出发点：先对原象进行“模糊”，再光栅化。（模糊这一过程很困难，根据如何定义采样点的模糊值，延伸出了不同的方法）
         - MSAA（Multi Sample Anti-Aliasing）：靠模糊解决走样问题，计算量增加k倍，k为每个像素计算模糊的采样次数（没有考虑可复用的采样点）（注：GAMES101的描述和《游戏引擎架构（第2版）》书中有冲突的地方，后者认为MSAA不计算样本的着色，而依靠样本的深度测试的结果加权计算像素颜色，而将FSAA（full-screen antialiasing）作为GAMES101描述的MSAA情况，即上文所描述的）
-        - FXAA（Fast Approximate AA）：基于后处理的AA，检测边缘，替换成平滑的边缘
+        - FXAA（Fast Approximate AA）：基于后处理的AA，检测边缘，替换成平滑的边缘。这些在GAMES104[3]中，有较为详细的介绍。
         - TAA（Temporal AA）：保留上一帧的值，使其参与这一帧的采样。计算量⬇ 空间占用⬆，对于快速运动需要特殊处理
     > 顺便一提 Aliasing 也有"别名"的意思，如`int &r = a`，就可以说`r`是`a`的 Aliasing（别名）。
 代码：一种 MSAA 2*2 的计算方法
@@ -93,9 +93,14 @@ void fresh_screen(){
 }
 ```
 
+## Deferred Rendering 延迟渲染
+
+延迟渲染能更好的处理多光源+透明物体堆叠时的排序问题。GAMES104[3](https://www.bilibili.com/video/BV1kY411P7QM/?share_source=copy_web&vd_source=0adb7f42d815b5c9500f37460d0d6596)中，有动图说明了和前向渲染的区别
+
+<img src='..\img\ComputerGraphics\Rasterization-1.png'>
 
 ## 参考
-- [GAMES101-闫令琪-Rasterization Bilibili](https://www.bilibili.com/video/BV1X7411F744?p=5)
-- [游戏引擎架构（第2版）- 【美】Jason Gregory](https://book.douban.com/subject/34864920/)
+1. [GAMES101-闫令琪-Rasterization Bilibili](https://www.bilibili.com/video/BV1X7411F744?p=5)
+2. [游戏引擎架构（第2版）- 【美】Jason Gregory](https://book.douban.com/subject/34864920/)
     - 10.2 抗锯齿
-
+3. [GAMES104现代游戏引擎课程的第七讲-bilibili](https://www.bilibili.com/video/BV1kY411P7QM)
