@@ -37,6 +37,7 @@ void fresh_screen(){
 
 3. Aliasing（走样，锯齿）
     - 摩尔纹，边缘锯齿
+    - 手游上3D场景的锯齿大多是分辨率缩放导致的，开了抗锯齿也没用
     - 原理涉及数字图像处理（信号处理），关键词：混叠
     - Anti-Aliasing（反走样，抗锯齿），是一个信号处理问题
         - 简单的出发点：先对原象进行“模糊”，再光栅化。（模糊这一过程很困难，根据如何定义采样点的模糊值，延伸出了不同的方法）
@@ -95,9 +96,13 @@ void fresh_screen(){
 
 ## Deferred Rendering 延迟渲染
 
-延迟渲染能更好的处理多光源+透明物体堆叠时的排序问题。GAMES104[3](https://www.bilibili.com/video/BV1kY411P7QM/?share_source=copy_web&vd_source=0adb7f42d815b5c9500f37460d0d6596)中，有动图说明了和前向渲染的区别
+延迟渲染能更好的处理多光源+透明物体堆叠时的排序问题。GAMES104[【3】](https://www.bilibili.com/video/BV1kY411P7QM/?share_source=copy_web&vd_source=0adb7f42d815b5c9500f37460d0d6596)中，有动图说明了和前向渲染的区别
+- 为了进一步处理多光源，又引入了tile-based理念，通过将画面分成一个个tile，进一步确定每个tile需计算的光源。tile也缓解了访问G-Buffer的问题，不过使用这部分概念的多是移动平台。
 
-<img src='..\img\ComputerGraphics\Rasterization-1.png'>
+<img src='../img/ComputerGraphics/Rasterization-1.png'>
+
+G-Buffer -> V-Buffer
+- V-Buffer支持更复杂的材质，可以按需加载。但不够成熟（2022【3】）
 
 ## 参考
 1. [GAMES101-闫令琪-Rasterization Bilibili](https://www.bilibili.com/video/BV1X7411F744?p=5)

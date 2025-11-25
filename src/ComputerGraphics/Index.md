@@ -26,11 +26,15 @@
 
 <img src="../img/computer_graphics-3.png">
 
+还缺了到屏幕上的一步，这一步的问题就是需要考虑显示器刷新频率和渲染频率的不一致【4】
+- 可能会导致画面撕裂
+- 如果开启垂直同步（V-Sync），则可能出现快慢帧现象
 
  
 ## 参考
-- [GAMES101-闫令琪 Bilibili](https://www.bilibili.com/video/BV1X7411F744)
-- [技术美术入门：渲染管线概述-Kerry佬 Bilibili](https://www.bilibili.com/video/BV1Q54y1G7v3)
+1. [GAMES101-闫令琪 Bilibili](https://www.bilibili.com/video/BV1X7411F744)
+2. [技术美术入门：渲染管线概述-Kerry佬 Bilibili](https://www.bilibili.com/video/BV1Q54y1G7v3)
     - p1对Unity渲染管线有一个总体介绍
-- [游戏引擎架构（第2版）- 【美】Jason Gregory](https://book.douban.com/subject/34864920/)
+3. [游戏引擎架构（第2版）- 【美】Jason Gregory](https://book.douban.com/subject/34864920/)
     - 10-渲染引擎
+4. [GAMES104现代游戏引擎课程的第七讲-bilibili](https://www.bilibili.com/video/BV1kY411P7QM)
