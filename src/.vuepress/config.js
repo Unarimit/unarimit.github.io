@@ -179,7 +179,7 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: '游戏引擎和渲染 [低完成度]',
+                text: '渲染',
                 link: '/Shading/index.html',
                 collapsible: true,
                 children: [
@@ -188,13 +188,29 @@ export default defineUserConfig({
                     { text: "地形", link: "/Shading/Terrain"},
                     { text: "雾效", link: "/Shading/Fog"},
                     { text: "后处理", link: "/Shading/PostProcess"},
-                    { text: "[x]Shader和渲染", link: "/WIP" },
-                    { text: "URP渲染管线", link: "/Shading/URP_Pipeline" },
-                    { text: "[W]Blender", link: "/Shading/Blender" },
-                    { text: "[W]模型", link: "/Shading/Modeling" },
                     { text: "渲染风格和方法论", link: "/Shading/StyleAndMethod" },
                     { text: "NPR", link: "/Shading/NPR" },
+                    { text: "URP渲染管线", link: "/Shading/URP_Pipeline" },
+                    { text: "[x]Shader和渲染", link: "/WIP" },
                     { text: "[x]特效和粒子系统", link: "/WIP" },
+                ]
+            },
+            {
+                text: '动画 [低完成度]',
+                link: '/Animation/index.html',
+                collapsible: true,
+                children: [
+                    { text: "总览", link: "/Animation/index.html" },
+                    { text: "UI缓动动画", link: "/Animation/UITween" },
+                ]
+            },
+            {
+                text: '未分类',
+                ///link: '/NotClassify/index.html',
+                collapsible: true,
+                children: [
+                    { text: "[W]Blender", link: "/NotClassify/Blender" },
+                    { text: "[W]模型", link: "/NotClassify/Modeling" },
                 ]
             },
             {
@@ -203,7 +219,6 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/Gameplay/index.html" },
-                    { text: "UI缓动动画", link: "/Gameplay/UITween" },
                 ]
             }
         ]
