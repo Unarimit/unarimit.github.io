@@ -179,7 +179,7 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: '渲染',
+                text: '渲染技术',
                 link: '/Shading/index.html',
                 collapsible: true,
                 children: [
@@ -202,6 +202,7 @@ export default defineUserConfig({
                 children: [
                     { text: "总览", link: "/Animation/index.html" },
                     { text: "UI缓动动画", link: "/Animation/UITween" },
+                    { text: "蒙皮动画", link: "/Animation/SkinnedAnimation" },
                 ]
             },
             {
