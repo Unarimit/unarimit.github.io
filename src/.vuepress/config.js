@@ -203,6 +203,7 @@ export default defineUserConfig({
                     { text: "总览", link: "/Animation/index.html" },
                     { text: "UI缓动动画", link: "/Animation/UITween" },
                     { text: "蒙皮动画", link: "/Animation/SkinnedAnimation" },
+                    { text: "动画混合", link: "/Animation/Blending" },
                 ]
             },
             {
