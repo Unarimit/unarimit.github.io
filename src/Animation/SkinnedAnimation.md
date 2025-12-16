@@ -1,4 +1,4 @@
-# 蒙皮动画
+# 骨骼蒙皮动画
 
 本章是对GAMES104现代游戏引擎课程中提到的技术的总结【1】，并结合了相关资料。
 
@@ -52,6 +52,11 @@
 - AI+自动蒙皮
 - 导出工具（压缩动画、忽略动画Root位移等）
     - 导出由DCC工具制作的动画。数字内容制作（Digital Content Creation, DCC）工具（3ds Max、Maya、Blender）
+- 动画重定向（retargeting），将一个身材比例的动画重定向到另一个身材比例 【2】
+    - 实际实现细节很多，有很多hack
+
+<img src="../img/Animation/SkinnedAnimation-5.png">
 
 ## 参考
 1. [GAMES104现代游戏引擎课程的第八讲-bilibili](https://www.bilibili.com/video/BV1jr4y1t7WR)
+2. [GAMES104现代游戏引擎课程的第九讲-bilibili](https://www.bilibili.com/video/BV1pY411F7pA)
