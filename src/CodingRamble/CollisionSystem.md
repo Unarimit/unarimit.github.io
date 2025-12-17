@@ -6,6 +6,10 @@
 
 由于文中涉及大量碰撞体的碰撞逻辑介绍，摘录了《游戏引擎架构》中的一些图片。这些图片为了便于理解都是二维的，但文中的介绍和描述则是三维的（会提到z轴），请不要感到意外。
 
+本文主要涉及对碰撞原型的介绍，除此之外还可以通过三角面和高度场表达碰撞物体，只不过这样做的物体一般是静态的，而且如果可以通过简单的碰撞原型组合表达，就应该去组合表达，提高性能。【6】
+
+<img src="../img/CodeRamble/CollisionSystem-14.png" width="500">
+
 ## 碰撞原型
 
 复杂的碰撞体可由碰撞原型组合得到，碰撞原型都是些简单的几何体。
@@ -115,11 +119,20 @@
 这类问题可以归纳为[几何查询（geometric query）问题](https://en.wikipedia.org/wiki/Computational_geometry#Geometric_query_problems)，也适用于上述的检测优化算法。另外，这些投射算法不会发生碰撞穿透问题。
 - 可以看看名为[“空间数据库”](https://en.wikipedia.org/wiki/Spatial_database)的解决方案
 
+
+## 具体实现
+基本所有引擎都会通过两步处理碰撞检测，快速过滤 + 具体判断 【6】
+- Broad Phase（快速过滤）
+    - Boundary Volume Hierarchy（BVH）Tree （更新成本低）
+    - Sort and Sweep （上面提到的扫掠算法，比较简单）
+- Narrow Phase（具体判断）
+
 ## 参考
-- [游戏引擎架构（第2版）- 【美】Jason Gregory](https://book.douban.com/subject/34864920/)
+1. [游戏引擎架构（第2版）- 【美】Jason Gregory](https://book.douban.com/subject/34864920/)
     - 12.3-碰撞检测系统
-- [22.13包围盒（Bounding-Volume）/包围盒相交 Justin - 知乎](https://zhuanlan.zhihu.com/p/405154230)
+2. [22.13包围盒（Bounding-Volume）/包围盒相交 Justin - 知乎](https://zhuanlan.zhihu.com/p/405154230)
     - 对[《Real-Time Rendering, Fourth Edition - Tomas》](https://book.douban.com/subject/30296179/)的翻译
-- [Capsule Collision Detection - wicked engine](https://wickedengine.net/2020/04/26/capsule-collision-detection/)
-- [几何查询（geometric query） - wiki](https://en.wikipedia.org/wiki/Computational_geometry#Geometric_query_problems)
-- [空间数据库（Spatial Database） - wiki](https://en.wikipedia.org/wiki/Spatial_database)
+3. [Capsule Collision Detection - wicked engine](https://wickedengine.net/2020/04/26/capsule-collision-detection/)
+4. [几何查询（geometric query） - wiki](https://en.wikipedia.org/wiki/Computational_geometry#Geometric_query_problems)
+5. [空间数据库（Spatial Database） - wiki](https://en.wikipedia.org/wiki/Spatial_database)
+6. [GAMES104现代游戏引擎课程的第十讲-bilibili](https://www.bilibili.com/video/BV16U4y117VU)
