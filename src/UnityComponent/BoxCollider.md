@@ -8,9 +8,26 @@
 
 Kinematic：对物理不生效的物体，例如地板。需要慎重使用，不然容易出现“神奇”的bug。
 
-碰撞检测工作原理可以看这篇[初探碰撞系统](../CodingRamble/CollisionSystem)
+碰撞检测：碰撞检测工作原理可以看这篇[初探碰撞系统](../CodingRamble/CollisionSystem)
+- Raycast(Multiple hits, Closest hit, Any hit)、Sweep、Overlap等场景请求也是碰撞检测
+
+碰撞解决：如何让两个相交的物体合理的弹开？
+- 应用一个反向的惩罚力（Applying Penalty Force），比较假的做法
+- 根据约束求解，应用一个合适的力
 
 *力与运动的逐帧求解：欧拉法的误差会导致数值爆炸，所以用半隐式欧拉法（semi-implicit Euler's Method）
+
+碰撞组：设计好碰撞组可以减少运算量
+
+连续碰撞检测(Continues Collision Detection, CCD)
+- 对简单碰撞原型可以使用扫掠，扫掠的检测见[初探碰撞系统](../CodingRamble/CollisionSystem)
+- 如果是难解的mesh可以增加检测步长
+- *能增加碰撞体厚度的话还是不要自讨苦吃了
+
+确定性模拟，确保联机时的一致性。
+> 这是个很难解决的问题，所以实际上联机游戏很少有物理能影响游戏状态，大多只提供表现
+- 统一物理模拟的步长、精度等
+- 统一其他物理算法求解计算内的步长和顺序
 
 ## Collider
 
