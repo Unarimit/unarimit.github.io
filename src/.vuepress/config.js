@@ -223,6 +223,7 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/Gameplay/index.html" },
+                    { text: "游戏引擎", link: "/Gameplay/GameEngine" },
                 ]
             }
         ]

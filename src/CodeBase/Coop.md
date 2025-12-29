@@ -114,3 +114,4 @@ WIP
 
 ## 参考
 - 覆写Inspector代码：[UGUI Minimap - Assets Store](https://assetstore.unity.com/packages/tools/gui/ugui-minimap-32874)
+- 更好的Inspector可视化：[odin - Assets Store](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041)

@@ -90,9 +90,11 @@
 
 **但是，他现在的可玩性也很低，因为只能在投、抛、检测并伤害中组合。**
 
-这时候就需要在技能控制器中引入`Buffs`或更多效果类型，增加组合种类。
+这时候就需要在技能控制器中引入`Buff`或更多效果类型，增加组合种类。
 - 如眩晕，中毒，回血等效果，甚至可以做一个闪现技能，因为技能控制器中有释放者的Transform！
 - 这时候利用lua等热更新技术，可以方便的完善技能的多样性。
+
+TODO: Buff是技能系统的另一个关键点，从简单的dot或hot，到复杂的moba里常见的多阶段技能，都需要靠他来实现。
 
 ### 更好的实现-释放、选择、影响
 
@@ -263,8 +265,6 @@ private RangeReleaser getRangeReleaser(CombatSkill skill)
 当然还有一些关键的复位（Reset）逻辑在 `Releaser` 中，可以自行去代码仓库查看哦，这里附上当时增加这段逻辑的commit们，按时间从早到晚排序。
 - [[Game logic] change skill pass param logic - github commit](https://github.com/Unarimit/my-topdown-shooting-game/commit/4c195637e06f67a70387efff12c28eafe17e9c11)
 - [[Game logic] add ObjectPool in skill system - github commit](https://github.com/Unarimit/my-topdown-shooting-game/commit/79d240f3d031e0892dc5aec22f126cd2b1f944f2)
-
-
 
 
 ## 总结
