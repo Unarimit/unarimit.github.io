@@ -206,6 +206,8 @@ export default defineUserConfig({
                     { text: "动画混合", link: "/Animation/Blending" },
                     { text: "IK", link: "/Animation/IK" },
                     { text: "面部动画", link: "/Animation/Facial" },
+                    { text: "布娃娃效果", link: "/Animation/Ragdoll" },
+                    { text: "衣料模拟", link: "/Animation/ClothSolver" },
                 ]
             },
             {
