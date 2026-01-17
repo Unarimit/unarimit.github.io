@@ -66,9 +66,11 @@ export default defineUserConfig({
                 children: [
                     { text: "总览", link: "/CodeImplement/index.html" },
                     { text: "技能系统设计", link: "/CodeImplement/AbilitySystem" },
-                    { text: "[W]环境交互", link: "/CodeImplement/Interaction" },
                     { text: "人机切换", link: "/CodeImplement/HumanAgentSwitch" },
                     { text: "RTS相机", link: "/CodeImplement/RTSCamera" },
+                    { text: "载具系统", link: "/CodeImplement/VehicleSystem" },
+                    { text: "破坏系统", link: "/CodeImplement/DestructionSys" },
+                    { text: "[W]环境交互", link: "/CodeImplement/Interaction" },
                     { text: "[W]Tag和Layer", link: "/CodeImplement/TagAndLayer" },
                 ]
             },
