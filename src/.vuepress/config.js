@@ -189,6 +189,7 @@ export default defineUserConfig({
                     { text: "天空和云", link: "/Shading/SkyAndCloud"},
                     { text: "地形", link: "/Shading/Terrain"},
                     { text: "雾效", link: "/Shading/Fog"},
+                    { text: "粒子系统", link: "/Shading/ParticalSystem"},
                     { text: "后处理", link: "/Shading/PostProcess"},
                     { text: "渲染风格和方法论", link: "/Shading/StyleAndMethod" },
                     { text: "NPR", link: "/Shading/NPR" },
