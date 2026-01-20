@@ -218,6 +218,7 @@ export default defineUserConfig({
                 ///link: '/NotClassify/index.html',
                 collapsible: true,
                 children: [
+                    { text: "声音系统", link: "/NotClassify/VolumeSys/VolumeSys" },
                     { text: "[W]Blender", link: "/NotClassify/Blender" },
                     { text: "[W]模型", link: "/NotClassify/Modeling" },
                 ]
