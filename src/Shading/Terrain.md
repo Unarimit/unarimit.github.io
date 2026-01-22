@@ -40,5 +40,12 @@
   <img src="../img/Shading/Terrain-2.png" width=500/>
 
 
+## 地形编辑
+
+地形编辑需要提供一定的“智能”【2】
+- 智能笔刷，在刷deco的时候避开障碍物等
+
+
 ## 参考
 1. [GAMES104，游戏中地形大气和云的渲染(上)](https://b23.tv/5XyJy4t)  
+2. [GAMES104现代游戏引擎课程的第十四讲-bilibili](https://www.bilibili.com/video/BV1QN4y1u78P)
