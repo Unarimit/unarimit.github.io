@@ -8,6 +8,8 @@ WIP 2D，3D
 
 ## Unity方案-AINavigation
 
+TODO：看文档后重新编辑
+
 `AINavigation`是一种基于A\*和网格的unity内置寻路方案。由`NavMesh`和`NavMeshAgent`两个主要组件构成，起使用流程如下：
 
 1. Bake NavMesh，根据使用Navigation版本不同，操作会有差异
@@ -95,3 +97,4 @@ public void MoveOnce(Vector3 location, float MaxSpeed)
 - 旧版Navigation：[Making A MOBA Character in 2023 - #1: INTRODUCTION (Unity 2023 Tutorial) - Youtube](https://www.youtube.com/watch?v=p3AB_GP45C4)
 - NavMesh实现原理：[Navigation Meshes and Pathfinding](https://www.gamedev.net/tutorials/programming/artificial-intelligence/navigation-meshes-and-pathfinding-r4880/)
 - [ai.navigation@2.0 - Unity Manual](https://docs.unity3d.com/Packages/com.unity.ai.navigation@2.0/manual/CreateNavMesh.html)
+- [GAMES104-现代游戏引擎：从入门到实践，第十六讲](https://www.bilibili.com/video/BV19N4y1T7eU)

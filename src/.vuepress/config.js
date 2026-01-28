@@ -114,7 +114,7 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/AI/index.html" },
-                    { text: "寻路", link: "/AI/Navigation" },
+                    { text: "寻路", link: "/AI/Navigation/Navigation" },
                     { text: "[W]状态机", link: "/AI/StateMachine" },
                     { text: "GOAP", link: "/AI/GOAP" },
                     { text: "[W]行为树", link: "/AI/BehaviorTree" },
