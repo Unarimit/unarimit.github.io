@@ -4,6 +4,8 @@
 
 > 事件系统是指在Unity中实现成就、触发任务等功能的实现。不是指`UntiyEvent`。
 
+> 另外，说到事件系统，总让我想到消息队列（如 Rabbit MQ）这种常用于分布式、多任务的后端技术。
+
 我认为，事件系统应该分为延时事件系统和即时事件系统
 - 延时事件系统：主要强调事件发生的时间
     - 例如游戏进行的第100个回合会有一个胜负判定，这是一个延时事件
@@ -12,9 +14,9 @@
 - 即时事件系统：当事件发生时就立刻处理，需要回调函数，常常用C#事件实现
     - 如各种游戏的成就系统，任务系统
     - **实现方式1：对事件标记的存储方法注册监听事件**
-    - **实现方式2：使用事件总线，适合关系性不大的模块（解耦），C#有成熟的开源方案，如`Unity C# Event Bus` 或 `Cap`**
-
-> 说到事件系统，总让我想到消息队列（如 Rabbit MQ）这种常用于分布式、多任务的后端技术。
+    - **实现方式2：使用事件总线，适合关系性不大的模块（解耦），C#有成熟的开源方案，如[Unity C# Event Bus](https://github.com/adammyhre/Unity-Event-Bus) 或 [Cap](https://github.com/dotnetcore/CAP)**
+        - 有时考虑到触发事件时立刻调用会导致时序问题和深堆栈问题（如炸弹链式爆炸），会考虑建一个buffer延迟一帧再触发【2】
+        - 最终可能需要支持多种invode方式（immediately、nextFrame、nextFramePost）。考虑到这一点，上文提到的两种开源方案，通过拓展**Cap**来实现更靠谱一些
 
 ## 延时事件系统-例子
 我认为上述说明已经足够，直接从一个例子开始吧。
@@ -129,4 +131,5 @@ public class GameLevelManager : MonoBehaviour{
 ```
 
 ## 参考
-- [《Game Programming Patterns》](https://gameprogrammingpatterns.com/)
+1. [《Game Programming Patterns》](https://gameprogrammingpatterns.com/)
+2. [GAMES104-现代游戏引擎：从入门到实践，第十五讲](https://www.bilibili.com/video/BV1u34y1H7jd)

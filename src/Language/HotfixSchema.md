@@ -27,6 +27,15 @@
 
 > 在简单的虚拟机情况下，这个情况会简单不少，因为一句虚拟机代码通常会对应一个宿主代码函数（如C++和Lua的情况，参考[C++/Lua交互指南 - Ocean藏心，知乎](https://zhuanlan.zhihu.com/p/40406096)）。<br>但在游戏引擎中就大大增加了复杂度。在unity的xlua方案情况下，脚本语言为C#，C#通过 `P/Invoke` 调用C++编译的Lua虚拟机代码库，而且由于 `IL2Cpp` 、代码剪裁等优化，最终**可能**会是"C++版的 `P/Invoke` " 调用C++编译的Lua虚拟机代码库。（这方面我也不是很了解，很好奇 `IL2Cpp` 后的 `P/Invoke` 是什么玩意，以后有空再来探索吧 TODO）
 
+## 挑战
+
+当我们完成了热更代码和native代码的调用，还需面临以下问题（这些问题引擎层到应用层也适用）：【4】
+1. 热更代码的效率不如native代码
+2. 热更代码如何管理native代码对象
+3. 热更代码和native代码的调用形态
+    - 像monobehavior一样随引擎tick调用热更代码，或者反过来热更代码tick调用native代码（native代码像是SDK供热更代码调用）
+
+
 ## 热更新方案
 
 - [xlua](https://github.com/Tencent/xLua)
@@ -82,7 +91,8 @@
 
 
 ## 参考
-- 头图：[20.1 Hotfix Update - infiniteflight](https://infiniteflight.com/timeline/20-1-hotfix-update)
-- [平台调用 (P/Invoke) - learn.microsoft.com](https://learn.microsoft.com/zh-cn/dotnet/standard/native-interop/pinvoke)
-- [Unity 中的Mono与IL2CPP - 知乎](https://zhuanlan.zhihu.com/p/663371215)
-- [Unity - AssetBundle和XLua热更新教程（简单详细） - 长生但酒狂 csdn](https://blog.csdn.net/qq_28299311/article/details/104870024)
+0. 头图：[20.1 Hotfix Update - infiniteflight](https://infiniteflight.com/timeline/20-1-hotfix-update)
+1. [平台调用 (P/Invoke) - learn.microsoft.com](https://learn.microsoft.com/zh-cn/dotnet/standard/native-interop/pinvoke)
+2. [Unity 中的Mono与IL2CPP - 知乎](https://zhuanlan.zhihu.com/p/663371215)
+3. [Unity - AssetBundle和XLua热更新教程（简单详细） - 长生但酒狂 csdn](https://blog.csdn.net/qq_28299311/article/details/104870024)
+4. [GAMES104-现代游戏引擎：从入门到实践，第十五讲](https://www.bilibili.com/video/BV1u34y1H7jd)

@@ -231,6 +231,7 @@ export default defineUserConfig({
                 children: [
                     { text: "总览", link: "/Gameplay/index.html" },
                     { text: "游戏引擎", link: "/Gameplay/GameEngine" },
+                    { text: "游戏引擎", link: "/Gameplay/3C/3C" },
                 ]
             }
         ]
