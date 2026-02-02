@@ -42,6 +42,7 @@ export default defineUserConfig({
                     { text: "自定义Editor", link: "/UnityComponent/CustomEditor" },
                     { text: "数据持久化", link: "/UnityComponent/DataPersistence" },
                     { text: "TimeLine", link: "/UnityComponent/TimeLine" },
+                    { text: "寻路模块", link: "/UnityComponent/AINavigation" },
                 ]
             },
             {
