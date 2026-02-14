@@ -2,6 +2,22 @@
 
 主要介绍其他游戏的AI设计（针对俯视视角的游戏），但这好像是策划干的活！
 
+
+## AI的感知
+
+AI的感知可以从三个方向出发【1】：
+
+1. 自己的信息
+    - 生命值、位置、护甲等状态
+2. 环境信息
+    - 静态空间信息：战术点
+    - 动态空间信息：
+        - Influence Map，可以记录敌人密度等信息
+        - GameObject
+3. 感知模拟
+    - 光、声音
+    - 好处是可以让AI更加真实（比起开全图更傻），坏处是性能消耗高，不好实现
+
 ## DoorKickers
 
 优秀的室内作战敌人AI，会根据响动转移位置。
@@ -35,4 +51,5 @@ WIP
 并且还会根据军官性格改善决策的权重。
 
 ## 参考
-- [[WiKi资料整理] AI行为解析 - 远行星号中文论坛](https://www.fossic.org/forum.php?mod=viewthread&tid=3070&fromuid=2329)
+1. [GAMES104-现代游戏引擎：从入门到实践，第十六讲](https://www.bilibili.com/video/BV1r34y1J7Sg)
+2. [[WiKi资料整理] AI行为解析 - 远行星号中文论坛](https://www.fossic.org/forum.php?mod=viewthread&tid=3070&fromuid=2329)

@@ -118,7 +118,7 @@ export default defineUserConfig({
                     { text: "寻路", link: "/AI/Navigation/Navigation" },
                     { text: "[W]状态机", link: "/AI/StateMachine" },
                     { text: "GOAP", link: "/AI/GOAP" },
-                    { text: "[W]行为树", link: "/AI/BehaviorTree" },
+                    { text: "[W]行为树", link: "/AI/BehaviorTree/BehaviorTree" },
                     { text: "[W]常见AI设计", link: "/AI/AIDesign" },
                 ]
             },
@@ -221,6 +221,7 @@ export default defineUserConfig({
                 children: [
                     { text: "声音系统", link: "/NotClassify/VolumeSys/VolumeSys" },
                     { text: "游戏引擎工具链", link: "/NotClassify/ToolChains/ToolChains" },
+                    { text: "学习资源清单", link: "/NotClassify/StudyAssetList/StudyAssetList" },
                     { text: "[W]Blender", link: "/NotClassify/Blender" },
                     { text: "[W]模型", link: "/NotClassify/Modeling" },
                 ]
