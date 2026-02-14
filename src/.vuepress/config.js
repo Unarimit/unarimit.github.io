@@ -110,7 +110,7 @@ export default defineUserConfig({
                 ]
             },
             {
-                text: 'AI (NPC&人机&Boot)',
+                text: 'AI (NPC和人机)',
                 link: '/AI/index.html',
                 collapsible: true,
                 children: [
@@ -118,7 +118,7 @@ export default defineUserConfig({
                     { text: "寻路", link: "/AI/Navigation/Navigation" },
                     { text: "[W]状态机", link: "/AI/StateMachine" },
                     { text: "GOAP", link: "/AI/GOAP" },
-                    { text: "[W]行为树", link: "/AI/BehaviorTree/BehaviorTree" },
+                    { text: "行为树", link: "/AI/BehaviorTree/BehaviorTree" },
                     { text: "[W]常见AI设计", link: "/AI/AIDesign" },
                 ]
             },

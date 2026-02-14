@@ -1,6 +1,9 @@
-<img src='../img/goap-0.png'>
 
 # GOAP-目标导向型行为规划
+
+<center> <img src='../img/goap-0.png' width="500"> </center>
+
+可以拆成规划和执行两个部分，执行甚至可以通过**行为树**去做，而规划是GOAP区别于其他方案的重点。规划可以描述为：
 
 为每个`行为`设计`条件`和`权值`，执行`行为`会改变`状态`，**目标**是一个特殊的状态`状态`，agent需要规划一系列`行为`，到达**目标**`状态`。
 > 规划一系列`行为`的过程可以具象为求图中两点（目前`状态`和目标`状态`）的最短路径过程
@@ -11,13 +14,16 @@
 当然，可能这些仍然比较初级（包括我之后要演示的Demo），具体到生产项目中可能涉及更多的机制策略以及优化方案，这些请自行探索吧。
 > 对于机制策略以及优化方案，文章 [游戏AI——GOAP技术要点 - FlyingZiming cnblog](https://www.cnblogs.com/FlyingZiming/p/17274602.html) 应该提供了一些宏观的观点。
 
+## 特点
+
 结合这些概念，GOAP的**特点**如下：
 - 相比行为树/状态机相对固定的逻辑，GOAP更动态一点，可以根据目标状态规划出行为列表。
     - 动态意味着少量的代码就可以带来不错的效果，尤其是`行为`很多的时候
     - 动态也同样意味着**难以预测**，debug会相对困难
 - 更容易在已有逻辑上添加`行为`，只要设计合理的权值就可以了
-- 要设计一个特殊演出会比较困难，很难在GOAP规划内部进行条件判断
-    - 例如在目标角色为某个指定角色时安排一些额外`行为`
+- 缺点：【6】
+    - 相比行为树/HTN等方法，计算量较大 
+    - 对世界状态的表达和影响定义是一个挑战
 
 以上特点使得GOAP更适用于战斗场景。
 
@@ -42,9 +48,10 @@
 WIP（由于行为实现和测试很麻烦，虽然状态定义好了，还没有实现）
 
 ## 参考
-- 理论-轮子：[游戏AI行为决策——GOAP（目标导向型行动规划）- OwlCat cnblog](https://www.cnblogs.com/OwlCat/p/17936809)
-- 理论-概览：[游戏AI——GOAP技术要点 - FlyingZiming cnblog](https://www.cnblogs.com/FlyingZiming/p/17274602.html)
-- 结合实例分析：[FEAR基于GOAP的AI系统GDC分享 -  烟雨迷离半世殇的博客](https://www.lfzxb.top/gdc-sharing-of-ai-system-based-on-goap-in-fear-simple-cn/)
-- 开源Unity Asset实现：[Goap - asset store](https://assetstore.unity.com/packages/tools/behavior-ai/goap-252687)
-- [《游戏人工智能》 4.行为选择算法一览](https://book.douban.com/subject/27154117/)
+1. 理论-轮子：[游戏AI行为决策——GOAP（目标导向型行动规划）- OwlCat cnblog](https://www.cnblogs.com/OwlCat/p/17936809)
+2. 理论-概览：[游戏AI——GOAP技术要点 - FlyingZiming cnblog](https://www.cnblogs.com/FlyingZiming/p/17274602.html)
+3. 结合实例分析：[FEAR基于GOAP的AI系统GDC分享 -  烟雨迷离半世殇的博客](https://www.lfzxb.top/gdc-sharing-of-ai-system-based-on-goap-in-fear-simple-cn/)
+4. 开源Unity Asset实现：[Goap - asset store](https://assetstore.unity.com/packages/tools/behavior-ai/goap-252687)
+5. [《游戏人工智能》 4.行为选择算法一览](https://book.douban.com/subject/27154117/)
     - 考虑到中文版已不再版，只有图书馆能借到，可以看在线英文版（对应第一版内容）：[Game AI Pro](http://www.gameaipro.com/)
+6. [GAMES104-现代游戏引擎：从入门到实践，第十七讲](https://www.bilibili.com/video/BV1iG4y1i78Q)
