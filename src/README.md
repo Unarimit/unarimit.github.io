@@ -1,4 +1,4 @@
-# 我要成为U3D高手！
+# 引言-我要成为U3D高手！
 
 以个人主页的方式，规划和总结我的“U3D客户端开发”的学习。
 
@@ -15,7 +15,10 @@
 
 目前主要包含下列内容：
 - Unity 3D 开发常用的 API，即[Unity组件](./UnityComponent/index.md)部分
-- 游戏开发涉及的设计模式，即[代码设计](./GameCodeDesign/index.md)部分
+- 游戏开发涉及的基础、框架甚至原型实现，即：
+    - [代码设计-基础](./CodeBase/index.md)部分
+    - [代码设计-原型实现](./CodeBase/index.md)部分
+    - [代码设计-框架](./CodeBase/index.md)部分
 - 渲染管线相关的基础知识，即[计算机图形学部分](./ComputerGraphics/index.md)部分，是看GAMES101时做的笔记。
 - 包括Lua基础和XLua热更新方案的[Lua学习笔记](./Lua/index.md)部分
 - 游戏常见的AI设计，即[AI(NPC&人机&Boot)](./AI/index.md)部分
@@ -38,7 +41,6 @@ https://unity.cn/university
 ## 未包含的内容
 
 - 服务端计算， 参考[et框架-github](https://github.com/egametang/ET/tree/master)
-    - [【网络同步】浅析帧同步和状态同步 - 曾志伟 知乎](https://zhuanlan.zhihu.com/p/357973435?utm_id=0)
 - 性能优化
     - [了解 Unity 中的优化 - unity doc](https://docs.unity3d.com/cn/current/Manual/BestPracticeUnderstandingPerformanceInUnity.html)
 - 针对几种不同类型的泛用设计模式（卡牌对战，FPS等）

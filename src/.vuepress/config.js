@@ -13,6 +13,10 @@ export default defineUserConfig({
         ],
         sidebar: [
             {
+                text: '引言',
+                link: '/index.html',
+            },
+            {
                 text: '作品',
                 link: '/Projects/index.html',
                 collapsible: false,
@@ -44,6 +48,7 @@ export default defineUserConfig({
                     { text: "数据持久化", link: "/UnityComponent/DataPersistence" },
                     { text: "TimeLine", link: "/UnityComponent/TimeLine" },
                     { text: "寻路模块", link: "/UnityComponent/AINavigation" },
+                    { text: "[W]Tag和Layer", link: "/UnityComponent/TagAndLayer" },
                 ]
             },
             {
@@ -73,7 +78,6 @@ export default defineUserConfig({
                     { text: "载具系统", link: "/CodeImplement/VehicleSystem" },
                     { text: "破坏系统", link: "/CodeImplement/DestructionSys" },
                     { text: "[W]环境交互", link: "/CodeImplement/Interaction" },
-                    { text: "[W]Tag和Layer", link: "/CodeImplement/TagAndLayer" },
                 ]
             },
             {
@@ -82,6 +86,7 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/CodeFramework/index.html" },
+                    { text: "网络", link: "/CodeFramework/Network/index.html" },
                     { text: "启动流程设计", link: "/CodeFramework/StartupProcedure" },
                     { text: "游戏上下文设计", link: "/CodeFramework/GameContextSystem" },
                     { text: "资源系统和服务", link: "/CodeFramework/ResourceSystem" },
