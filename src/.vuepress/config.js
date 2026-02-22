@@ -19,6 +19,7 @@ export default defineUserConfig({
                 children: [
                     { text: "[W]上帝视角射击游戏", link: "/Projects/TopShooting" },
                     { text: "[W]个人主页-我要成为U3D高手", link: "/Projects/ToBecomeU3dMaster" },
+                    { text: "*参考清单", link: "/Projects/StudyAssetList/StudyAssetList" },
                 ]
             },
             {
@@ -221,7 +222,6 @@ export default defineUserConfig({
                 children: [
                     { text: "声音系统", link: "/NotClassify/VolumeSys/VolumeSys" },
                     { text: "游戏引擎工具链", link: "/NotClassify/ToolChains/ToolChains" },
-                    { text: "学习资源清单", link: "/NotClassify/StudyAssetList/StudyAssetList" },
                     { text: "[W]Blender", link: "/NotClassify/Blender" },
                     { text: "[W]模型", link: "/NotClassify/Modeling" },
                 ]
