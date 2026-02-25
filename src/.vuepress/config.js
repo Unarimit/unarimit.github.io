@@ -240,6 +240,7 @@ export default defineUserConfig({
                     { text: "总览", link: "/Gameplay/index.html" },
                     { text: "3C", link: "/Gameplay/3C/3C" },
                     { text: "游戏引擎", link: "/Gameplay/GameEngine" },
+                    { text: "MMORPG", link: "/Gameplay/MMORPG" },
                 ]
             }
         ]
