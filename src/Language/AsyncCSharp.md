@@ -1,5 +1,7 @@
 # 异步（C#）
 
+> 相关章节：[多线程](../CodeBase/MultiThread)、[异步编程实践](../CodeImplement/AsynchronousInPractice)
+
 C#提供了[三种异步编程模型](https://learn.microsoft.com/zh-cn/dotnet/standard/asynchronous-programming-patterns/)。**基于任务的异步模式(TAP)** 、基于事件的异步模式 (EAP)、异步编程模型 (APM) 。其中，后两者较少使用，故文档中不多涉及。
 
 [代码设计-异步编程](../GameCodeDesign/Asynchronous)中介绍了一些TAP的用法和注意事项。
@@ -42,6 +44,36 @@ C#提供了[三种异步编程模型](https://learn.microsoft.com/zh-cn/dotnet/s
    - 了解`ValueTask`、`TaskCompletionSource`和其他高性能选项。
 
 :::
+
+## C# Task
+
+Task是组成异步函数的基础，因为异步函数的签名大多情况都包含`Task`，一些其他情景，如事件触发时会用`async void`为签名。
+
+C# Task 是对**线程池**的又一层封装，提供了返回值的支持：
+
+```csharp
+ThreadPool.QueueUserWorkItem(Foo, 5); // Calling [void Foo(int num)]
+new Task(Foo, 5).Start(); // Equivalent of preceding using Task
+Task.Run(() => Foo(5)); // Another equivalent
+```
+
+要记得处理异常，调用 `Wait`、`Result` 或 `ContinueWith` 中设置 `TaskContinuationOptions.OnlyOnFaulted`
+   > 以Task为代表的异步编程模型在执行程序员定义的代码时，会捕获异常存起来，也可以实现一套异步编程模型，设置遇到异常的逻辑。
+
+### Task的拓展方法
+
+- Task工厂：TaskFactory，辅助对任务构造和调度。
+- Task的群体等待方法。
+- 并行For：Parallel，提供对并行循环和区域的支持。
+
+可以参考[Task 类 - learn.microsoft](https://learn.microsoft.com/zh-cn/dotnet/api/system.threading.tasks.task?view=netframework-4.8)
+
+### 调度选项和任务取消
+
+除了`Result`和`Exception`外，这两个引入的Feature也应该好好理解。
+
+- 调度选项：通过配置 `TaskScheduler` 达成目的，一般用于在GUI应用中，让一部分改变GUI的代码在主线程中执行。
+- 任务取消：通过配置 `CancellationToken` 达成目的，程序员写的代码需要根据传入的token打断当前逻辑。
 
 ## Awaitable-如何构造可等待对象
 

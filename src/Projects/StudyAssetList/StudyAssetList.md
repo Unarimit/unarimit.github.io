@@ -82,7 +82,8 @@
 ### 其他技术博客
 - [Unity 环境下平滑法线（软化边）方案整理 - 简书](https://www.jianshu.com/p/5163577c373a)
 - [Unity LookAt和LookRotation的使用 - 简书](https://www.jianshu.com/p/edc80df2ebd9)
-- [图解系统：malloc是如何分配内存的 - 小林coding](https://www.xiaolincoding.com/os/3_memory/malloc.html)
+- [图解系统系列 - 小林coding](https://www.xiaolincoding.com/os)
+  - nmd需要公众号验证码了
 - [Unity 批处理模型转Humanoid - 腾讯独立游戏孵化器](https://gwb.tencent.com/community/detail/128310)
 - [游戏AI行为决策——GOAP（目标导向型行动规划）- OwlCat](https://www.cnblogs.com/OwlCat/p/17936809)
 

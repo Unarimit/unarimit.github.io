@@ -60,7 +60,6 @@ export default defineUserConfig({
                     { text: "(游戏中的)设计模式", link: "/CodeBase/DesignPattern" },
                     { text: "[W]常用规范", link: "/CodeBase/CommonlySpec" },
                     { text: "多线程", link: "/CodeBase/MultiThread" },
-                    { text: "异步编程", link: "/CodeBase/Asynchronous" },
                     { text: "[W]响应式编程", link: "/CodeBase/ReactiveProgramming/index.html" },
                     { text: "事件系统", link: "/CodeBase/EventSystem" },
                     { text: "[W]协同开发", link: "/CodeBase/Coop" },
@@ -77,6 +76,7 @@ export default defineUserConfig({
                     { text: "RTS相机", link: "/CodeImplement/RTSCamera" },
                     { text: "载具系统", link: "/CodeImplement/VehicleSystem" },
                     { text: "破坏系统", link: "/CodeImplement/DestructionSys" },
+                    { text: "异步编程实践", link: "/CodeImplement/AsynchronousInPractice" },
                     { text: "[W]环境交互", link: "/CodeImplement/Interaction" },
                 ]
             },
@@ -90,6 +90,7 @@ export default defineUserConfig({
                     { text: "启动流程设计", link: "/CodeFramework/StartupProcedure" },
                     { text: "游戏上下文设计", link: "/CodeFramework/GameContextSystem" },
                     { text: "资源系统和服务", link: "/CodeFramework/ResourceSystem" },
+                    { text: "JobSystem", link: "/CodeFramework/JobSystem" },
                     { text: "[W]UI系统设计", link: "/CodeFramework/UISystem" },
                 ]
             },
