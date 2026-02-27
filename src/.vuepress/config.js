@@ -90,7 +90,7 @@ export default defineUserConfig({
                     { text: "启动流程设计", link: "/CodeFramework/StartupProcedure" },
                     { text: "游戏上下文设计", link: "/CodeFramework/GameContextSystem" },
                     { text: "资源系统和服务", link: "/CodeFramework/ResourceSystem" },
-                    { text: "JobSystem", link: "/CodeFramework/JobSystem" },
+                    { text: "JobSystem", link: "/CodeFramework/JobSystem/JobSystem" },
                     { text: "[W]UI系统设计", link: "/CodeFramework/UISystem" },
                 ]
             },

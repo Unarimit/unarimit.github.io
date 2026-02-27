@@ -1,5 +1,14 @@
 # JobSystem
 
+为了减少线程切换开销，Job System一般是**基于协程**实现的，又被称为“Fiber-Based Job System”【1】。
+
+> 基于协程：即任务实际在协程中运行，每个work thread里面跑封装成协程的job
+
+除此之外，还要考虑调度逻辑。
+- 暂停等待队列一般遵循先进后出，可以简单的处理任务链的依赖执行。
+- work thread队列之间有负载均衡逻辑
+
+![alt text](image.png)
 
 ## 使用Unity JobSystem
 
@@ -124,7 +133,8 @@ public class MyScheduledJob : MonoBehaviour
 
 
 ## 参考
-1. [Job system - Unity Documentation](https://docs.unity3d.com/Manual/JobSystem.html)
-2. [继承IJob的示例 - Unity Documentation](https://docs.unity3d.com/cn/current/ScriptReference/Unity.Jobs.IJob.html)
-3. [Unity JobSystem使用及技巧 - cnblog](https://www.cnblogs.com/FlyingZiming/p/17241013.html)
+1. [GAMES104-现代游戏引擎：从入门到实践，第20讲](https://www.bilibili.com/video/BV1EP411V7jx)
+2. [Job system - Unity Documentation](https://docs.unity3d.com/Manual/JobSystem.html)
+3. [继承IJob的示例 - Unity Documentation](https://docs.unity3d.com/cn/current/ScriptReference/Unity.Jobs.IJob.html)
+4. [Unity JobSystem使用及技巧 - cnblog](https://www.cnblogs.com/FlyingZiming/p/17241013.html)
     - 评论区吵架很有意思：[Blittable ECS？- 知乎](https://zhuanlan.zhihu.com/p/83120068)
