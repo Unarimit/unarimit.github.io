@@ -91,6 +91,7 @@ export default defineUserConfig({
                     { text: "游戏上下文设计", link: "/CodeFramework/GameContextSystem" },
                     { text: "资源系统和服务", link: "/CodeFramework/ResourceSystem" },
                     { text: "JobSystem", link: "/CodeFramework/JobSystem/JobSystem" },
+                    { text: "面向数据编程和ECS", link: "/CodeFramework/DOPAndECS/DOPAndECS" },
                     { text: "[W]UI系统设计", link: "/CodeFramework/UISystem" },
                 ]
             },
