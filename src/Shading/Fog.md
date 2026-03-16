@@ -7,7 +7,7 @@
 
 Unity引擎默认使用`Exp Squared Fog`。比较简单，不做介绍。
 
-<img src="../img/shading/Fog-1.png" width="500">
+<img src="../img/Shading/Fog-1.png" width="500">
 
 ## 模拟雾下沉的雾效-Height Fog
 
@@ -15,7 +15,7 @@ Unity引擎默认使用`Exp Squared Fog`。比较简单，不做介绍。
 
 ## 更高级的雾效-Voxel-based Volumetric Fog
 
-<img src="../img/shading/Fog-2.png" width="500">
+<img src="../img/Shading/Fog-2.png" width="500">
 
 类似[天空和云](./SkyAndCloud.md)中大气和体积云的计算方式
 
