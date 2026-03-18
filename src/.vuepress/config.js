@@ -185,6 +185,7 @@ export default defineUserConfig({
                     { text: "第一个月工作有感", link:"/CodingRamble/FirstMonthWorkLog"},
                     { text: "随笔-反人类Web前端", link:"/CodingRamble/FuckWebChapter1"},
                     { text: "Untiy内存问题两则", link:"/CodingRamble/UnityMemoryQuestion"},
+                    { text: "AI使用心得-2026", link:"/CodingRamble/AIUse2026/AIUse2026"},
                     { text: "[w]记录使用unity做MMD", link:"/CodingRamble/UnityMMD"},
                     { text: "[w]游戏常用的几何算法", link: "/CodingRamble/GameGeometry" },
                     { text: "[x]学习一下Unity的TD模板", link: "/CodingRamble/TowerDefenceTemplate" },
