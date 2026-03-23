@@ -45,8 +45,10 @@
     - 特性：基于Mono，使用C#
     - 为什么不选：ios不支持Mono JIT，Interpreter又太慢
 - [HybridCLR(曾用名：huatuo)](https://github.com/focus-creative-games/hybridclr)
-    - 特性：拓展自IL2cpp，使用C#
-    - 为什么不选：2021年出现？比较新，而且商业化
+    - 特性：拓展自 Mono/IL2CPP 运行时，使用C#
+    - 为什么不选：开发时需要编译（热重载技术能一定程度缓解），且很多正常需求都需要商业版本解锁，例如：
+        - （非商业版本）不支持WebGL
+        - （非商业版本）热更每次都会附带特定的程序集大小（导致小补丁要下大程序集），没有脚本语言更新灵活
 - [puerTS](https://github.com/Tencent/puerts)
     - 特性：支持Unity和UE，使用TypeScript
     - 为什么不选：使用TypeScript写逻辑和c#相差很大，但TypeScript是静态语言，比lua好
