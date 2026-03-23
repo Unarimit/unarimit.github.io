@@ -13,6 +13,8 @@
 
 WIP，是否内存压缩，扫描机制，什么时候扫描第1、2代。
 
+在[关于对象生命周期的假设（终结器，GC.KeepAlive）](https://learn.microsoft.com/zh-cn/dotnet/standard/unsafe-code/best-practices#7-assumptions-about-object-lifetimes-finalizers-gckeepalive)中提到，不要在代码逻辑中假设对象始终存在。当关于这个实例的函数还在执行时，后面没有对this的引用，那这个实例就有可能被回收。
+
 ### 全扫描垃圾回收
 
 详见Lua学习笔记中的：[Lua的垃圾回收](../Lua/GCInLua)
