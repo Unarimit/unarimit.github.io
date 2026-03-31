@@ -41,7 +41,7 @@ Account = {balance = 0}
 
 function Account:new (o)
     o = o or {}
-    self.__index = self
+    self.__index = self  -- 考虑继承使用self而非Account
     setmetatable(o, self)
     return o
 end
