@@ -74,6 +74,7 @@ export default defineUserConfig({
                     { text: "技能系统设计", link: "/CodeImplement/AbilitySystem" },
                     { text: "人机切换", link: "/CodeImplement/HumanAgentSwitch" },
                     { text: "RTS相机", link: "/CodeImplement/RTSCamera" },
+                    { text: "换装系统", link: "/CodeImplement/ClothChangeSys/ClothChangeSys" },
                     { text: "载具系统", link: "/CodeImplement/VehicleSystem" },
                     { text: "破坏系统", link: "/CodeImplement/DestructionSys" },
                     { text: "异步编程实践", link: "/CodeImplement/AsynchronousInPractice" },
@@ -232,6 +233,7 @@ export default defineUserConfig({
                 children: [
                     { text: "声音系统", link: "/NotClassify/VolumeSys/VolumeSys" },
                     { text: "游戏引擎工具链", link: "/NotClassify/ToolChains/ToolChains" },
+                    { text: "CI/CD", link: "/NotClassify/CI_CD/CI_CD" },
                     { text: "[W]Blender", link: "/NotClassify/Blender" },
                     { text: "[W]模型", link: "/NotClassify/Modeling" },
                 ]
