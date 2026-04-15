@@ -190,7 +190,7 @@ export default defineUserConfig({
                     { text: "[w]记录使用unity做MMD", link:"/CodingRamble/UnityMMD"},
                     { text: "[w]游戏常用的几何算法", link: "/CodingRamble/GameGeometry" },
                     { text: "[x]学习一下Unity的TD模板", link: "/CodingRamble/TowerDefenceTemplate" },
-                    { text: "[W]记录VRoid导入Unity", link: "/CodingRamble/VRoidInUnity" },
+                    { text: "[W]记录VRoid导入Unity实现换装系统", link: "/CodingRamble/VRoidInUnity/index.html" },
                 ]
             },
             {

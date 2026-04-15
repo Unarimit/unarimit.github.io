@@ -39,7 +39,7 @@ public class EquipmentSystem : MonoBehaviour
         var skinnedMesh = item.GetComponent<SkinnedMeshRenderer>();
 
         // 重新绑定骨骼
-        skinnedMesh.bones = targetMesh.bones;
+        skinnedMesh.bones = targetMesh.bones; // 参考Mesh的骨骼不一定够用，如果无效，可能还递归按名字去替换骨骼
         skinnedMesh.rootBone = targetMesh.rootBone;
     }
 }
