@@ -4,7 +4,7 @@
 
 UI的性能优化可以分为三个方向：
 1. 减少draw call提交的次数，从而减小总I/O
-    - 触发动态合批（dynamic batching），首先通过图集合并细小的UI，会增加一定量的CPU开销。
+    - 触发动态合批（dynamic batching），首先通过图集合并细小的UI，会增加一定量的CPU开销。(图集的格式配置参考【5】)
     - 减少图片大小，使用九宫格图等技巧。
 2. 减少Canvas Rebuild消耗
     - 对于触发Rebuild频繁的组，使用多个画布（平行或内嵌），实现动静分离。
@@ -103,3 +103,4 @@ WIP：实验
     - [Unity UI 优化技巧 - Unity HowTo](https://unity.com/cn/how-to/unity-ui-optimization-tips)
 3. [Unity UI (uGUI) 2.0 - Unity Manul](https://docs.unity3d.com/Packages/com.unity.ugui@2.0/manual/index.html)
 4. [UGUI 1.0 - github](https://github.com/Unity-Technologies/uGUI/tree/2018.4)
+5. [Sprite Atlas best practices in Unity 6 - youtube](https://www.youtube.com/watch?v=hXlpnwD-TgY)
