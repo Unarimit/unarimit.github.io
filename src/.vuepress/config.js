@@ -39,6 +39,7 @@ export default defineUserConfig({
                     { text: "[W]动画机", link: "/UnityComponent/Animator" },
                     { text: "碰撞箱", link: "/UnityComponent/BoxCollider" },
                     { text: "资源管理", link: "/UnityComponent/Resource" },
+                    { text: "资源导入和AssetPostprocessor", link: "/UnityComponent/AssetPostprocessor" },
                     { text: "UGUI", link: "/UnityComponent/UGUI" },
                     { text: "TextMeshPro", link: "/UnityComponent/TextMeshPro" },
                     { text: "[W]常用Transform操作", link: "/UnityComponent/Transform" },
