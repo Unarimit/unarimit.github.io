@@ -21,7 +21,7 @@ export default defineUserConfig({
                 link: '/Projects/index.html',
                 collapsible: false,
                 children: [
-                    { text: "[W]上帝视角射击游戏", link: "/Projects/TopShooting" },
+                    { text: "上帝视角射击游戏", link: "/Projects/TopShooting" },
                     { text: "[W]个人主页-我要成为U3D高手", link: "/Projects/ToBecomeU3dMaster" },
                     { text: "*参考清单", link: "/Projects/StudyAssetList/StudyAssetList" },
                 ]
