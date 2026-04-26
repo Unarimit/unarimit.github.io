@@ -144,8 +144,8 @@ export default defineUserConfig({
                         link: "/Language/Compile/index.html",
                         children: [
                             { text: "总览", link: "/Language/Compile/index.html" },
-                            { text: "编译（C++）", link: "/Language/Compile/CompileCpp" },
-                            { text: "编译（C#）", link: "/Language/Compile/CompileCsharp" },
+                            { text: "编译产物（C++）", link: "/Language/Compile/CompileCpp" },
+                            { text: "编译产物及JIT（C#）", link: "/Language/Compile/CompileCsharp" },
                         ]
                     },
                     { text: "函数", link: "/Language/Function" },

@@ -55,17 +55,8 @@
 
 看知乎上的一些讨论，感觉`HybridCLR`倾向于热更新逻辑和框架逻辑在同一个作用域，而其他方案则分离热更新逻辑和框架逻辑。
 
-::: tip 相关概念 
-- AOT(Ahead-of-time, 提前编译)
-    - 区别于"完全静态编译（Full-ahead-of-time,Full-AOT）:程序运行前，将所有源码编译成目标平台的原生码。" // 感觉怪怪的
-    - Unity文档是这样描述的："Ahead of Time (AOT) compilation is an optimization method used by all platforms except iOS for optimizing the size of the built player."
-    - 程序运行之前，将.exe或.dll文件中的CIL的byte code部分转译为目标平台的原生码并且存储，程序运行中仍有部分CIL的byte code需要JIT编译。
-- JIT(Just-in-time, 即时编译)
-    - 程序运行过程中，将CIL的byte code转译为目标平台的原生码。
-    - 具体在C#中，执行函数前会加载函数需要的程序集，并在执行方法时编译方法的IL代码，一个方法反复执行在同一个AppDomain中时，只用编译一遍。
-- Interpreter(解释器)
-    - 参考Python等解释语言，由于每一段逻辑都要运行时编译，会显著影响效率。
-:::
+关于 AOT(Ahead-of-time, 提前编译)、JIT(Just-in-time, 即时编译)、Interpreter(解释器) 相关概念，见[编译原理](./Compile/index)
+
 
 ## 热更新流程-XLua
 

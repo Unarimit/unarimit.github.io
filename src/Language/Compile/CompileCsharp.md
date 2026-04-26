@@ -1,18 +1,16 @@
-# 编译（C#）
+# 编译产物及JIT（C#）
 
-WIP
+C#程序的编译过程如下图所示：
 
-## 编译流程介绍
-
-一个经典的C#程序的编译过程如下图所示：
-
-<img src="../../img/csharp-compile-1.png" width="600">
+<img src="../../img/csharp-compile-1.png" width="520">
 
 一个C#项目编译后的可执行文件的结构（以压缩文件打开）如下图所示：
 
 <img src='../../img/csharp-compile-2.png'>
 
 ### metadata
+
+相比c++ RTTI只对检测到多态特性的类生成`type_info`，C#对所有类生成完整元数据。
 
 WIP
 
