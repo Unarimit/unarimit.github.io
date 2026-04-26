@@ -34,3 +34,4 @@ WIP
 - [《CLR via C# 第四版》](https://book.douban.com/subject/26285940)
 - [.NET compilation process explained (C#) - dev.to 2021](https://dev.to/kcrnac/net-execution-process-explained-c-1b7a)
     - 第一章编译的流程图就来自这里
+- [The Book of the Runtime](https://github.com/dotnet/runtime/tree/main/docs/design/coreclr/botr)
