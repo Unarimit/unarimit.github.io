@@ -7,15 +7,15 @@
 一个经典的c程序的编译过程如下图所示：
 > c++和c的编译过程是相似的，区别主要源于C++比C提供了更多的特性，比如类、模板、异常处理等。这些特性在编译过程中需要额外的处理。
 
-<img src='../img/cpp_compile-1.jpg'>
+<img src='../../img/cpp_compile-1.jpg'>
 
 还有一页我认为看着不错的ppt：
 
-<img src='../img/cpp_compile-3.png' width="600">
+<img src='../../img/cpp_compile-3.png' width="600">
 
 一个cpp文件编译后的可执行文件的结构（以压缩文件打开）如下图所示：
 
-<img src='../img/cpp_compile-2.png' width="600">
+<img src='../../img/cpp_compile-2.png' width="600">
 
 其中 `.text` 是代码段，`.bss` `.data` 是全局/静态存储段
 

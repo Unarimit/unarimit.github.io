@@ -6,11 +6,11 @@ WIP
 
 一个经典的C#程序的编译过程如下图所示：
 
-<img src="../img/csharp-compile-1.png" width="600">
+<img src="../../img/csharp-compile-1.png" width="600">
 
 一个C#项目编译后的可执行文件的结构（以压缩文件打开）如下图所示：
 
-<img src='../img/csharp-compile-2.png'>
+<img src='../../img/csharp-compile-2.png'>
 
 ### metadata
 

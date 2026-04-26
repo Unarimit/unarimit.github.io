@@ -139,8 +139,15 @@ export default defineUserConfig({
                 children: [
                     { text: "总览", link: "/Language/index.html" },
                     { text: "内存管理", link: "/Language/MemoryManage" },
-                    { text: "编译（C++）", link: "/Language/CompileCpp" },
-                    { text: "编译（C#）", link: "/Language/CompileCsharp" },
+                    {   
+                        text: "编译", 
+                        link: "/Language/Compile/index.html",
+                        children: [
+                            { text: "总览", link: "/Language/Compile/index.html" },
+                            { text: "编译（C++）", link: "/Language/Compile/CompileCpp" },
+                            { text: "编译（C#）", link: "/Language/Compile/CompileCsharp" },
+                        ]
+                    },
                     { text: "函数", link: "/Language/Function" },
                     { text: "数值", link: "/Language/Number" },
                     { text: "类型", link: "/Language/Class" },
