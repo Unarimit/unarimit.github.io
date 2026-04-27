@@ -52,7 +52,7 @@ public class EquipmentSystem : MonoBehaviour
 
 ## 例子-记录VRoid导入Unity实现换装系统
 
-在[记录VRoid导入Unity实现换装系统](../../CodingRamble/VRoidInUnity)中，我尝试实现了换装系统部分的共享骨骼部分。
+在[记录VRoid导入Unity实现换装系统](../../CodingRamble/VRoidInUnity/)中，我尝试实现了换装系统部分的共享骨骼部分。
 
 ## 参考
 1. LLM
