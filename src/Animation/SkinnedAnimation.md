@@ -19,6 +19,7 @@
 
 - 绑定姿势：T-Pose vs A-Pose
     - A-Pose绑定后肩膀表现力更强
+    - bindpose矩阵，在绑定时定义骨骼和蒙皮的关系。
 
 - 骨骼定义。如人形标准骨骼Humanoid，标准化命名（pelvis、head），方便工具识别
     - 额外骨骼：眉毛、衣服等。武器可以采用Mount一个节点或单独绑的方式实现
@@ -26,6 +27,7 @@
     - 骨骼节点Joint的平移、朝向和放缩的意义，前两个用于动画，后一个可用于捏脸
     - 骨骼节点Joint的插值在Local Space做，和其蒙皮一起计算位移涉及稍微复杂的运算【1】
     - 蒙皮的插值在Model Space做，分别单独计算受各个顶点影响后的位置，再根据权重求和
+
 
 - 计算
     - 计算骨骼移动的主要运算被转为矩阵在GPU中运行
@@ -54,6 +56,8 @@
     - 导出由DCC工具制作的动画。数字内容制作（Digital Content Creation, DCC）工具（3ds Max、Maya、Blender）
 - 动画重定向（retargeting），将一个身材比例的动画重定向到另一个身材比例 【2】
     - 实际实现细节很多，有很多hack
+- 修正导入结果
+    - Humanoid不能兼容主要是绑定姿势下骨骼旋转不同，所以可以通过覆盖相同的骨骼Transform，并重算BindPose（`bones[i].worldToLocalMatrix * skin.transform.localToWorldMatrix;`）解决。在[记录VRoid导入Unity实现换装系统](../CodingRamble/VRoidInUnity/)中有解决方案
 
 <img src="../img/Animation/SkinnedAnimation-5.png">
 
