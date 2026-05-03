@@ -56,7 +56,7 @@
 
 Claude Code CLI编程时表现好，且源码正好泄露了。这里参考别人的总结和AI对源代码的分析，总结下我认为关键的原理【5】。
 
-![alt text](cc90e968ae3e03bdd10e2f71d7c6d250.png)
+![alt text](./cc90e968ae3e03bdd10e2f71d7c6d250.png)
 
 - `--dangerously-skip-permissions` 模式（也叫 YOLO 模式）会有第二个AI做审查
 

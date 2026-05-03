@@ -20,13 +20,13 @@
 
 - 工具链的基石，schema系统，通过已有类型定义复杂类型。有两种方式
     - 如untiy的inspector中，monobehavior和material的编辑
-    - ![alt text](image.png)
+    - ![alt text](./image.png)
 
 - 数据需要展示成方便人类理解的版本，如欧拉角和弧度角
 
 - 所见即所得，编辑完可以快速play看效果，导致工具链在架构上不能独立于游戏引擎
     - 两种实现方式 `Play in Editor` 和 `Play In PIE World`，前者play时变动的属性会影响到editor
-    - ![alt text](image-1.png)
+    - ![alt text](./image-1.png)
 
 - 可扩展性，允许第三方开发者实现自己的工具链
     - 尽可能提供全部的API支持
@@ -40,12 +40,12 @@
 
 插件（Plugin）模式，是一种在商业软件和游戏引擎中非常常见的设计思想。它的核心是将系统拆分为核心框架和可扩展插件，让功能可以灵活增减，而不需要修改核心代码。
 
-![alt text](image-2.png)
+![alt text](./image-2.png)
 
 plugin的模式
 - Covered和Distributed，区别就是出现功能重写时，前者后加载的覆盖前加载的，后者会Merge
 - Pipeline和Onion rings，太抽象了看图吧
-    - ![alt text](image-3.png)
+    - ![alt text](./image-3.png)
 
 
 ## 参考

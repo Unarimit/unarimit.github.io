@@ -24,16 +24,16 @@
 
 - attenuation（衰减）：根据声源距离不同，声音的衰减并非分贝的加减（因为低频和高频随距离衰减的速度不同），早期通过录制几种不同距离的声音插值实现，现在可通过中间件实现
     - 点声源、柱型声源（小溪）、盒型声源
-    - ![alt text](image.png)
+    - ![alt text](./image.png)
 
 - 阻挡：
     - 简单但高消耗方法：raycast+进一步采样积分+根据材质配置衰减参数，用于重要的声音反馈（如射击游戏）
-    - ![alt text](image-1.png)
-    - ![alt text](image-2.png)
+    - ![alt text](./image-1.png)
+    - ![alt text](./image-2.png)
 
 - 混响：干音（Dry）和湿音（Wet）
     - 一般由经验模型实现
-    - ![alt text](image-3.png)
+    - ![alt text](./image-3.png)
 
 - 多普勒效应，如飞机引擎声音模拟
 

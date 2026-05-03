@@ -71,7 +71,7 @@ VRoid 导出 VRM 时使用 T-Pose 导致手臂大幅动作时出现穿模
 
 对策：给身体做一个“瘦身”的 BlendShape，或使用clipMask不渲染被衣服遮盖的身体
 
-![alt text](image.png)
+![alt text](./image.png)
 
 ::: details ai解释
 为什么“前伸”会导致穿模？

@@ -6,7 +6,7 @@
 
 所有寻路系统都有三个部分构成【1】
 
-![alt text](image.png)
+![alt text](./image.png)
 
 地图表达（Map Representation）
 - 数据结构选择：WayPoint Network（早期方法，类比做地铁，先引导到地铁站）、Grid（很难表达3D层叠结构）、Navigation Mesh、八叉树（主要用于飞行时的寻路）。现在比较常用的是Navigation Mesh
@@ -43,7 +43,7 @@
 
 速度障碍法-基于速度的
 - 有VO、RVO、ORCA算法，依次效果越好，性能消耗越高
-![alt text](image-4.png)
+![alt text](./image-4.png)
 
 
 ## Unity方案-AINavigation

@@ -8,7 +8,7 @@
 
 在`UniRx`的新继承者`R3`的[仓库](https://github.com/Cysharp/R3)里，看到了一个很有趣[frame-based-operations](https://github.com/Cysharp/R3?tab=readme-ov-file#frame-based-operations)特性（如下图所示），于是带着好奇去学习一下他是怎么做到的。
 
-![frame-based-operations](image.png)
+![frame-based-operations](./image.png)
 
 ## 什么是响应式编程
 

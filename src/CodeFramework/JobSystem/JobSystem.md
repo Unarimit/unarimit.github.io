@@ -8,7 +8,7 @@
 - 暂停等待队列一般遵循先进后出，可以简单的处理任务链的依赖执行。
 - work thread队列之间有负载均衡逻辑
 
-![alt text](image.png)
+![alt text](./image.png)
 
 ## 使用Unity JobSystem
 

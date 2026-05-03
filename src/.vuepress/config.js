@@ -1,12 +1,16 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { hopeTheme } from "vuepress-theme-hope"
 import { defineUserConfig } from 'vuepress'
-
 export default defineUserConfig({
     bundler: viteBundler(),
     title: '我要成为U3D高手',
     description: '个人网站',
     theme: hopeTheme({
+        plugins: {
+            slimsearch: {
+                indexContent: true,
+            },
+        },
         navbar: [
             { text: 'Github', link: 'https://github.com/unarimit' },
             { text: 'Bilibili', link: 'https://space.bilibili.com/1935339' },
