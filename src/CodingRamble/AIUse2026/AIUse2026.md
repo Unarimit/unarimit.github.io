@@ -48,13 +48,21 @@
     - 将相对固定的流程Skill化，如资源替换
     - *国内可以用平替"Code Buddy"
 3. OpenClaw，接OA后可以用于处理自动化事务，但不能参与敏感操作
-4. Codex，自动化特化
+4. Codex，自动化特化，界面比较匹配前端逻辑，多开任务GUI比较直观。
 5. Python控制流，具体任务特化。比起Claude Code CLI用一句话确定的工作流，这种方式开发的掌控性更强，且能一定程度减少ai幻觉的影响，但实现起来相对复杂。
     - 如情景1中提到的[做法](https://zhuanlan.zhihu.com/p/2355110476)
 
+### Claude Code CLI
+
+Claude Code CLI编程时表现好，且源码正好泄露了。这里参考别人的总结和AI对源代码的分析，总结下我认为关键的原理【5】。
+
+![alt text](cc90e968ae3e03bdd10e2f71d7c6d250.png)
+
+- `--dangerously-skip-permissions` 模式（也叫 YOLO 模式）会有第二个AI做审查
+
 ## 衍生技术、术语
 1. 为项目建立给LLM看的文档
-    - 检索增强生成（Retrieval-augmented Generation，简称RAG）和embedding模型，这个部署比较麻烦，一般用于开放文档的知识库ai
+    - 检索增强生成（Retrieval-augmented Generation，简称RAG）和embedding模型，这个部署比较麻烦，一般用于开放文档的知识库ai。
     - 分层文本文档，可用于本地开发
 2. 获取网络知识：Web Search
 3. 检索本地代码：Grep or Lsp
@@ -62,10 +70,11 @@
 
 ## 问题和改进思路
 1. 如果让AI来写工作上下文相关的文档，会写很多多余的部分
-- 如何限制AI的输入和输出
+    - 如何限制AI的输入和输出：另一个独立上下文的agent or 代码硬编码
 
 ## 参考
 1. [AI到底是如何进行编程的？抓包拆解Claude Code](https://www.bilibili.com/video/BV1AuzkBREhx)
 2. [Cline](https://cline.bot/)
 3. [Nexus - github](https://github.com/abhigyanpatwari/GitNexus) 
 4. [Unity MCP](https://github.com/CoplayDev/unity-mcp)
+5. [Claude Code实现原理介绍 - 微信公众号](https://mp.weixin.qq.com/s/ldp-p2-dMJifjsd_dmmqQg)
