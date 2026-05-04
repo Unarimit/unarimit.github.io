@@ -15,9 +15,12 @@ export default defineUserConfig({
         navbar: [
             { text: '博客样式', link: '/' },
             { text: '文档样式', link: '/intro.html' },
-            { text: 'Github', link: 'https://github.com/unarimit' },
-            { text: 'Bilibili', link: 'https://space.bilibili.com/1935339' },
         ],
+        navbarLayout: {
+            start: ['Brand'],
+            center: ['Links'],
+            end: ['Language', 'Outlook', 'Search', 'SocialIcons'],
+        },
         sidebar: [
             {
                 text: '引言',
