@@ -1,3 +1,8 @@
+---
+article: false
+timeline: false
+---
+
 # 代码杂谈
 
 <img src="../img/codeRamble-0.png">

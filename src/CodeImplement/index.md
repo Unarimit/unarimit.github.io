@@ -1,3 +1,8 @@
+---
+article: false
+timeline: false
+---
+
 # 代码设计-原型实现
 
 尝试实现一些比较cooool的功能，增加做新功能时和需求battle的勇气

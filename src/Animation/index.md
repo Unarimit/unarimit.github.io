@@ -1,3 +1,8 @@
+---
+article: false
+timeline: false
+---
+
 # 动画
 
 ## 挑战

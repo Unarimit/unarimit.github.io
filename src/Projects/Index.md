@@ -1,3 +1,8 @@
+---
+article: false
+timeline: false
+---
+
 # 作品
 
 ## 上帝视角射击游戏

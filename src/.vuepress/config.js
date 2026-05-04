@@ -10,15 +10,18 @@ export default defineUserConfig({
             slimsearch: {
                 indexContent: true,
             },
+            blog: true,
         },
         navbar: [
+            { text: '博客样式', link: '/' },
+            { text: '文档样式', link: '/intro.html' },
             { text: 'Github', link: 'https://github.com/unarimit' },
             { text: 'Bilibili', link: 'https://space.bilibili.com/1935339' },
         ],
         sidebar: [
             {
                 text: '引言',
-                link: '/index.html',
+                link: '/intro.html',
             },
             {
                 text: '作品',

@@ -1,3 +1,8 @@
+---
+article: false
+timeline: false
+---
+
 # 性能优化
 <img src='../img/Profiler/index.png'>
 

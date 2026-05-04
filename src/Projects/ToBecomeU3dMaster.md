@@ -80,6 +80,7 @@
 ### 引用中
 
 1. 引用应该具体，假设理论引自某本书的某一章节，应该标出章节号
+    - 迭代，利用 [hope theme的脚注功能](https://theme-hope.vuejs.press/zh/guide/markdown/content/tabs.html)
 2. 尊重个人知识权益，引用博客或b站视频应标注发表人id
 
 

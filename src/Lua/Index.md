@@ -1,3 +1,8 @@
+---
+article: false
+timeline: false
+---
+
 # Lua学习笔记
 
 <img src='../img/lua-0.png'>

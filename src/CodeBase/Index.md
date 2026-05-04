@@ -1,3 +1,8 @@
+---
+article: false
+timeline: false
+---
+
 # 代码设计-基础
 
 <img src="../img/code-design.png">
