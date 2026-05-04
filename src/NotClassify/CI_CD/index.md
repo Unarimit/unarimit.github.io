@@ -1,8 +1,3 @@
----
-article: false
-timeline: false
----
-
 # CI/CD
 
 CI/CD是指持续集成（英语：continuous integration）和持续交付（英语：continuous delivery）或持续部署（英语：continuous deployment）的组合实践。CI/CD通过在应用程序的构建、测试和部署中实施自动化，在开发和运营团队之间架起了桥梁。【1】
