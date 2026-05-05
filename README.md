@@ -13,6 +13,7 @@ https://zhuanlan.zhihu.com/p/520525757?utm_id=0
 
 https://blog.csdn.net/weixin_43019353/article/details/130757392
 
+使用Claude Code帮我给VuePress添加feature
 
 ## 迁移事项
 根据上方的`配置Action自动部署`链接，配置`ACCESS_TOKEN`
