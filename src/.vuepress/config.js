@@ -113,7 +113,7 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/Profiler/index.html" },
-                    { text: "UGUI", link:"/Profiler/ProfilerUI/ProfilerUI"},
+                    { text: "UGUI", link:"/Profiler/ProfilerUI/index.html" },
                 ]
             },
             {
