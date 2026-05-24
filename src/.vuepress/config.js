@@ -182,7 +182,7 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "总览", link: "/Lua/index.html" },
-                    { text: "[w]常用语法", link: "/Lua/Grammar" },
+                    { text: "常用语法", link: "/Lua/Grammar" },
                     { text: "表-关键数据结构", link: "/Lua/Table" },
                     { text: "动态性", link: "/Lua/Dynamic" },
                     { text: "lua中的面向对象", link: "/Lua/OOPInLua" },
