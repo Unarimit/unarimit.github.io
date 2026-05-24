@@ -6,6 +6,9 @@ export default defineUserConfig({
     title: '我要成为U3D高手',
     description: '个人网站',
     theme: hopeTheme({
+        markdown: {
+            footnote: true,
+        },
         plugins: {
             slimsearch: {
                 indexContent: true,

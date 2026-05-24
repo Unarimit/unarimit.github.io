@@ -21,6 +21,12 @@
 - 缺乏审核机制，会导致自己做planner写错的逻辑只能在人工测试中发现。
 - 有些描述时间大于编码时间的内容也很难办。
 
+## 情景3-AI流水线
+
+游戏客户端开发最大的问题是：大多开发阶段必须由人来确认“功能是否已经实现”、“表现是否符合预期”，所以很难建立起月均几亿token的AI流水线。
+
+不过，可以为高频重复任务定制小流水线，如框架适配、重构、简单的活动开发等。
+
 ### 提示词非常丰富：组件知识库+文档+效果图+指定接口和数据
 
 在由开发根据经验写好组件知识库（或者给几个能完全覆盖现有逻辑的参考），并且附上文档、效果图、指定接口和数据等能拿到的所有图文数据之后（如果可以的话可以带上后端代码），由LLM完成的prefab和业务逻辑是足够使用的
@@ -31,7 +37,7 @@
 
 - LLM对图片中UI元素的具体位置理解较差，只能拿到相对关系
 - LLM对原本由管线工具生成的内容生成的不太准确，需要在提示词中强调（只给示例和代码可能不够）
-    - 这里用MCP迭代一下管线工具，用格式化输入MCP代替完全由LLM自己生成我感觉会好些
+    - 这里用MCP迭代一下管线工具，用格式化输入MCP代替完全由LLM自己生成我感觉会好些（实际上LLM经常自己创建python脚本去生成资源（如prefab），所以交给可维护性更强的mcp function call更好一些。
 - 编码风格很难统一，这对于需要多人协作的、希望产出固定AI管线（Skill）的情境下，有些难搞
 - 考虑上下文和开销，Sub Agent会很有用
 
@@ -54,11 +60,19 @@
 
 ### Claude Code CLI
 
-Claude Code CLI编程时表现好，且源码正好泄露了。这里参考别人的总结和AI对源代码的分析，总结下我认为关键的原理【5】。
+Claude Code CLI编程时表现好，且源码正好泄露了。这里参考别人的总结和AI对源代码的分析，总结下我认为关键的原理[^ccAnalyse][^抓包]。
 
 ![alt text](./cc90e968ae3e03bdd10e2f71d7c6d250.png)
 
 - `--dangerously-skip-permissions` 模式（也叫 YOLO 模式）会有第二个AI做审查
+
+### MCP(Model Context Protocol)
+
+> MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems. [^mcp]
+
+MCP最早由 Anthropic 发布，作为到外部系统（unity、psd、blender）的接口，本质是给 AI 工具提供"精准查询接口"。
+
+Coplay 的 Unity MCP[^unityMCP]，除了查询外，还提供了修改场景、截图、Play、Refresh、自定义function call等功能，一定程度解决了在unity开发中，agent对当前状态感知模糊的问题。
 
 ## 衍生技术、术语
 1. 为项目建立给LLM看的文档
@@ -73,8 +87,7 @@ Claude Code CLI编程时表现好，且源码正好泄露了。这里参考别�
     - 如何限制AI的输入和输出：另一个独立上下文的agent or 代码硬编码
 
 ## 参考
-1. [AI到底是如何进行编程的？抓包拆解Claude Code](https://www.bilibili.com/video/BV1AuzkBREhx)
-2. [Cline](https://cline.bot/)
-3. [Nexus - github](https://github.com/abhigyanpatwari/GitNexus) 
-4. [Unity MCP](https://github.com/CoplayDev/unity-mcp)
-5. [Claude Code实现原理介绍 - 微信公众号](https://mp.weixin.qq.com/s/ldp-p2-dMJifjsd_dmmqQg)
+[^抓包]: [AI到底是如何进行编程的？抓包拆解Claude Code](https://www.bilibili.com/video/BV1AuzkBREhx)
+[^unityMCP]: [Unity MCP](https://github.com/CoplayDev/unity-mcp)
+[^ccAnalyse]: [Claude Code实现原理介绍 - 微信公众号](https://mp.weixin.qq.com/s/ldp-p2-dMJifjsd_dmmqQg)
+[^mcp]: [modelcontextprotocol.io](https://modelcontextprotocol.io/docs/getting-started/intro)
