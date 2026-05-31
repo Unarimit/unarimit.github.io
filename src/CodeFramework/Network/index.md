@@ -76,13 +76,24 @@ fps场景中的命中判定，是一个经典的因延迟影响，不得不将�
 
 ![alt text](./image-5.png)
 
+## 传输/接收消息封装
+
+消息以什么样的形式发送，是json、xml？还是MessagePack、protobuf。
+
+著名一揽子方案gRPC就是基于 HTTP + protobuf 实现的。
+
+## API架构
+
+后端的架构选型大多会落到 RPC（Remote Process Call，远程过程调用） 和 REST（Representational State Transfer） 中的任意一个（GraphQL这种面向数据查询只能内网用用了），一般游戏接口都会采取RPC的架构设计。
+
+但上文提到的帧同步很难说是涉及API架构的，帧同步是一个面向网络游戏的同步方案，本质上每个客户端在向其他所有客户端做单向通知，还会涉及插值、预测、预测回滚等优化策略。这样的复杂度已经脱离了 API名字应该怎么约定 的低级趣味。
+
 ## 其他细节
 
 - 通信是否需要封装？socket 或 RPC（Remote Procedure Call）
 - 网络拓扑选择？P2P 或 专用服务器（要考虑不同地区的人的延迟，可能需要专用线路，一般由阿里云等服务商解决）
 - 时钟同步（Clock Synchronization），以便确定玩家操作的时间
 - 玩家上传丢包表现？重复上一次操作还是回泉水
-- 传输数据压缩，如protobuf
 
 ## 参考
 1. [GAMES104-现代游戏引擎：从入门到实践，第18讲](https://www.bilibili.com/video/BV1HN4y157Zq)
