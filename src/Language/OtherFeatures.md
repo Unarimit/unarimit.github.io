@@ -128,6 +128,12 @@ Lua中，由于可以直接观察调用栈，所以能做的事情会比较多�
 
 在[《Programming in Lua》 第23章，调试库](https://www.lua.org/pil/23.html) 中描述了一些，对应[第四版书（Lua5.3）](https://www.lua.org/pil/)的内容则是第25章（反射）
 
+## 混入（Mixin）
+
+混入是面向对象程序设计语言中的类，提供了方法的实现。其他类可以访问mixin类的方法而不必成为其子类。[^Mixin]
+
+C#中的拓展方法就是一种支持Mixin的例子，游戏开发中经常可以看到一些工具类对`transform`等组件的拓展。
+> lua也可以通过手动定义表合并方法来模拟，但这可能会让逻辑看起来很混乱。
 
 
 ## 模块化
@@ -152,3 +158,4 @@ C++：C++20的import
     - [.NET 中的反射 - learn.microsoft](https://learn.microsoft.com/zh-cn/dotnet/fundamentals/reflection/reflection)
     - [Lua程序设计 第四版 - Roberto](https://www.lua.org/pil/)第25章
     - [GAMES104现代游戏引擎课程的第十四讲-bilibili](https://www.bilibili.com/video/BV1QN4y1u78P)
+[^Mixin]: [混入 - wikipedua](https://zh.wikipedia.org/wiki/Mixin)
