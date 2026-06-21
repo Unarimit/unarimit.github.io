@@ -215,6 +215,16 @@ export default defineUserConfig({
                 ]
             },
             {
+                text: '引擎架构和构建技术',
+                link: '/GameBuild/index.html',
+                collapsible: true,
+                children: [
+                    { text: "总览", link: "/GameBuild/index.html" },
+                    { text: "CI/CD", link: "/GameBuild/CI_CD/index.html" },
+                    { text: "游戏引擎工具链", link: "/GameBuild/ToolChains/ToolChains" },
+                ]
+            },
+            {
                 text: '渲染技术',
                 link: '/Shading/index.html',
                 collapsible: true,
@@ -253,8 +263,6 @@ export default defineUserConfig({
                 collapsible: true,
                 children: [
                     { text: "声音系统", link: "/NotClassify/VolumeSys/VolumeSys" },
-                    { text: "游戏引擎工具链", link: "/NotClassify/ToolChains/ToolChains" },
-                    { text: "CI/CD", link: "/NotClassify/CI_CD/index.html" },
                     { text: "[W]Blender", link: "/NotClassify/Blender" },
                     { text: "[W]模型", link: "/NotClassify/Modeling" },
                 ]
